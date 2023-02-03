@@ -1,4 +1,5 @@
 library(tidyverse)
+library(tidyr)
 library(XML)
 library(splitstackshape)
 
