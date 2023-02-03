@@ -1,0 +1,1189 @@
+"","areaType","areaName","areaCode","date","variant","cumWeeklySequenced","newWeeklyPercentage"
+"1","nation","England","E92000001","2021-02-14","Other",236135,2.69
+"2","nation","England","E92000001","2021-02-14","V-20DEC-01 (Alpha)",236135,97.31
+"3","nation","England","E92000001","2021-02-14","V-21APR-02 (Delta B.1.617.2)",0,0
+"4","nation","England","E92000001","2021-02-14","V-21OCT-01 (Delta AY 4.2)",0,0
+"5","nation","England","E92000001","2021-02-14","V-22DEC-01 (Omicron CH.1.1)",0,0
+"6","nation","England","E92000001","2021-02-14","V-22JUL-01 (Omicron BA.2.75)",0,0
+"7","nation","England","E92000001","2021-02-14","V-22OCT-01 (Omicron BQ.1)",0,0
+"8","nation","England","E92000001","2021-02-14","VOC-21NOV-01 (Omicron BA.1)",0,0
+"9","nation","England","E92000001","2021-02-14","VOC-22APR-03 (Omicron BA.4)",0,0
+"10","nation","England","E92000001","2021-02-14","VOC-22APR-04 (Omicron BA.5)",0,0
+"11","nation","England","E92000001","2021-02-14","VOC-22JAN-01 (Omicron BA.2)",0,0
+"12","nation","England","E92000001","2021-02-14","unclassified_variant",0,0
+"13","nation","England","E92000001","2021-02-21","Other",249502,2.48
+"14","nation","England","E92000001","2021-02-21","V-20DEC-01 (Alpha)",249502,97.52
+"15","nation","England","E92000001","2021-02-21","V-21APR-02 (Delta B.1.617.2)",0,0
+"16","nation","England","E92000001","2021-02-21","V-21OCT-01 (Delta AY 4.2)",0,0
+"17","nation","England","E92000001","2021-02-21","V-22DEC-01 (Omicron CH.1.1)",0,0
+"18","nation","England","E92000001","2021-02-21","V-22JUL-01 (Omicron BA.2.75)",0,0
+"19","nation","England","E92000001","2021-02-21","V-22OCT-01 (Omicron BQ.1)",0,0
+"20","nation","England","E92000001","2021-02-21","VOC-21NOV-01 (Omicron BA.1)",0,0
+"21","nation","England","E92000001","2021-02-21","VOC-22APR-03 (Omicron BA.4)",0,0
+"22","nation","England","E92000001","2021-02-21","VOC-22APR-04 (Omicron BA.5)",0,0
+"23","nation","England","E92000001","2021-02-21","VOC-22JAN-01 (Omicron BA.2)",0,0
+"24","nation","England","E92000001","2021-02-21","unclassified_variant",0,0
+"25","nation","England","E92000001","2021-02-28","Other",261207,2.96
+"26","nation","England","E92000001","2021-02-28","V-20DEC-01 (Alpha)",261207,97.04
+"27","nation","England","E92000001","2021-02-28","V-21APR-02 (Delta B.1.617.2)",0,0
+"28","nation","England","E92000001","2021-02-28","V-21OCT-01 (Delta AY 4.2)",0,0
+"29","nation","England","E92000001","2021-02-28","V-22DEC-01 (Omicron CH.1.1)",0,0
+"30","nation","England","E92000001","2021-02-28","V-22JUL-01 (Omicron BA.2.75)",0,0
+"31","nation","England","E92000001","2021-02-28","V-22OCT-01 (Omicron BQ.1)",0,0
+"32","nation","England","E92000001","2021-02-28","VOC-21NOV-01 (Omicron BA.1)",0,0
+"33","nation","England","E92000001","2021-02-28","VOC-22APR-03 (Omicron BA.4)",0,0
+"34","nation","England","E92000001","2021-02-28","VOC-22APR-04 (Omicron BA.5)",0,0
+"35","nation","England","E92000001","2021-02-28","VOC-22JAN-01 (Omicron BA.2)",0,0
+"36","nation","England","E92000001","2021-02-28","unclassified_variant",0,0
+"37","nation","England","E92000001","2021-03-07","Other",274285,2.7
+"38","nation","England","E92000001","2021-03-07","V-20DEC-01 (Alpha)",274285,97.3
+"39","nation","England","E92000001","2021-03-07","V-21APR-02 (Delta B.1.617.2)",0,0
+"40","nation","England","E92000001","2021-03-07","V-21OCT-01 (Delta AY 4.2)",0,0
+"41","nation","England","E92000001","2021-03-07","V-22DEC-01 (Omicron CH.1.1)",0,0
+"42","nation","England","E92000001","2021-03-07","V-22JUL-01 (Omicron BA.2.75)",0,0
+"43","nation","England","E92000001","2021-03-07","V-22OCT-01 (Omicron BQ.1)",0,0
+"44","nation","England","E92000001","2021-03-07","VOC-21NOV-01 (Omicron BA.1)",0,0
+"45","nation","England","E92000001","2021-03-07","VOC-22APR-03 (Omicron BA.4)",0,0
+"46","nation","England","E92000001","2021-03-07","VOC-22APR-04 (Omicron BA.5)",0,0
+"47","nation","England","E92000001","2021-03-07","VOC-22JAN-01 (Omicron BA.2)",0,0
+"48","nation","England","E92000001","2021-03-07","unclassified_variant",0,0
+"49","nation","England","E92000001","2021-03-14","Other",287250,2.28
+"50","nation","England","E92000001","2021-03-14","V-20DEC-01 (Alpha)",287250,97.72
+"51","nation","England","E92000001","2021-03-14","V-21APR-02 (Delta B.1.617.2)",0,0
+"52","nation","England","E92000001","2021-03-14","V-21OCT-01 (Delta AY 4.2)",0,0
+"53","nation","England","E92000001","2021-03-14","V-22DEC-01 (Omicron CH.1.1)",0,0
+"54","nation","England","E92000001","2021-03-14","V-22JUL-01 (Omicron BA.2.75)",0,0
+"55","nation","England","E92000001","2021-03-14","V-22OCT-01 (Omicron BQ.1)",0,0
+"56","nation","England","E92000001","2021-03-14","VOC-21NOV-01 (Omicron BA.1)",0,0
+"57","nation","England","E92000001","2021-03-14","VOC-22APR-03 (Omicron BA.4)",0,0
+"58","nation","England","E92000001","2021-03-14","VOC-22APR-04 (Omicron BA.5)",0,0
+"59","nation","England","E92000001","2021-03-14","VOC-22JAN-01 (Omicron BA.2)",0,0
+"60","nation","England","E92000001","2021-03-14","unclassified_variant",0,0
+"61","nation","England","E92000001","2021-03-21","Other",301501,1.9
+"62","nation","England","E92000001","2021-03-21","V-20DEC-01 (Alpha)",301501,98.1
+"63","nation","England","E92000001","2021-03-21","V-21APR-02 (Delta B.1.617.2)",0,0
+"64","nation","England","E92000001","2021-03-21","V-21OCT-01 (Delta AY 4.2)",0,0
+"65","nation","England","E92000001","2021-03-21","V-22DEC-01 (Omicron CH.1.1)",0,0
+"66","nation","England","E92000001","2021-03-21","V-22JUL-01 (Omicron BA.2.75)",0,0
+"67","nation","England","E92000001","2021-03-21","V-22OCT-01 (Omicron BQ.1)",0,0
+"68","nation","England","E92000001","2021-03-21","VOC-21NOV-01 (Omicron BA.1)",0,0
+"69","nation","England","E92000001","2021-03-21","VOC-22APR-03 (Omicron BA.4)",0,0
+"70","nation","England","E92000001","2021-03-21","VOC-22APR-04 (Omicron BA.5)",0,0
+"71","nation","England","E92000001","2021-03-21","VOC-22JAN-01 (Omicron BA.2)",0,0
+"72","nation","England","E92000001","2021-03-21","unclassified_variant",0,0
+"73","nation","England","E92000001","2021-03-28","Other",311537,2.36
+"74","nation","England","E92000001","2021-03-28","V-20DEC-01 (Alpha)",311537,97.52
+"75","nation","England","E92000001","2021-03-28","V-21APR-02 (Delta B.1.617.2)",311537,0.12
+"76","nation","England","E92000001","2021-03-28","V-21OCT-01 (Delta AY 4.2)",0,0
+"77","nation","England","E92000001","2021-03-28","V-22DEC-01 (Omicron CH.1.1)",0,0
+"78","nation","England","E92000001","2021-03-28","V-22JUL-01 (Omicron BA.2.75)",0,0
+"79","nation","England","E92000001","2021-03-28","V-22OCT-01 (Omicron BQ.1)",0,0
+"80","nation","England","E92000001","2021-03-28","VOC-21NOV-01 (Omicron BA.1)",0,0
+"81","nation","England","E92000001","2021-03-28","VOC-22APR-03 (Omicron BA.4)",0,0
+"82","nation","England","E92000001","2021-03-28","VOC-22APR-04 (Omicron BA.5)",0,0
+"83","nation","England","E92000001","2021-03-28","VOC-22JAN-01 (Omicron BA.2)",0,0
+"84","nation","England","E92000001","2021-03-28","unclassified_variant",0,0
+"85","nation","England","E92000001","2021-04-04","Other",318387,3.12
+"86","nation","England","E92000001","2021-04-04","V-20DEC-01 (Alpha)",318387,95.61
+"87","nation","England","E92000001","2021-04-04","V-21APR-02 (Delta B.1.617.2)",318387,1.27
+"88","nation","England","E92000001","2021-04-04","V-21OCT-01 (Delta AY 4.2)",0,0
+"89","nation","England","E92000001","2021-04-04","V-22DEC-01 (Omicron CH.1.1)",0,0
+"90","nation","England","E92000001","2021-04-04","V-22JUL-01 (Omicron BA.2.75)",0,0
+"91","nation","England","E92000001","2021-04-04","V-22OCT-01 (Omicron BQ.1)",0,0
+"92","nation","England","E92000001","2021-04-04","VOC-21NOV-01 (Omicron BA.1)",0,0
+"93","nation","England","E92000001","2021-04-04","VOC-22APR-03 (Omicron BA.4)",0,0
+"94","nation","England","E92000001","2021-04-04","VOC-22APR-04 (Omicron BA.5)",0,0
+"95","nation","England","E92000001","2021-04-04","VOC-22JAN-01 (Omicron BA.2)",0,0
+"96","nation","England","E92000001","2021-04-04","unclassified_variant",0,0
+"97","nation","England","E92000001","2021-04-11","Other",324368,3.51
+"98","nation","England","E92000001","2021-04-11","V-20DEC-01 (Alpha)",324368,93.53
+"99","nation","England","E92000001","2021-04-11","V-21APR-02 (Delta B.1.617.2)",324368,2.96
+"100","nation","England","E92000001","2021-04-11","V-21OCT-01 (Delta AY 4.2)",0,0
+"101","nation","England","E92000001","2021-04-11","V-22DEC-01 (Omicron CH.1.1)",0,0
+"102","nation","England","E92000001","2021-04-11","V-22JUL-01 (Omicron BA.2.75)",0,0
+"103","nation","England","E92000001","2021-04-11","V-22OCT-01 (Omicron BQ.1)",0,0
+"104","nation","England","E92000001","2021-04-11","VOC-21NOV-01 (Omicron BA.1)",0,0
+"105","nation","England","E92000001","2021-04-11","VOC-22APR-03 (Omicron BA.4)",0,0
+"106","nation","England","E92000001","2021-04-11","VOC-22APR-04 (Omicron BA.5)",0,0
+"107","nation","England","E92000001","2021-04-11","VOC-22JAN-01 (Omicron BA.2)",0,0
+"108","nation","England","E92000001","2021-04-11","unclassified_variant",0,0
+"109","nation","England","E92000001","2021-04-18","Other",330439,4.04
+"110","nation","England","E92000001","2021-04-18","V-20DEC-01 (Alpha)",330439,89.05
+"111","nation","England","E92000001","2021-04-18","V-21APR-02 (Delta B.1.617.2)",330439,6.92
+"112","nation","England","E92000001","2021-04-18","V-21OCT-01 (Delta AY 4.2)",0,0
+"113","nation","England","E92000001","2021-04-18","V-22DEC-01 (Omicron CH.1.1)",0,0
+"114","nation","England","E92000001","2021-04-18","V-22JUL-01 (Omicron BA.2.75)",0,0
+"115","nation","England","E92000001","2021-04-18","V-22OCT-01 (Omicron BQ.1)",0,0
+"116","nation","England","E92000001","2021-04-18","VOC-21NOV-01 (Omicron BA.1)",0,0
+"117","nation","England","E92000001","2021-04-18","VOC-22APR-03 (Omicron BA.4)",0,0
+"118","nation","England","E92000001","2021-04-18","VOC-22APR-04 (Omicron BA.5)",0,0
+"119","nation","England","E92000001","2021-04-18","VOC-22JAN-01 (Omicron BA.2)",0,0
+"120","nation","England","E92000001","2021-04-18","unclassified_variant",0,0
+"121","nation","England","E92000001","2021-04-25","Other",336253,3.65
+"122","nation","England","E92000001","2021-04-25","V-20DEC-01 (Alpha)",336253,83.64
+"123","nation","England","E92000001","2021-04-25","V-21APR-02 (Delta B.1.617.2)",336253,12.71
+"124","nation","England","E92000001","2021-04-25","V-21OCT-01 (Delta AY 4.2)",0,0
+"125","nation","England","E92000001","2021-04-25","V-22DEC-01 (Omicron CH.1.1)",0,0
+"126","nation","England","E92000001","2021-04-25","V-22JUL-01 (Omicron BA.2.75)",0,0
+"127","nation","England","E92000001","2021-04-25","V-22OCT-01 (Omicron BQ.1)",0,0
+"128","nation","England","E92000001","2021-04-25","VOC-21NOV-01 (Omicron BA.1)",0,0
+"129","nation","England","E92000001","2021-04-25","VOC-22APR-03 (Omicron BA.4)",0,0
+"130","nation","England","E92000001","2021-04-25","VOC-22APR-04 (Omicron BA.5)",0,0
+"131","nation","England","E92000001","2021-04-25","VOC-22JAN-01 (Omicron BA.2)",0,0
+"132","nation","England","E92000001","2021-04-25","unclassified_variant",0,0
+"133","nation","England","E92000001","2021-05-02","Other",342284,2.97
+"134","nation","England","E92000001","2021-05-02","V-20DEC-01 (Alpha)",342284,70.92
+"135","nation","England","E92000001","2021-05-02","V-21APR-02 (Delta B.1.617.2)",342284,26.12
+"136","nation","England","E92000001","2021-05-02","V-21OCT-01 (Delta AY 4.2)",0,0
+"137","nation","England","E92000001","2021-05-02","V-22DEC-01 (Omicron CH.1.1)",0,0
+"138","nation","England","E92000001","2021-05-02","V-22JUL-01 (Omicron BA.2.75)",0,0
+"139","nation","England","E92000001","2021-05-02","V-22OCT-01 (Omicron BQ.1)",0,0
+"140","nation","England","E92000001","2021-05-02","VOC-21NOV-01 (Omicron BA.1)",0,0
+"141","nation","England","E92000001","2021-05-02","VOC-22APR-03 (Omicron BA.4)",0,0
+"142","nation","England","E92000001","2021-05-02","VOC-22APR-04 (Omicron BA.5)",0,0
+"143","nation","England","E92000001","2021-05-02","VOC-22JAN-01 (Omicron BA.2)",0,0
+"144","nation","England","E92000001","2021-05-02","unclassified_variant",0,0
+"145","nation","England","E92000001","2021-05-09","Other",348154,2.49
+"146","nation","England","E92000001","2021-05-09","V-20DEC-01 (Alpha)",348154,54.89
+"147","nation","England","E92000001","2021-05-09","V-21APR-02 (Delta B.1.617.2)",348154,42.62
+"148","nation","England","E92000001","2021-05-09","V-21OCT-01 (Delta AY 4.2)",0,0
+"149","nation","England","E92000001","2021-05-09","V-22DEC-01 (Omicron CH.1.1)",0,0
+"150","nation","England","E92000001","2021-05-09","V-22JUL-01 (Omicron BA.2.75)",0,0
+"151","nation","England","E92000001","2021-05-09","V-22OCT-01 (Omicron BQ.1)",0,0
+"152","nation","England","E92000001","2021-05-09","VOC-21NOV-01 (Omicron BA.1)",0,0
+"153","nation","England","E92000001","2021-05-09","VOC-22APR-03 (Omicron BA.4)",0,0
+"154","nation","England","E92000001","2021-05-09","VOC-22APR-04 (Omicron BA.5)",0,0
+"155","nation","England","E92000001","2021-05-09","VOC-22JAN-01 (Omicron BA.2)",0,0
+"156","nation","England","E92000001","2021-05-09","unclassified_variant",0,0
+"157","nation","England","E92000001","2021-05-16","Other",355702,1.62
+"158","nation","England","E92000001","2021-05-16","V-20DEC-01 (Alpha)",355702,35.37
+"159","nation","England","E92000001","2021-05-16","V-21APR-02 (Delta B.1.617.2)",355702,63.01
+"160","nation","England","E92000001","2021-05-16","V-21OCT-01 (Delta AY 4.2)",0,0
+"161","nation","England","E92000001","2021-05-16","V-22DEC-01 (Omicron CH.1.1)",0,0
+"162","nation","England","E92000001","2021-05-16","V-22JUL-01 (Omicron BA.2.75)",0,0
+"163","nation","England","E92000001","2021-05-16","V-22OCT-01 (Omicron BQ.1)",0,0
+"164","nation","England","E92000001","2021-05-16","VOC-21NOV-01 (Omicron BA.1)",0,0
+"165","nation","England","E92000001","2021-05-16","VOC-22APR-03 (Omicron BA.4)",0,0
+"166","nation","England","E92000001","2021-05-16","VOC-22APR-04 (Omicron BA.5)",0,0
+"167","nation","England","E92000001","2021-05-16","VOC-22JAN-01 (Omicron BA.2)",0,0
+"168","nation","England","E92000001","2021-05-16","unclassified_variant",0,0
+"169","nation","England","E92000001","2021-05-23","Other",367033,0.89
+"170","nation","England","E92000001","2021-05-23","V-20DEC-01 (Alpha)",367033,18.5
+"171","nation","England","E92000001","2021-05-23","V-21APR-02 (Delta B.1.617.2)",367033,80.61
+"172","nation","England","E92000001","2021-05-23","V-21OCT-01 (Delta AY 4.2)",0,0
+"173","nation","England","E92000001","2021-05-23","V-22DEC-01 (Omicron CH.1.1)",0,0
+"174","nation","England","E92000001","2021-05-23","V-22JUL-01 (Omicron BA.2.75)",0,0
+"175","nation","England","E92000001","2021-05-23","V-22OCT-01 (Omicron BQ.1)",0,0
+"176","nation","England","E92000001","2021-05-23","VOC-21NOV-01 (Omicron BA.1)",0,0
+"177","nation","England","E92000001","2021-05-23","VOC-22APR-03 (Omicron BA.4)",0,0
+"178","nation","England","E92000001","2021-05-23","VOC-22APR-04 (Omicron BA.5)",0,0
+"179","nation","England","E92000001","2021-05-23","VOC-22JAN-01 (Omicron BA.2)",0,0
+"180","nation","England","E92000001","2021-05-23","unclassified_variant",0,0
+"181","nation","England","E92000001","2021-05-30","Other",385074,0.44
+"182","nation","England","E92000001","2021-05-30","V-20DEC-01 (Alpha)",385074,9.22
+"183","nation","England","E92000001","2021-05-30","V-21APR-02 (Delta B.1.617.2)",385074,90.34
+"184","nation","England","E92000001","2021-05-30","V-21OCT-01 (Delta AY 4.2)",0,0
+"185","nation","England","E92000001","2021-05-30","V-22DEC-01 (Omicron CH.1.1)",0,0
+"186","nation","England","E92000001","2021-05-30","V-22JUL-01 (Omicron BA.2.75)",0,0
+"187","nation","England","E92000001","2021-05-30","V-22OCT-01 (Omicron BQ.1)",0,0
+"188","nation","England","E92000001","2021-05-30","VOC-21NOV-01 (Omicron BA.1)",0,0
+"189","nation","England","E92000001","2021-05-30","VOC-22APR-03 (Omicron BA.4)",0,0
+"190","nation","England","E92000001","2021-05-30","VOC-22APR-04 (Omicron BA.5)",0,0
+"191","nation","England","E92000001","2021-05-30","VOC-22JAN-01 (Omicron BA.2)",0,0
+"192","nation","England","E92000001","2021-05-30","unclassified_variant",0,0
+"193","nation","England","E92000001","2021-06-06","Other",403933,0.26
+"194","nation","England","E92000001","2021-06-06","V-20DEC-01 (Alpha)",403933,4.64
+"195","nation","England","E92000001","2021-06-06","V-21APR-02 (Delta B.1.617.2)",403933,95.09
+"196","nation","England","E92000001","2021-06-06","V-21OCT-01 (Delta AY 4.2)",403933,0.01
+"197","nation","England","E92000001","2021-06-06","V-22DEC-01 (Omicron CH.1.1)",0,0
+"198","nation","England","E92000001","2021-06-06","V-22JUL-01 (Omicron BA.2.75)",0,0
+"199","nation","England","E92000001","2021-06-06","V-22OCT-01 (Omicron BQ.1)",0,0
+"200","nation","England","E92000001","2021-06-06","VOC-21NOV-01 (Omicron BA.1)",0,0
+"201","nation","England","E92000001","2021-06-06","VOC-22APR-03 (Omicron BA.4)",0,0
+"202","nation","England","E92000001","2021-06-06","VOC-22APR-04 (Omicron BA.5)",0,0
+"203","nation","England","E92000001","2021-06-06","VOC-22JAN-01 (Omicron BA.2)",0,0
+"204","nation","England","E92000001","2021-06-06","unclassified_variant",0,0
+"205","nation","England","E92000001","2021-06-13","Other",418672,0.18
+"206","nation","England","E92000001","2021-06-13","V-20DEC-01 (Alpha)",418672,1.63
+"207","nation","England","E92000001","2021-06-13","V-21APR-02 (Delta B.1.617.2)",418672,98.19
+"208","nation","England","E92000001","2021-06-13","V-21OCT-01 (Delta AY 4.2)",0,0
+"209","nation","England","E92000001","2021-06-13","V-22DEC-01 (Omicron CH.1.1)",0,0
+"210","nation","England","E92000001","2021-06-13","V-22JUL-01 (Omicron BA.2.75)",0,0
+"211","nation","England","E92000001","2021-06-13","V-22OCT-01 (Omicron BQ.1)",0,0
+"212","nation","England","E92000001","2021-06-13","VOC-21NOV-01 (Omicron BA.1)",0,0
+"213","nation","England","E92000001","2021-06-13","VOC-22APR-03 (Omicron BA.4)",0,0
+"214","nation","England","E92000001","2021-06-13","VOC-22APR-04 (Omicron BA.5)",0,0
+"215","nation","England","E92000001","2021-06-13","VOC-22JAN-01 (Omicron BA.2)",0,0
+"216","nation","England","E92000001","2021-06-13","unclassified_variant",0,0
+"217","nation","England","E92000001","2021-06-20","Other",437787,0.16
+"218","nation","England","E92000001","2021-06-20","V-20DEC-01 (Alpha)",437787,0.97
+"219","nation","England","E92000001","2021-06-20","V-21APR-02 (Delta B.1.617.2)",437787,98.74
+"220","nation","England","E92000001","2021-06-20","V-21OCT-01 (Delta AY 4.2)",437787,0.13
+"221","nation","England","E92000001","2021-06-20","V-22DEC-01 (Omicron CH.1.1)",0,0
+"222","nation","England","E92000001","2021-06-20","V-22JUL-01 (Omicron BA.2.75)",0,0
+"223","nation","England","E92000001","2021-06-20","V-22OCT-01 (Omicron BQ.1)",0,0
+"224","nation","England","E92000001","2021-06-20","VOC-21NOV-01 (Omicron BA.1)",0,0
+"225","nation","England","E92000001","2021-06-20","VOC-22APR-03 (Omicron BA.4)",0,0
+"226","nation","England","E92000001","2021-06-20","VOC-22APR-04 (Omicron BA.5)",0,0
+"227","nation","England","E92000001","2021-06-20","VOC-22JAN-01 (Omicron BA.2)",0,0
+"228","nation","England","E92000001","2021-06-20","unclassified_variant",0,0
+"229","nation","England","E92000001","2021-06-27","Other",461463,0.13
+"230","nation","England","E92000001","2021-06-27","V-20DEC-01 (Alpha)",461463,0.58
+"231","nation","England","E92000001","2021-06-27","V-21APR-02 (Delta B.1.617.2)",461463,99.02
+"232","nation","England","E92000001","2021-06-27","V-21OCT-01 (Delta AY 4.2)",461463,0.27
+"233","nation","England","E92000001","2021-06-27","V-22DEC-01 (Omicron CH.1.1)",0,0
+"234","nation","England","E92000001","2021-06-27","V-22JUL-01 (Omicron BA.2.75)",0,0
+"235","nation","England","E92000001","2021-06-27","V-22OCT-01 (Omicron BQ.1)",0,0
+"236","nation","England","E92000001","2021-06-27","VOC-21NOV-01 (Omicron BA.1)",0,0
+"237","nation","England","E92000001","2021-06-27","VOC-22APR-03 (Omicron BA.4)",0,0
+"238","nation","England","E92000001","2021-06-27","VOC-22APR-04 (Omicron BA.5)",0,0
+"239","nation","England","E92000001","2021-06-27","VOC-22JAN-01 (Omicron BA.2)",0,0
+"240","nation","England","E92000001","2021-06-27","unclassified_variant",0,0
+"241","nation","England","E92000001","2021-07-04","Other",484036,0.14
+"242","nation","England","E92000001","2021-07-04","V-20DEC-01 (Alpha)",484036,0.23
+"243","nation","England","E92000001","2021-07-04","V-21APR-02 (Delta B.1.617.2)",484036,99.14
+"244","nation","England","E92000001","2021-07-04","V-21OCT-01 (Delta AY 4.2)",484036,0.49
+"245","nation","England","E92000001","2021-07-04","V-22DEC-01 (Omicron CH.1.1)",0,0
+"246","nation","England","E92000001","2021-07-04","V-22JUL-01 (Omicron BA.2.75)",0,0
+"247","nation","England","E92000001","2021-07-04","V-22OCT-01 (Omicron BQ.1)",0,0
+"248","nation","England","E92000001","2021-07-04","VOC-21NOV-01 (Omicron BA.1)",0,0
+"249","nation","England","E92000001","2021-07-04","VOC-22APR-03 (Omicron BA.4)",0,0
+"250","nation","England","E92000001","2021-07-04","VOC-22APR-04 (Omicron BA.5)",0,0
+"251","nation","England","E92000001","2021-07-04","VOC-22JAN-01 (Omicron BA.2)",0,0
+"252","nation","England","E92000001","2021-07-04","unclassified_variant",0,0
+"253","nation","England","E92000001","2021-07-11","Other",504508,0.22
+"254","nation","England","E92000001","2021-07-11","V-20DEC-01 (Alpha)",504508,0.08
+"255","nation","England","E92000001","2021-07-11","V-21APR-02 (Delta B.1.617.2)",504508,98.8
+"256","nation","England","E92000001","2021-07-11","V-21OCT-01 (Delta AY 4.2)",504508,0.9
+"257","nation","England","E92000001","2021-07-11","V-22DEC-01 (Omicron CH.1.1)",0,0
+"258","nation","England","E92000001","2021-07-11","V-22JUL-01 (Omicron BA.2.75)",0,0
+"259","nation","England","E92000001","2021-07-11","V-22OCT-01 (Omicron BQ.1)",0,0
+"260","nation","England","E92000001","2021-07-11","VOC-21NOV-01 (Omicron BA.1)",0,0
+"261","nation","England","E92000001","2021-07-11","VOC-22APR-03 (Omicron BA.4)",0,0
+"262","nation","England","E92000001","2021-07-11","VOC-22APR-04 (Omicron BA.5)",0,0
+"263","nation","England","E92000001","2021-07-11","VOC-22JAN-01 (Omicron BA.2)",0,0
+"264","nation","England","E92000001","2021-07-11","unclassified_variant",0,0
+"265","nation","England","E92000001","2021-07-18","Other",532682,0.23
+"266","nation","England","E92000001","2021-07-18","V-20DEC-01 (Alpha)",532682,0.08
+"267","nation","England","E92000001","2021-07-18","V-21APR-02 (Delta B.1.617.2)",532682,98.72
+"268","nation","England","E92000001","2021-07-18","V-21OCT-01 (Delta AY 4.2)",532682,0.97
+"269","nation","England","E92000001","2021-07-18","V-22DEC-01 (Omicron CH.1.1)",0,0
+"270","nation","England","E92000001","2021-07-18","V-22JUL-01 (Omicron BA.2.75)",0,0
+"271","nation","England","E92000001","2021-07-18","V-22OCT-01 (Omicron BQ.1)",0,0
+"272","nation","England","E92000001","2021-07-18","VOC-21NOV-01 (Omicron BA.1)",0,0
+"273","nation","England","E92000001","2021-07-18","VOC-22APR-03 (Omicron BA.4)",0,0
+"274","nation","England","E92000001","2021-07-18","VOC-22APR-04 (Omicron BA.5)",0,0
+"275","nation","England","E92000001","2021-07-18","VOC-22JAN-01 (Omicron BA.2)",0,0
+"276","nation","England","E92000001","2021-07-18","unclassified_variant",0,0
+"277","nation","England","E92000001","2021-07-25","Other",561834,0.17
+"278","nation","England","E92000001","2021-07-25","V-20DEC-01 (Alpha)",561834,0.04
+"279","nation","England","E92000001","2021-07-25","V-21APR-02 (Delta B.1.617.2)",561834,98.58
+"280","nation","England","E92000001","2021-07-25","V-21OCT-01 (Delta AY 4.2)",561834,1.21
+"281","nation","England","E92000001","2021-07-25","V-22DEC-01 (Omicron CH.1.1)",0,0
+"282","nation","England","E92000001","2021-07-25","V-22JUL-01 (Omicron BA.2.75)",0,0
+"283","nation","England","E92000001","2021-07-25","V-22OCT-01 (Omicron BQ.1)",0,0
+"284","nation","England","E92000001","2021-07-25","VOC-21NOV-01 (Omicron BA.1)",0,0
+"285","nation","England","E92000001","2021-07-25","VOC-22APR-03 (Omicron BA.4)",0,0
+"286","nation","England","E92000001","2021-07-25","VOC-22APR-04 (Omicron BA.5)",0,0
+"287","nation","England","E92000001","2021-07-25","VOC-22JAN-01 (Omicron BA.2)",0,0
+"288","nation","England","E92000001","2021-07-25","unclassified_variant",0,0
+"289","nation","England","E92000001","2021-08-01","Other",591206,0.3
+"290","nation","England","E92000001","2021-08-01","V-20DEC-01 (Alpha)",591206,0.03
+"291","nation","England","E92000001","2021-08-01","V-21APR-02 (Delta B.1.617.2)",591206,98.4
+"292","nation","England","E92000001","2021-08-01","V-21OCT-01 (Delta AY 4.2)",591206,1.27
+"293","nation","England","E92000001","2021-08-01","V-22DEC-01 (Omicron CH.1.1)",0,0
+"294","nation","England","E92000001","2021-08-01","V-22JUL-01 (Omicron BA.2.75)",0,0
+"295","nation","England","E92000001","2021-08-01","V-22OCT-01 (Omicron BQ.1)",0,0
+"296","nation","England","E92000001","2021-08-01","VOC-21NOV-01 (Omicron BA.1)",0,0
+"297","nation","England","E92000001","2021-08-01","VOC-22APR-03 (Omicron BA.4)",0,0
+"298","nation","England","E92000001","2021-08-01","VOC-22APR-04 (Omicron BA.5)",0,0
+"299","nation","England","E92000001","2021-08-01","VOC-22JAN-01 (Omicron BA.2)",0,0
+"300","nation","England","E92000001","2021-08-01","unclassified_variant",0,0
+"301","nation","England","E92000001","2021-08-08","Other",618552,1.76
+"302","nation","England","E92000001","2021-08-08","V-20DEC-01 (Alpha)",618552,0.02
+"303","nation","England","E92000001","2021-08-08","V-21APR-02 (Delta B.1.617.2)",618552,96.22
+"304","nation","England","E92000001","2021-08-08","V-21OCT-01 (Delta AY 4.2)",618552,2
+"305","nation","England","E92000001","2021-08-08","V-22DEC-01 (Omicron CH.1.1)",0,0
+"306","nation","England","E92000001","2021-08-08","V-22JUL-01 (Omicron BA.2.75)",0,0
+"307","nation","England","E92000001","2021-08-08","V-22OCT-01 (Omicron BQ.1)",0,0
+"308","nation","England","E92000001","2021-08-08","VOC-21NOV-01 (Omicron BA.1)",0,0
+"309","nation","England","E92000001","2021-08-08","VOC-22APR-03 (Omicron BA.4)",0,0
+"310","nation","England","E92000001","2021-08-08","VOC-22APR-04 (Omicron BA.5)",0,0
+"311","nation","England","E92000001","2021-08-08","VOC-22JAN-01 (Omicron BA.2)",0,0
+"312","nation","England","E92000001","2021-08-08","unclassified_variant",0,0
+"313","nation","England","E92000001","2021-08-15","Other",649737,0.2
+"314","nation","England","E92000001","2021-08-15","V-20DEC-01 (Alpha)",649737,0.01
+"315","nation","England","E92000001","2021-08-15","V-21APR-02 (Delta B.1.617.2)",649737,97.43
+"316","nation","England","E92000001","2021-08-15","V-21OCT-01 (Delta AY 4.2)",649737,2.36
+"317","nation","England","E92000001","2021-08-15","V-22DEC-01 (Omicron CH.1.1)",0,0
+"318","nation","England","E92000001","2021-08-15","V-22JUL-01 (Omicron BA.2.75)",0,0
+"319","nation","England","E92000001","2021-08-15","V-22OCT-01 (Omicron BQ.1)",0,0
+"320","nation","England","E92000001","2021-08-15","VOC-21NOV-01 (Omicron BA.1)",0,0
+"321","nation","England","E92000001","2021-08-15","VOC-22APR-03 (Omicron BA.4)",0,0
+"322","nation","England","E92000001","2021-08-15","VOC-22APR-04 (Omicron BA.5)",0,0
+"323","nation","England","E92000001","2021-08-15","VOC-22JAN-01 (Omicron BA.2)",0,0
+"324","nation","England","E92000001","2021-08-15","unclassified_variant",0,0
+"325","nation","England","E92000001","2021-08-22","Other",681497,0.11
+"326","nation","England","E92000001","2021-08-22","V-20DEC-01 (Alpha)",681497,0.01
+"327","nation","England","E92000001","2021-08-22","V-21APR-02 (Delta B.1.617.2)",681497,96.7
+"328","nation","England","E92000001","2021-08-22","V-21OCT-01 (Delta AY 4.2)",681497,3.18
+"329","nation","England","E92000001","2021-08-22","V-22DEC-01 (Omicron CH.1.1)",0,0
+"330","nation","England","E92000001","2021-08-22","V-22JUL-01 (Omicron BA.2.75)",0,0
+"331","nation","England","E92000001","2021-08-22","V-22OCT-01 (Omicron BQ.1)",0,0
+"332","nation","England","E92000001","2021-08-22","VOC-21NOV-01 (Omicron BA.1)",0,0
+"333","nation","England","E92000001","2021-08-22","VOC-22APR-03 (Omicron BA.4)",0,0
+"334","nation","England","E92000001","2021-08-22","VOC-22APR-04 (Omicron BA.5)",0,0
+"335","nation","England","E92000001","2021-08-22","VOC-22JAN-01 (Omicron BA.2)",0,0
+"336","nation","England","E92000001","2021-08-22","unclassified_variant",0,0
+"337","nation","England","E92000001","2021-08-29","Other",712712,0.11
+"338","nation","England","E92000001","2021-08-29","V-20DEC-01 (Alpha)",712712,0.01
+"339","nation","England","E92000001","2021-08-29","V-21APR-02 (Delta B.1.617.2)",712712,96.5
+"340","nation","England","E92000001","2021-08-29","V-21OCT-01 (Delta AY 4.2)",712712,3.37
+"341","nation","England","E92000001","2021-08-29","V-22DEC-01 (Omicron CH.1.1)",0,0
+"342","nation","England","E92000001","2021-08-29","V-22JUL-01 (Omicron BA.2.75)",0,0
+"343","nation","England","E92000001","2021-08-29","V-22OCT-01 (Omicron BQ.1)",0,0
+"344","nation","England","E92000001","2021-08-29","VOC-21NOV-01 (Omicron BA.1)",0,0
+"345","nation","England","E92000001","2021-08-29","VOC-22APR-03 (Omicron BA.4)",0,0
+"346","nation","England","E92000001","2021-08-29","VOC-22APR-04 (Omicron BA.5)",0,0
+"347","nation","England","E92000001","2021-08-29","VOC-22JAN-01 (Omicron BA.2)",0,0
+"348","nation","England","E92000001","2021-08-29","unclassified_variant",0,0
+"349","nation","England","E92000001","2021-09-05","Other",740839,0.17
+"350","nation","England","E92000001","2021-09-05","V-20DEC-01 (Alpha)",740839,0
+"351","nation","England","E92000001","2021-09-05","V-21APR-02 (Delta B.1.617.2)",740839,95.69
+"352","nation","England","E92000001","2021-09-05","V-21OCT-01 (Delta AY 4.2)",740839,4.13
+"353","nation","England","E92000001","2021-09-05","V-22DEC-01 (Omicron CH.1.1)",0,0
+"354","nation","England","E92000001","2021-09-05","V-22JUL-01 (Omicron BA.2.75)",0,0
+"355","nation","England","E92000001","2021-09-05","V-22OCT-01 (Omicron BQ.1)",0,0
+"356","nation","England","E92000001","2021-09-05","VOC-21NOV-01 (Omicron BA.1)",0,0
+"357","nation","England","E92000001","2021-09-05","VOC-22APR-03 (Omicron BA.4)",0,0
+"358","nation","England","E92000001","2021-09-05","VOC-22APR-04 (Omicron BA.5)",0,0
+"359","nation","England","E92000001","2021-09-05","VOC-22JAN-01 (Omicron BA.2)",0,0
+"360","nation","England","E92000001","2021-09-05","unclassified_variant",0,0
+"361","nation","England","E92000001","2021-09-12","Other",770898,0.19
+"362","nation","England","E92000001","2021-09-12","V-20DEC-01 (Alpha)",770898,0.02
+"363","nation","England","E92000001","2021-09-12","V-21APR-02 (Delta B.1.617.2)",770898,94.46
+"364","nation","England","E92000001","2021-09-12","V-21OCT-01 (Delta AY 4.2)",770898,5.33
+"365","nation","England","E92000001","2021-09-12","V-22DEC-01 (Omicron CH.1.1)",0,0
+"366","nation","England","E92000001","2021-09-12","V-22JUL-01 (Omicron BA.2.75)",0,0
+"367","nation","England","E92000001","2021-09-12","V-22OCT-01 (Omicron BQ.1)",0,0
+"368","nation","England","E92000001","2021-09-12","VOC-21NOV-01 (Omicron BA.1)",0,0
+"369","nation","England","E92000001","2021-09-12","VOC-22APR-03 (Omicron BA.4)",0,0
+"370","nation","England","E92000001","2021-09-12","VOC-22APR-04 (Omicron BA.5)",0,0
+"371","nation","England","E92000001","2021-09-12","VOC-22JAN-01 (Omicron BA.2)",0,0
+"372","nation","England","E92000001","2021-09-12","unclassified_variant",0,0
+"373","nation","England","E92000001","2021-09-19","Other",800033,0.2
+"374","nation","England","E92000001","2021-09-19","V-20DEC-01 (Alpha)",800033,0.01
+"375","nation","England","E92000001","2021-09-19","V-21APR-02 (Delta B.1.617.2)",800033,93.2
+"376","nation","England","E92000001","2021-09-19","V-21OCT-01 (Delta AY 4.2)",800033,6.58
+"377","nation","England","E92000001","2021-09-19","V-22DEC-01 (Omicron CH.1.1)",0,0
+"378","nation","England","E92000001","2021-09-19","V-22JUL-01 (Omicron BA.2.75)",0,0
+"379","nation","England","E92000001","2021-09-19","V-22OCT-01 (Omicron BQ.1)",0,0
+"380","nation","England","E92000001","2021-09-19","VOC-21NOV-01 (Omicron BA.1)",0,0
+"381","nation","England","E92000001","2021-09-19","VOC-22APR-03 (Omicron BA.4)",0,0
+"382","nation","England","E92000001","2021-09-19","VOC-22APR-04 (Omicron BA.5)",0,0
+"383","nation","England","E92000001","2021-09-19","VOC-22JAN-01 (Omicron BA.2)",0,0
+"384","nation","England","E92000001","2021-09-19","unclassified_variant",0,0
+"385","nation","England","E92000001","2021-09-26","Other",830262,0.44
+"386","nation","England","E92000001","2021-09-26","V-20DEC-01 (Alpha)",0,0
+"387","nation","England","E92000001","2021-09-26","V-21APR-02 (Delta B.1.617.2)",830262,91.74
+"388","nation","England","E92000001","2021-09-26","V-21OCT-01 (Delta AY 4.2)",830262,7.81
+"389","nation","England","E92000001","2021-09-26","V-22DEC-01 (Omicron CH.1.1)",0,0
+"390","nation","England","E92000001","2021-09-26","V-22JUL-01 (Omicron BA.2.75)",0,0
+"391","nation","England","E92000001","2021-09-26","V-22OCT-01 (Omicron BQ.1)",0,0
+"392","nation","England","E92000001","2021-09-26","VOC-21NOV-01 (Omicron BA.1)",0,0
+"393","nation","England","E92000001","2021-09-26","VOC-22APR-03 (Omicron BA.4)",0,0
+"394","nation","England","E92000001","2021-09-26","VOC-22APR-04 (Omicron BA.5)",0,0
+"395","nation","England","E92000001","2021-09-26","VOC-22JAN-01 (Omicron BA.2)",0,0
+"396","nation","England","E92000001","2021-09-26","unclassified_variant",0,0
+"397","nation","England","E92000001","2021-10-03","Other",862484,0.64
+"398","nation","England","E92000001","2021-10-03","V-20DEC-01 (Alpha)",862484,0.01
+"399","nation","England","E92000001","2021-10-03","V-21APR-02 (Delta B.1.617.2)",862484,90.86
+"400","nation","England","E92000001","2021-10-03","V-21OCT-01 (Delta AY 4.2)",862484,8.5
+"401","nation","England","E92000001","2021-10-03","V-22DEC-01 (Omicron CH.1.1)",0,0
+"402","nation","England","E92000001","2021-10-03","V-22JUL-01 (Omicron BA.2.75)",0,0
+"403","nation","England","E92000001","2021-10-03","V-22OCT-01 (Omicron BQ.1)",0,0
+"404","nation","England","E92000001","2021-10-03","VOC-21NOV-01 (Omicron BA.1)",0,0
+"405","nation","England","E92000001","2021-10-03","VOC-22APR-03 (Omicron BA.4)",0,0
+"406","nation","England","E92000001","2021-10-03","VOC-22APR-04 (Omicron BA.5)",0,0
+"407","nation","England","E92000001","2021-10-03","VOC-22JAN-01 (Omicron BA.2)",0,0
+"408","nation","England","E92000001","2021-10-03","unclassified_variant",0,0
+"409","nation","England","E92000001","2021-10-10","Other",892538,1.19
+"410","nation","England","E92000001","2021-10-10","V-20DEC-01 (Alpha)",892538,0.01
+"411","nation","England","E92000001","2021-10-10","V-21APR-02 (Delta B.1.617.2)",892538,89.65
+"412","nation","England","E92000001","2021-10-10","V-21OCT-01 (Delta AY 4.2)",892538,9.16
+"413","nation","England","E92000001","2021-10-10","V-22DEC-01 (Omicron CH.1.1)",0,0
+"414","nation","England","E92000001","2021-10-10","V-22JUL-01 (Omicron BA.2.75)",0,0
+"415","nation","England","E92000001","2021-10-10","V-22OCT-01 (Omicron BQ.1)",0,0
+"416","nation","England","E92000001","2021-10-10","VOC-21NOV-01 (Omicron BA.1)",0,0
+"417","nation","England","E92000001","2021-10-10","VOC-22APR-03 (Omicron BA.4)",0,0
+"418","nation","England","E92000001","2021-10-10","VOC-22APR-04 (Omicron BA.5)",0,0
+"419","nation","England","E92000001","2021-10-10","VOC-22JAN-01 (Omicron BA.2)",0,0
+"420","nation","England","E92000001","2021-10-10","unclassified_variant",0,0
+"421","nation","England","E92000001","2021-10-17","Other",927536,1.3
+"422","nation","England","E92000001","2021-10-17","V-20DEC-01 (Alpha)",927536,0
+"423","nation","England","E92000001","2021-10-17","V-21APR-02 (Delta B.1.617.2)",927536,87.93
+"424","nation","England","E92000001","2021-10-17","V-21OCT-01 (Delta AY 4.2)",927536,10.77
+"425","nation","England","E92000001","2021-10-17","V-22DEC-01 (Omicron CH.1.1)",0,0
+"426","nation","England","E92000001","2021-10-17","V-22JUL-01 (Omicron BA.2.75)",0,0
+"427","nation","England","E92000001","2021-10-17","V-22OCT-01 (Omicron BQ.1)",0,0
+"428","nation","England","E92000001","2021-10-17","VOC-21NOV-01 (Omicron BA.1)",0,0
+"429","nation","England","E92000001","2021-10-17","VOC-22APR-03 (Omicron BA.4)",0,0
+"430","nation","England","E92000001","2021-10-17","VOC-22APR-04 (Omicron BA.5)",0,0
+"431","nation","England","E92000001","2021-10-17","VOC-22JAN-01 (Omicron BA.2)",0,0
+"432","nation","England","E92000001","2021-10-17","unclassified_variant",0,0
+"433","nation","England","E92000001","2021-10-24","Other",961743,1.42
+"434","nation","England","E92000001","2021-10-24","V-20DEC-01 (Alpha)",961743,0.01
+"435","nation","England","E92000001","2021-10-24","V-21APR-02 (Delta B.1.617.2)",961743,86.18
+"436","nation","England","E92000001","2021-10-24","V-21OCT-01 (Delta AY 4.2)",961743,12.39
+"437","nation","England","E92000001","2021-10-24","V-22DEC-01 (Omicron CH.1.1)",0,0
+"438","nation","England","E92000001","2021-10-24","V-22JUL-01 (Omicron BA.2.75)",0,0
+"439","nation","England","E92000001","2021-10-24","V-22OCT-01 (Omicron BQ.1)",0,0
+"440","nation","England","E92000001","2021-10-24","VOC-21NOV-01 (Omicron BA.1)",0,0
+"441","nation","England","E92000001","2021-10-24","VOC-22APR-03 (Omicron BA.4)",0,0
+"442","nation","England","E92000001","2021-10-24","VOC-22APR-04 (Omicron BA.5)",0,0
+"443","nation","England","E92000001","2021-10-24","VOC-22JAN-01 (Omicron BA.2)",0,0
+"444","nation","England","E92000001","2021-10-24","unclassified_variant",0,0
+"445","nation","England","E92000001","2021-10-31","Other",998420,0.18
+"446","nation","England","E92000001","2021-10-31","V-20DEC-01 (Alpha)",0,0
+"447","nation","England","E92000001","2021-10-31","V-21APR-02 (Delta B.1.617.2)",998420,84.21
+"448","nation","England","E92000001","2021-10-31","V-21OCT-01 (Delta AY 4.2)",998420,14.53
+"449","nation","England","E92000001","2021-10-31","V-22DEC-01 (Omicron CH.1.1)",0,0
+"450","nation","England","E92000001","2021-10-31","V-22JUL-01 (Omicron BA.2.75)",0,0
+"451","nation","England","E92000001","2021-10-31","V-22OCT-01 (Omicron BQ.1)",0,0
+"452","nation","England","E92000001","2021-10-31","VOC-21NOV-01 (Omicron BA.1)",998420,1.01
+"453","nation","England","E92000001","2021-10-31","VOC-22APR-03 (Omicron BA.4)",0,0
+"454","nation","England","E92000001","2021-10-31","VOC-22APR-04 (Omicron BA.5)",0,0
+"455","nation","England","E92000001","2021-10-31","VOC-22JAN-01 (Omicron BA.2)",998420,0.07
+"456","nation","England","E92000001","2021-10-31","unclassified_variant",0,0
+"457","nation","England","E92000001","2021-11-07","Other",1042209,0.07
+"458","nation","England","E92000001","2021-11-07","V-20DEC-01 (Alpha)",0,0
+"459","nation","England","E92000001","2021-11-07","V-21APR-02 (Delta B.1.617.2)",1042209,81.7
+"460","nation","England","E92000001","2021-11-07","V-21OCT-01 (Delta AY 4.2)",1042209,16.87
+"461","nation","England","E92000001","2021-11-07","V-22DEC-01 (Omicron CH.1.1)",0,0
+"462","nation","England","E92000001","2021-11-07","V-22JUL-01 (Omicron BA.2.75)",0,0
+"463","nation","England","E92000001","2021-11-07","V-22OCT-01 (Omicron BQ.1)",0,0
+"464","nation","England","E92000001","2021-11-07","VOC-21NOV-01 (Omicron BA.1)",1042209,1.21
+"465","nation","England","E92000001","2021-11-07","VOC-22APR-03 (Omicron BA.4)",0,0
+"466","nation","England","E92000001","2021-11-07","VOC-22APR-04 (Omicron BA.5)",0,0
+"467","nation","England","E92000001","2021-11-07","VOC-22JAN-01 (Omicron BA.2)",1042209,0.14
+"468","nation","England","E92000001","2021-11-07","unclassified_variant",0,0
+"469","nation","England","E92000001","2021-11-14","Other",1087430,0.07
+"470","nation","England","E92000001","2021-11-14","V-20DEC-01 (Alpha)",0,0
+"471","nation","England","E92000001","2021-11-14","V-21APR-02 (Delta B.1.617.2)",1087430,78.91
+"472","nation","England","E92000001","2021-11-14","V-21OCT-01 (Delta AY 4.2)",1087430,19.3
+"473","nation","England","E92000001","2021-11-14","V-22DEC-01 (Omicron CH.1.1)",0,0
+"474","nation","England","E92000001","2021-11-14","V-22JUL-01 (Omicron BA.2.75)",0,0
+"475","nation","England","E92000001","2021-11-14","V-22OCT-01 (Omicron BQ.1)",0,0
+"476","nation","England","E92000001","2021-11-14","VOC-21NOV-01 (Omicron BA.1)",1087430,1.5
+"477","nation","England","E92000001","2021-11-14","VOC-22APR-03 (Omicron BA.4)",0,0
+"478","nation","England","E92000001","2021-11-14","VOC-22APR-04 (Omicron BA.5)",0,0
+"479","nation","England","E92000001","2021-11-14","VOC-22JAN-01 (Omicron BA.2)",1087430,0.21
+"480","nation","England","E92000001","2021-11-14","unclassified_variant",0,0
+"481","nation","England","E92000001","2021-11-21","Other",1136636,0.04
+"482","nation","England","E92000001","2021-11-21","V-20DEC-01 (Alpha)",0,0
+"483","nation","England","E92000001","2021-11-21","V-21APR-02 (Delta B.1.617.2)",1136636,76.95
+"484","nation","England","E92000001","2021-11-21","V-21OCT-01 (Delta AY 4.2)",1136636,21.07
+"485","nation","England","E92000001","2021-11-21","V-22DEC-01 (Omicron CH.1.1)",0,0
+"486","nation","England","E92000001","2021-11-21","V-22JUL-01 (Omicron BA.2.75)",0,0
+"487","nation","England","E92000001","2021-11-21","V-22OCT-01 (Omicron BQ.1)",0,0
+"488","nation","England","E92000001","2021-11-21","VOC-21NOV-01 (Omicron BA.1)",1136636,1.63
+"489","nation","England","E92000001","2021-11-21","VOC-22APR-03 (Omicron BA.4)",0,0
+"490","nation","England","E92000001","2021-11-21","VOC-22APR-04 (Omicron BA.5)",0,0
+"491","nation","England","E92000001","2021-11-21","VOC-22JAN-01 (Omicron BA.2)",1136636,0.3
+"492","nation","England","E92000001","2021-11-21","unclassified_variant",0,0
+"493","nation","England","E92000001","2021-11-28","Other",1193760,0.05
+"494","nation","England","E92000001","2021-11-28","V-20DEC-01 (Alpha)",0,0
+"495","nation","England","E92000001","2021-11-28","V-21APR-02 (Delta B.1.617.2)",1193760,73.57
+"496","nation","England","E92000001","2021-11-28","V-21OCT-01 (Delta AY 4.2)",1193760,23.25
+"497","nation","England","E92000001","2021-11-28","V-22DEC-01 (Omicron CH.1.1)",0,0
+"498","nation","England","E92000001","2021-11-28","V-22JUL-01 (Omicron BA.2.75)",0,0
+"499","nation","England","E92000001","2021-11-28","V-22OCT-01 (Omicron BQ.1)",0,0
+"500","nation","England","E92000001","2021-11-28","VOC-21NOV-01 (Omicron BA.1)",1193760,2.73
+"501","nation","England","E92000001","2021-11-28","VOC-22APR-03 (Omicron BA.4)",0,0
+"502","nation","England","E92000001","2021-11-28","VOC-22APR-04 (Omicron BA.5)",0,0
+"503","nation","England","E92000001","2021-11-28","VOC-22JAN-01 (Omicron BA.2)",1193760,0.4
+"504","nation","England","E92000001","2021-11-28","unclassified_variant",0,0
+"505","nation","England","E92000001","2021-12-05","Other",1252309,0.1
+"506","nation","England","E92000001","2021-12-05","V-20DEC-01 (Alpha)",0,0
+"507","nation","England","E92000001","2021-12-05","V-21APR-02 (Delta B.1.617.2)",1252309,61.9
+"508","nation","England","E92000001","2021-12-05","V-21OCT-01 (Delta AY 4.2)",1252309,21.72
+"509","nation","England","E92000001","2021-12-05","V-22DEC-01 (Omicron CH.1.1)",0,0
+"510","nation","England","E92000001","2021-12-05","V-22JUL-01 (Omicron BA.2.75)",0,0
+"511","nation","England","E92000001","2021-12-05","V-22OCT-01 (Omicron BQ.1)",0,0
+"512","nation","England","E92000001","2021-12-05","VOC-21NOV-01 (Omicron BA.1)",1252309,15.63
+"513","nation","England","E92000001","2021-12-05","VOC-22APR-03 (Omicron BA.4)",0,0
+"514","nation","England","E92000001","2021-12-05","VOC-22APR-04 (Omicron BA.5)",0,0
+"515","nation","England","E92000001","2021-12-05","VOC-22JAN-01 (Omicron BA.2)",1252309,0.65
+"516","nation","England","E92000001","2021-12-05","unclassified_variant",0,0
+"517","nation","England","E92000001","2021-12-12","Other",1318655,0.11
+"518","nation","England","E92000001","2021-12-12","V-20DEC-01 (Alpha)",0,0
+"519","nation","England","E92000001","2021-12-12","V-21APR-02 (Delta B.1.617.2)",1318655,28.54
+"520","nation","England","E92000001","2021-12-12","V-21OCT-01 (Delta AY 4.2)",1318655,11.01
+"521","nation","England","E92000001","2021-12-12","V-22DEC-01 (Omicron CH.1.1)",0,0
+"522","nation","England","E92000001","2021-12-12","V-22JUL-01 (Omicron BA.2.75)",0,0
+"523","nation","England","E92000001","2021-12-12","V-22OCT-01 (Omicron BQ.1)",0,0
+"524","nation","England","E92000001","2021-12-12","VOC-21NOV-01 (Omicron BA.1)",1318655,59.61
+"525","nation","England","E92000001","2021-12-12","VOC-22APR-03 (Omicron BA.4)",0,0
+"526","nation","England","E92000001","2021-12-12","VOC-22APR-04 (Omicron BA.5)",0,0
+"527","nation","England","E92000001","2021-12-12","VOC-22JAN-01 (Omicron BA.2)",1318655,0.74
+"528","nation","England","E92000001","2021-12-12","unclassified_variant",0,0
+"529","nation","England","E92000001","2021-12-19","Other",1368353,0.16
+"530","nation","England","E92000001","2021-12-19","V-20DEC-01 (Alpha)",1368353,0
+"531","nation","England","E92000001","2021-12-19","V-21APR-02 (Delta B.1.617.2)",1368353,11.05
+"532","nation","England","E92000001","2021-12-19","V-21OCT-01 (Delta AY 4.2)",1368353,4.53
+"533","nation","England","E92000001","2021-12-19","V-22DEC-01 (Omicron CH.1.1)",0,0
+"534","nation","England","E92000001","2021-12-19","V-22JUL-01 (Omicron BA.2.75)",0,0
+"535","nation","England","E92000001","2021-12-19","V-22OCT-01 (Omicron BQ.1)",0,0
+"536","nation","England","E92000001","2021-12-19","VOC-21NOV-01 (Omicron BA.1)",1368353,82.93
+"537","nation","England","E92000001","2021-12-19","VOC-22APR-03 (Omicron BA.4)",0,0
+"538","nation","England","E92000001","2021-12-19","VOC-22APR-04 (Omicron BA.5)",0,0
+"539","nation","England","E92000001","2021-12-19","VOC-22JAN-01 (Omicron BA.2)",1368353,1.32
+"540","nation","England","E92000001","2021-12-19","unclassified_variant",0,0
+"541","nation","England","E92000001","2021-12-26","Other",1434339,0.08
+"542","nation","England","E92000001","2021-12-26","V-20DEC-01 (Alpha)",1434339,0
+"543","nation","England","E92000001","2021-12-26","V-21APR-02 (Delta B.1.617.2)",1434339,3.17
+"544","nation","England","E92000001","2021-12-26","V-21OCT-01 (Delta AY 4.2)",1434339,1.27
+"545","nation","England","E92000001","2021-12-26","V-22DEC-01 (Omicron CH.1.1)",0,0
+"546","nation","England","E92000001","2021-12-26","V-22JUL-01 (Omicron BA.2.75)",0,0
+"547","nation","England","E92000001","2021-12-26","V-22OCT-01 (Omicron BQ.1)",0,0
+"548","nation","England","E92000001","2021-12-26","VOC-21NOV-01 (Omicron BA.1)",1434339,94.19
+"549","nation","England","E92000001","2021-12-26","VOC-22APR-03 (Omicron BA.4)",0,0
+"550","nation","England","E92000001","2021-12-26","VOC-22APR-04 (Omicron BA.5)",0,0
+"551","nation","England","E92000001","2021-12-26","VOC-22JAN-01 (Omicron BA.2)",1434339,1.29
+"552","nation","England","E92000001","2021-12-26","unclassified_variant",0,0
+"553","nation","England","E92000001","2022-01-02","Other",1510270,0.07
+"554","nation","England","E92000001","2022-01-02","V-20DEC-01 (Alpha)",1510270,0
+"555","nation","England","E92000001","2022-01-02","V-21APR-02 (Delta B.1.617.2)",1510270,1.47
+"556","nation","England","E92000001","2022-01-02","V-21OCT-01 (Delta AY 4.2)",1510270,0.53
+"557","nation","England","E92000001","2022-01-02","V-22DEC-01 (Omicron CH.1.1)",0,0
+"558","nation","England","E92000001","2022-01-02","V-22JUL-01 (Omicron BA.2.75)",0,0
+"559","nation","England","E92000001","2022-01-02","V-22OCT-01 (Omicron BQ.1)",1510270,0
+"560","nation","England","E92000001","2022-01-02","VOC-21NOV-01 (Omicron BA.1)",1510270,96.37
+"561","nation","England","E92000001","2022-01-02","VOC-22APR-03 (Omicron BA.4)",0,0
+"562","nation","England","E92000001","2022-01-02","VOC-22APR-04 (Omicron BA.5)",0,0
+"563","nation","England","E92000001","2022-01-02","VOC-22JAN-01 (Omicron BA.2)",1510270,1.57
+"564","nation","England","E92000001","2022-01-02","unclassified_variant",0,0
+"565","nation","England","E92000001","2022-01-09","Other",1569987,0.08
+"566","nation","England","E92000001","2022-01-09","V-20DEC-01 (Alpha)",1569987,0
+"567","nation","England","E92000001","2022-01-09","V-21APR-02 (Delta B.1.617.2)",1569987,0.61
+"568","nation","England","E92000001","2022-01-09","V-21OCT-01 (Delta AY 4.2)",1569987,0.2
+"569","nation","England","E92000001","2022-01-09","V-22DEC-01 (Omicron CH.1.1)",0,0
+"570","nation","England","E92000001","2022-01-09","V-22JUL-01 (Omicron BA.2.75)",1569987,0
+"571","nation","England","E92000001","2022-01-09","V-22OCT-01 (Omicron BQ.1)",0,0
+"572","nation","England","E92000001","2022-01-09","VOC-21NOV-01 (Omicron BA.1)",1569987,96.5
+"573","nation","England","E92000001","2022-01-09","VOC-22APR-03 (Omicron BA.4)",0,0
+"574","nation","England","E92000001","2022-01-09","VOC-22APR-04 (Omicron BA.5)",0,0
+"575","nation","England","E92000001","2022-01-09","VOC-22JAN-01 (Omicron BA.2)",1569987,2.61
+"576","nation","England","E92000001","2022-01-09","unclassified_variant",0,0
+"577","nation","England","E92000001","2022-01-16","Other",1632023,0.08
+"578","nation","England","E92000001","2022-01-16","V-20DEC-01 (Alpha)",0,0
+"579","nation","England","E92000001","2022-01-16","V-21APR-02 (Delta B.1.617.2)",1632023,0.23
+"580","nation","England","E92000001","2022-01-16","V-21OCT-01 (Delta AY 4.2)",1632023,0.1
+"581","nation","England","E92000001","2022-01-16","V-22DEC-01 (Omicron CH.1.1)",0,0
+"582","nation","England","E92000001","2022-01-16","V-22JUL-01 (Omicron BA.2.75)",0,0
+"583","nation","England","E92000001","2022-01-16","V-22OCT-01 (Omicron BQ.1)",0,0
+"584","nation","England","E92000001","2022-01-16","VOC-21NOV-01 (Omicron BA.1)",1632023,95.23
+"585","nation","England","E92000001","2022-01-16","VOC-22APR-03 (Omicron BA.4)",1632023,0
+"586","nation","England","E92000001","2022-01-16","VOC-22APR-04 (Omicron BA.5)",0,0
+"587","nation","England","E92000001","2022-01-16","VOC-22JAN-01 (Omicron BA.2)",1632023,4.36
+"588","nation","England","E92000001","2022-01-16","unclassified_variant",0,0
+"589","nation","England","E92000001","2022-01-23","Other",1687780,0.08
+"590","nation","England","E92000001","2022-01-23","V-20DEC-01 (Alpha)",0,0
+"591","nation","England","E92000001","2022-01-23","V-21APR-02 (Delta B.1.617.2)",1687780,0.07
+"592","nation","England","E92000001","2022-01-23","V-21OCT-01 (Delta AY 4.2)",1687780,0.03
+"593","nation","England","E92000001","2022-01-23","V-22DEC-01 (Omicron CH.1.1)",0,0
+"594","nation","England","E92000001","2022-01-23","V-22JUL-01 (Omicron BA.2.75)",0,0
+"595","nation","England","E92000001","2022-01-23","V-22OCT-01 (Omicron BQ.1)",0,0
+"596","nation","England","E92000001","2022-01-23","VOC-21NOV-01 (Omicron BA.1)",1687780,91.7
+"597","nation","England","E92000001","2022-01-23","VOC-22APR-03 (Omicron BA.4)",0,0
+"598","nation","England","E92000001","2022-01-23","VOC-22APR-04 (Omicron BA.5)",0,0
+"599","nation","England","E92000001","2022-01-23","VOC-22JAN-01 (Omicron BA.2)",1687780,8.11
+"600","nation","England","E92000001","2022-01-23","unclassified_variant",0,0
+"601","nation","England","E92000001","2022-01-30","Other",1753840,0.16
+"602","nation","England","E92000001","2022-01-30","V-20DEC-01 (Alpha)",1753840,0
+"603","nation","England","E92000001","2022-01-30","V-21APR-02 (Delta B.1.617.2)",1753840,0.05
+"604","nation","England","E92000001","2022-01-30","V-21OCT-01 (Delta AY 4.2)",1753840,0.02
+"605","nation","England","E92000001","2022-01-30","V-22DEC-01 (Omicron CH.1.1)",1753840,0
+"606","nation","England","E92000001","2022-01-30","V-22JUL-01 (Omicron BA.2.75)",0,0
+"607","nation","England","E92000001","2022-01-30","V-22OCT-01 (Omicron BQ.1)",1753840,0
+"608","nation","England","E92000001","2022-01-30","VOC-21NOV-01 (Omicron BA.1)",1753840,84.41
+"609","nation","England","E92000001","2022-01-30","VOC-22APR-03 (Omicron BA.4)",1753840,0
+"610","nation","England","E92000001","2022-01-30","VOC-22APR-04 (Omicron BA.5)",1753840,0.01
+"611","nation","England","E92000001","2022-01-30","VOC-22JAN-01 (Omicron BA.2)",1753840,15.35
+"612","nation","England","E92000001","2022-01-30","unclassified_variant",0,0
+"613","nation","England","E92000001","2022-02-06","Other",1813903,0.18
+"614","nation","England","E92000001","2022-02-06","V-20DEC-01 (Alpha)",0,0
+"615","nation","England","E92000001","2022-02-06","V-21APR-02 (Delta B.1.617.2)",1813903,0.02
+"616","nation","England","E92000001","2022-02-06","V-21OCT-01 (Delta AY 4.2)",1813903,0.01
+"617","nation","England","E92000001","2022-02-06","V-22DEC-01 (Omicron CH.1.1)",0,0
+"618","nation","England","E92000001","2022-02-06","V-22JUL-01 (Omicron BA.2.75)",0,0
+"619","nation","England","E92000001","2022-02-06","V-22OCT-01 (Omicron BQ.1)",1813903,0
+"620","nation","England","E92000001","2022-02-06","VOC-21NOV-01 (Omicron BA.1)",1813903,75.5
+"621","nation","England","E92000001","2022-02-06","VOC-22APR-03 (Omicron BA.4)",0,0
+"622","nation","England","E92000001","2022-02-06","VOC-22APR-04 (Omicron BA.5)",1813903,0
+"623","nation","England","E92000001","2022-02-06","VOC-22JAN-01 (Omicron BA.2)",1813903,24.27
+"624","nation","England","E92000001","2022-02-06","unclassified_variant",0,0
+"625","nation","England","E92000001","2022-02-13","Other",1870584,0.27
+"626","nation","England","E92000001","2022-02-13","V-20DEC-01 (Alpha)",0,0
+"627","nation","England","E92000001","2022-02-13","V-21APR-02 (Delta B.1.617.2)",1870584,0.03
+"628","nation","England","E92000001","2022-02-13","V-21OCT-01 (Delta AY 4.2)",1870584,0.01
+"629","nation","England","E92000001","2022-02-13","V-22DEC-01 (Omicron CH.1.1)",0,0
+"630","nation","England","E92000001","2022-02-13","V-22JUL-01 (Omicron BA.2.75)",0,0
+"631","nation","England","E92000001","2022-02-13","V-22OCT-01 (Omicron BQ.1)",0,0
+"632","nation","England","E92000001","2022-02-13","VOC-21NOV-01 (Omicron BA.1)",1870584,58.85
+"633","nation","England","E92000001","2022-02-13","VOC-22APR-03 (Omicron BA.4)",1870584,0
+"634","nation","England","E92000001","2022-02-13","VOC-22APR-04 (Omicron BA.5)",1870584,0
+"635","nation","England","E92000001","2022-02-13","VOC-22JAN-01 (Omicron BA.2)",1870584,40.84
+"636","nation","England","E92000001","2022-02-13","unclassified_variant",0,0
+"637","nation","England","E92000001","2022-02-20","Other",1911980,0.33
+"638","nation","England","E92000001","2022-02-20","V-20DEC-01 (Alpha)",0,0
+"639","nation","England","E92000001","2022-02-20","V-21APR-02 (Delta B.1.617.2)",1911980,0.02
+"640","nation","England","E92000001","2022-02-20","V-21OCT-01 (Delta AY 4.2)",0,0
+"641","nation","England","E92000001","2022-02-20","V-22DEC-01 (Omicron CH.1.1)",0,0
+"642","nation","England","E92000001","2022-02-20","V-22JUL-01 (Omicron BA.2.75)",0,0
+"643","nation","England","E92000001","2022-02-20","V-22OCT-01 (Omicron BQ.1)",0,0
+"644","nation","England","E92000001","2022-02-20","VOC-21NOV-01 (Omicron BA.1)",1911980,42.42
+"645","nation","England","E92000001","2022-02-20","VOC-22APR-03 (Omicron BA.4)",1911980,0
+"646","nation","England","E92000001","2022-02-20","VOC-22APR-04 (Omicron BA.5)",1911980,0.02
+"647","nation","England","E92000001","2022-02-20","VOC-22JAN-01 (Omicron BA.2)",1911980,57.2
+"648","nation","England","E92000001","2022-02-20","unclassified_variant",0,0
+"649","nation","England","E92000001","2022-02-27","Other",1955063,0.33
+"650","nation","England","E92000001","2022-02-27","V-20DEC-01 (Alpha)",0,0
+"651","nation","England","E92000001","2022-02-27","V-21APR-02 (Delta B.1.617.2)",1955063,0
+"652","nation","England","E92000001","2022-02-27","V-21OCT-01 (Delta AY 4.2)",0,0
+"653","nation","England","E92000001","2022-02-27","V-22DEC-01 (Omicron CH.1.1)",0,0
+"654","nation","England","E92000001","2022-02-27","V-22JUL-01 (Omicron BA.2.75)",0,0
+"655","nation","England","E92000001","2022-02-27","V-22OCT-01 (Omicron BQ.1)",0,0
+"656","nation","England","E92000001","2022-02-27","VOC-21NOV-01 (Omicron BA.1)",1955063,25.5
+"657","nation","England","E92000001","2022-02-27","VOC-22APR-03 (Omicron BA.4)",1955063,0
+"658","nation","England","E92000001","2022-02-27","VOC-22APR-04 (Omicron BA.5)",1955063,0
+"659","nation","England","E92000001","2022-02-27","VOC-22JAN-01 (Omicron BA.2)",1955063,74.15
+"660","nation","England","E92000001","2022-02-27","unclassified_variant",0,0
+"661","nation","England","E92000001","2022-03-06","Other",2011152,0.44
+"662","nation","England","E92000001","2022-03-06","V-20DEC-01 (Alpha)",0,0
+"663","nation","England","E92000001","2022-03-06","V-21APR-02 (Delta B.1.617.2)",2011152,0.01
+"664","nation","England","E92000001","2022-03-06","V-21OCT-01 (Delta AY 4.2)",0,0
+"665","nation","England","E92000001","2022-03-06","V-22DEC-01 (Omicron CH.1.1)",0,0
+"666","nation","England","E92000001","2022-03-06","V-22JUL-01 (Omicron BA.2.75)",0,0
+"667","nation","England","E92000001","2022-03-06","V-22OCT-01 (Omicron BQ.1)",0,0
+"668","nation","England","E92000001","2022-03-06","VOC-21NOV-01 (Omicron BA.1)",2011152,15.19
+"669","nation","England","E92000001","2022-03-06","VOC-22APR-03 (Omicron BA.4)",0,0
+"670","nation","England","E92000001","2022-03-06","VOC-22APR-04 (Omicron BA.5)",2011152,0.01
+"671","nation","England","E92000001","2022-03-06","VOC-22JAN-01 (Omicron BA.2)",2011152,84.34
+"672","nation","England","E92000001","2022-03-06","unclassified_variant",0,0
+"673","nation","England","E92000001","2022-03-13","Other",2070284,0.53
+"674","nation","England","E92000001","2022-03-13","V-20DEC-01 (Alpha)",0,0
+"675","nation","England","E92000001","2022-03-13","V-21APR-02 (Delta B.1.617.2)",2070284,0.01
+"676","nation","England","E92000001","2022-03-13","V-21OCT-01 (Delta AY 4.2)",2070284,0
+"677","nation","England","E92000001","2022-03-13","V-22DEC-01 (Omicron CH.1.1)",0,0
+"678","nation","England","E92000001","2022-03-13","V-22JUL-01 (Omicron BA.2.75)",0,0
+"679","nation","England","E92000001","2022-03-13","V-22OCT-01 (Omicron BQ.1)",0,0
+"680","nation","England","E92000001","2022-03-13","VOC-21NOV-01 (Omicron BA.1)",2070284,8.59
+"681","nation","England","E92000001","2022-03-13","VOC-22APR-03 (Omicron BA.4)",2070284,0.01
+"682","nation","England","E92000001","2022-03-13","VOC-22APR-04 (Omicron BA.5)",2070284,0.02
+"683","nation","England","E92000001","2022-03-13","VOC-22JAN-01 (Omicron BA.2)",2070284,90.83
+"684","nation","England","E92000001","2022-03-13","unclassified_variant",0,0
+"685","nation","England","E92000001","2022-03-20","Other",2121768,0.6
+"686","nation","England","E92000001","2022-03-20","V-20DEC-01 (Alpha)",0,0
+"687","nation","England","E92000001","2022-03-20","V-21APR-02 (Delta B.1.617.2)",2121768,0.01
+"688","nation","England","E92000001","2022-03-20","V-21OCT-01 (Delta AY 4.2)",0,0
+"689","nation","England","E92000001","2022-03-20","V-22DEC-01 (Omicron CH.1.1)",0,0
+"690","nation","England","E92000001","2022-03-20","V-22JUL-01 (Omicron BA.2.75)",0,0
+"691","nation","England","E92000001","2022-03-20","V-22OCT-01 (Omicron BQ.1)",0,0
+"692","nation","England","E92000001","2022-03-20","VOC-21NOV-01 (Omicron BA.1)",2121768,4.82
+"693","nation","England","E92000001","2022-03-20","VOC-22APR-03 (Omicron BA.4)",2121768,0.02
+"694","nation","England","E92000001","2022-03-20","VOC-22APR-04 (Omicron BA.5)",2121768,0.05
+"695","nation","England","E92000001","2022-03-20","VOC-22JAN-01 (Omicron BA.2)",2121768,94.51
+"696","nation","England","E92000001","2022-03-20","unclassified_variant",0,0
+"697","nation","England","E92000001","2022-03-27","Other",2148555,0.72
+"698","nation","England","E92000001","2022-03-27","V-20DEC-01 (Alpha)",0,0
+"699","nation","England","E92000001","2022-03-27","V-21APR-02 (Delta B.1.617.2)",0,0
+"700","nation","England","E92000001","2022-03-27","V-21OCT-01 (Delta AY 4.2)",0,0
+"701","nation","England","E92000001","2022-03-27","V-22DEC-01 (Omicron CH.1.1)",0,0
+"702","nation","England","E92000001","2022-03-27","V-22JUL-01 (Omicron BA.2.75)",0,0
+"703","nation","England","E92000001","2022-03-27","V-22OCT-01 (Omicron BQ.1)",0,0
+"704","nation","England","E92000001","2022-03-27","VOC-21NOV-01 (Omicron BA.1)",2148555,3.28
+"705","nation","England","E92000001","2022-03-27","VOC-22APR-03 (Omicron BA.4)",2148555,0.07
+"706","nation","England","E92000001","2022-03-27","VOC-22APR-04 (Omicron BA.5)",2148555,0.11
+"707","nation","England","E92000001","2022-03-27","VOC-22JAN-01 (Omicron BA.2)",2148555,95.82
+"708","nation","England","E92000001","2022-03-27","unclassified_variant",0,0
+"709","nation","England","E92000001","2022-04-03","Other",2162853,0.77
+"710","nation","England","E92000001","2022-04-03","V-20DEC-01 (Alpha)",0,0
+"711","nation","England","E92000001","2022-04-03","V-21APR-02 (Delta B.1.617.2)",0,0
+"712","nation","England","E92000001","2022-04-03","V-21OCT-01 (Delta AY 4.2)",0,0
+"713","nation","England","E92000001","2022-04-03","V-22DEC-01 (Omicron CH.1.1)",2162853,0.01
+"714","nation","England","E92000001","2022-04-03","V-22JUL-01 (Omicron BA.2.75)",0,0
+"715","nation","England","E92000001","2022-04-03","V-22OCT-01 (Omicron BQ.1)",0,0
+"716","nation","England","E92000001","2022-04-03","VOC-21NOV-01 (Omicron BA.1)",2162853,1.97
+"717","nation","England","E92000001","2022-04-03","VOC-22APR-03 (Omicron BA.4)",2162853,0.13
+"718","nation","England","E92000001","2022-04-03","VOC-22APR-04 (Omicron BA.5)",2162853,0.24
+"719","nation","England","E92000001","2022-04-03","VOC-22JAN-01 (Omicron BA.2)",2162853,96.89
+"720","nation","England","E92000001","2022-04-03","unclassified_variant",0,0
+"721","nation","England","E92000001","2022-04-10","Other",2176362,0.78
+"722","nation","England","E92000001","2022-04-10","V-20DEC-01 (Alpha)",0,0
+"723","nation","England","E92000001","2022-04-10","V-21APR-02 (Delta B.1.617.2)",0,0
+"724","nation","England","E92000001","2022-04-10","V-21OCT-01 (Delta AY 4.2)",0,0
+"725","nation","England","E92000001","2022-04-10","V-22DEC-01 (Omicron CH.1.1)",0,0
+"726","nation","England","E92000001","2022-04-10","V-22JUL-01 (Omicron BA.2.75)",0,0
+"727","nation","England","E92000001","2022-04-10","V-22OCT-01 (Omicron BQ.1)",0,0
+"728","nation","England","E92000001","2022-04-10","VOC-21NOV-01 (Omicron BA.1)",2176362,1.28
+"729","nation","England","E92000001","2022-04-10","VOC-22APR-03 (Omicron BA.4)",2176362,0.09
+"730","nation","England","E92000001","2022-04-10","VOC-22APR-04 (Omicron BA.5)",2176362,0.26
+"731","nation","England","E92000001","2022-04-10","VOC-22JAN-01 (Omicron BA.2)",2176362,97.59
+"732","nation","England","E92000001","2022-04-10","unclassified_variant",0,0
+"733","nation","England","E92000001","2022-04-17","Other",2185664,0.95
+"734","nation","England","E92000001","2022-04-17","V-20DEC-01 (Alpha)",2185664,0.01
+"735","nation","England","E92000001","2022-04-17","V-21APR-02 (Delta B.1.617.2)",0,0
+"736","nation","England","E92000001","2022-04-17","V-21OCT-01 (Delta AY 4.2)",0,0
+"737","nation","England","E92000001","2022-04-17","V-22DEC-01 (Omicron CH.1.1)",0,0
+"738","nation","England","E92000001","2022-04-17","V-22JUL-01 (Omicron BA.2.75)",0,0
+"739","nation","England","E92000001","2022-04-17","V-22OCT-01 (Omicron BQ.1)",2185664,0.01
+"740","nation","England","E92000001","2022-04-17","VOC-21NOV-01 (Omicron BA.1)",2185664,0.76
+"741","nation","England","E92000001","2022-04-17","VOC-22APR-03 (Omicron BA.4)",2185664,0.19
+"742","nation","England","E92000001","2022-04-17","VOC-22APR-04 (Omicron BA.5)",2185664,0.56
+"743","nation","England","E92000001","2022-04-17","VOC-22JAN-01 (Omicron BA.2)",2185664,97.52
+"744","nation","England","E92000001","2022-04-17","unclassified_variant",0,0
+"745","nation","England","E92000001","2022-04-24","Other",2191849,1.23
+"746","nation","England","E92000001","2022-04-24","V-20DEC-01 (Alpha)",0,0
+"747","nation","England","E92000001","2022-04-24","V-21APR-02 (Delta B.1.617.2)",0,0
+"748","nation","England","E92000001","2022-04-24","V-21OCT-01 (Delta AY 4.2)",0,0
+"749","nation","England","E92000001","2022-04-24","V-22DEC-01 (Omicron CH.1.1)",0,0
+"750","nation","England","E92000001","2022-04-24","V-22JUL-01 (Omicron BA.2.75)",0,0
+"751","nation","England","E92000001","2022-04-24","V-22OCT-01 (Omicron BQ.1)",2191849,0.02
+"752","nation","England","E92000001","2022-04-24","VOC-21NOV-01 (Omicron BA.1)",2191849,0.6
+"753","nation","England","E92000001","2022-04-24","VOC-22APR-03 (Omicron BA.4)",2191849,0.61
+"754","nation","England","E92000001","2022-04-24","VOC-22APR-04 (Omicron BA.5)",2191849,0.79
+"755","nation","England","E92000001","2022-04-24","VOC-22JAN-01 (Omicron BA.2)",2191849,96.75
+"756","nation","England","E92000001","2022-04-24","unclassified_variant",0,0
+"757","nation","England","E92000001","2022-05-01","Other",2196591,1.01
+"758","nation","England","E92000001","2022-05-01","V-20DEC-01 (Alpha)",0,0
+"759","nation","England","E92000001","2022-05-01","V-21APR-02 (Delta B.1.617.2)",0,0
+"760","nation","England","E92000001","2022-05-01","V-21OCT-01 (Delta AY 4.2)",0,0
+"761","nation","England","E92000001","2022-05-01","V-22DEC-01 (Omicron CH.1.1)",0,0
+"762","nation","England","E92000001","2022-05-01","V-22JUL-01 (Omicron BA.2.75)",0,0
+"763","nation","England","E92000001","2022-05-01","V-22OCT-01 (Omicron BQ.1)",0,0
+"764","nation","England","E92000001","2022-05-01","VOC-21NOV-01 (Omicron BA.1)",2196591,0.3
+"765","nation","England","E92000001","2022-05-01","VOC-22APR-03 (Omicron BA.4)",2196591,1.43
+"766","nation","England","E92000001","2022-05-01","VOC-22APR-04 (Omicron BA.5)",2196591,1.5
+"767","nation","England","E92000001","2022-05-01","VOC-22JAN-01 (Omicron BA.2)",2196591,95.76
+"768","nation","England","E92000001","2022-05-01","unclassified_variant",0,0
+"769","nation","England","E92000001","2022-05-08","Other",2200383,1.16
+"770","nation","England","E92000001","2022-05-08","V-20DEC-01 (Alpha)",0,0
+"771","nation","England","E92000001","2022-05-08","V-21APR-02 (Delta B.1.617.2)",0,0
+"772","nation","England","E92000001","2022-05-08","V-21OCT-01 (Delta AY 4.2)",0,0
+"773","nation","England","E92000001","2022-05-08","V-22DEC-01 (Omicron CH.1.1)",0,0
+"774","nation","England","E92000001","2022-05-08","V-22JUL-01 (Omicron BA.2.75)",0,0
+"775","nation","England","E92000001","2022-05-08","V-22OCT-01 (Omicron BQ.1)",2200383,0.03
+"776","nation","England","E92000001","2022-05-08","VOC-21NOV-01 (Omicron BA.1)",2200383,0.29
+"777","nation","England","E92000001","2022-05-08","VOC-22APR-03 (Omicron BA.4)",2200383,3.27
+"778","nation","England","E92000001","2022-05-08","VOC-22APR-04 (Omicron BA.5)",2200383,3.43
+"779","nation","England","E92000001","2022-05-08","VOC-22JAN-01 (Omicron BA.2)",2200383,91.82
+"780","nation","England","E92000001","2022-05-08","unclassified_variant",0,0
+"781","nation","England","E92000001","2022-05-15","Other",2203673,1.28
+"782","nation","England","E92000001","2022-05-15","V-20DEC-01 (Alpha)",0,0
+"783","nation","England","E92000001","2022-05-15","V-21APR-02 (Delta B.1.617.2)",0,0
+"784","nation","England","E92000001","2022-05-15","V-21OCT-01 (Delta AY 4.2)",0,0
+"785","nation","England","E92000001","2022-05-15","V-22DEC-01 (Omicron CH.1.1)",2203673,0.03
+"786","nation","England","E92000001","2022-05-15","V-22JUL-01 (Omicron BA.2.75)",0,0
+"787","nation","England","E92000001","2022-05-15","V-22OCT-01 (Omicron BQ.1)",0,0
+"788","nation","England","E92000001","2022-05-15","VOC-21NOV-01 (Omicron BA.1)",2203673,0.27
+"789","nation","England","E92000001","2022-05-15","VOC-22APR-03 (Omicron BA.4)",2203673,5.41
+"790","nation","England","E92000001","2022-05-15","VOC-22APR-04 (Omicron BA.5)",2203673,6.63
+"791","nation","England","E92000001","2022-05-15","VOC-22JAN-01 (Omicron BA.2)",2203673,86.38
+"792","nation","England","E92000001","2022-05-15","unclassified_variant",0,0
+"793","nation","England","E92000001","2022-05-22","Other",2206112,0.86
+"794","nation","England","E92000001","2022-05-22","V-20DEC-01 (Alpha)",0,0
+"795","nation","England","E92000001","2022-05-22","V-21APR-02 (Delta B.1.617.2)",0,0
+"796","nation","England","E92000001","2022-05-22","V-21OCT-01 (Delta AY 4.2)",0,0
+"797","nation","England","E92000001","2022-05-22","V-22DEC-01 (Omicron CH.1.1)",0,0
+"798","nation","England","E92000001","2022-05-22","V-22JUL-01 (Omicron BA.2.75)",0,0
+"799","nation","England","E92000001","2022-05-22","V-22OCT-01 (Omicron BQ.1)",0,0
+"800","nation","England","E92000001","2022-05-22","VOC-21NOV-01 (Omicron BA.1)",2206112,0.04
+"801","nation","England","E92000001","2022-05-22","VOC-22APR-03 (Omicron BA.4)",2206112,8.9
+"802","nation","England","E92000001","2022-05-22","VOC-22APR-04 (Omicron BA.5)",2206112,14.88
+"803","nation","England","E92000001","2022-05-22","VOC-22JAN-01 (Omicron BA.2)",2206112,75.32
+"804","nation","England","E92000001","2022-05-22","unclassified_variant",0,0
+"805","nation","England","E92000001","2022-05-29","Other",2208753,1.21
+"806","nation","England","E92000001","2022-05-29","V-20DEC-01 (Alpha)",0,0
+"807","nation","England","E92000001","2022-05-29","V-21APR-02 (Delta B.1.617.2)",0,0
+"808","nation","England","E92000001","2022-05-29","V-21OCT-01 (Delta AY 4.2)",0,0
+"809","nation","England","E92000001","2022-05-29","V-22DEC-01 (Omicron CH.1.1)",0,0
+"810","nation","England","E92000001","2022-05-29","V-22JUL-01 (Omicron BA.2.75)",0,0
+"811","nation","England","E92000001","2022-05-29","V-22OCT-01 (Omicron BQ.1)",2208753,0.08
+"812","nation","England","E92000001","2022-05-29","VOC-21NOV-01 (Omicron BA.1)",2208753,0.08
+"813","nation","England","E92000001","2022-05-29","VOC-22APR-03 (Omicron BA.4)",2208753,13.44
+"814","nation","England","E92000001","2022-05-29","VOC-22APR-04 (Omicron BA.5)",2208753,27.38
+"815","nation","England","E92000001","2022-05-29","VOC-22JAN-01 (Omicron BA.2)",2208753,57.82
+"816","nation","England","E92000001","2022-05-29","unclassified_variant",0,0
+"817","nation","England","E92000001","2022-06-05","Other",2213674,1.36
+"818","nation","England","E92000001","2022-06-05","V-20DEC-01 (Alpha)",0,0
+"819","nation","England","E92000001","2022-06-05","V-21APR-02 (Delta B.1.617.2)",2213674,0.06
+"820","nation","England","E92000001","2022-06-05","V-21OCT-01 (Delta AY 4.2)",0,0
+"821","nation","England","E92000001","2022-06-05","V-22DEC-01 (Omicron CH.1.1)",0,0
+"822","nation","England","E92000001","2022-06-05","V-22JUL-01 (Omicron BA.2.75)",0,0
+"823","nation","England","E92000001","2022-06-05","V-22OCT-01 (Omicron BQ.1)",0,0
+"824","nation","England","E92000001","2022-06-05","VOC-21NOV-01 (Omicron BA.1)",2213674,0.04
+"825","nation","England","E92000001","2022-06-05","VOC-22APR-03 (Omicron BA.4)",2213674,19.33
+"826","nation","England","E92000001","2022-06-05","VOC-22APR-04 (Omicron BA.5)",2213674,41.23
+"827","nation","England","E92000001","2022-06-05","VOC-22JAN-01 (Omicron BA.2)",2213674,37.98
+"828","nation","England","E92000001","2022-06-05","unclassified_variant",0,0
+"829","nation","England","E92000001","2022-06-12","Other",2219765,1.28
+"830","nation","England","E92000001","2022-06-12","V-20DEC-01 (Alpha)",0,0
+"831","nation","England","E92000001","2022-06-12","V-21APR-02 (Delta B.1.617.2)",0,0
+"832","nation","England","E92000001","2022-06-12","V-21OCT-01 (Delta AY 4.2)",0,0
+"833","nation","England","E92000001","2022-06-12","V-22DEC-01 (Omicron CH.1.1)",0,0
+"834","nation","England","E92000001","2022-06-12","V-22JUL-01 (Omicron BA.2.75)",0,0
+"835","nation","England","E92000001","2022-06-12","V-22OCT-01 (Omicron BQ.1)",0,0
+"836","nation","England","E92000001","2022-06-12","VOC-21NOV-01 (Omicron BA.1)",2219765,0.07
+"837","nation","England","E92000001","2022-06-12","VOC-22APR-03 (Omicron BA.4)",2219765,20.69
+"838","nation","England","E92000001","2022-06-12","VOC-22APR-04 (Omicron BA.5)",2219765,53.57
+"839","nation","England","E92000001","2022-06-12","VOC-22JAN-01 (Omicron BA.2)",2219765,24.4
+"840","nation","England","E92000001","2022-06-12","unclassified_variant",0,0
+"841","nation","England","E92000001","2022-06-19","Other",2228637,2.6
+"842","nation","England","E92000001","2022-06-19","V-20DEC-01 (Alpha)",0,0
+"843","nation","England","E92000001","2022-06-19","V-21APR-02 (Delta B.1.617.2)",0,0
+"844","nation","England","E92000001","2022-06-19","V-21OCT-01 (Delta AY 4.2)",0,0
+"845","nation","England","E92000001","2022-06-19","V-22DEC-01 (Omicron CH.1.1)",2228637,0.01
+"846","nation","England","E92000001","2022-06-19","V-22JUL-01 (Omicron BA.2.75)",2228637,0.1
+"847","nation","England","E92000001","2022-06-19","V-22OCT-01 (Omicron BQ.1)",2228637,0.03
+"848","nation","England","E92000001","2022-06-19","VOC-21NOV-01 (Omicron BA.1)",2228637,0.03
+"849","nation","England","E92000001","2022-06-19","VOC-22APR-03 (Omicron BA.4)",2228637,18.74
+"850","nation","England","E92000001","2022-06-19","VOC-22APR-04 (Omicron BA.5)",2228637,64.62
+"851","nation","England","E92000001","2022-06-19","VOC-22JAN-01 (Omicron BA.2)",2228637,13.85
+"852","nation","England","E92000001","2022-06-19","unclassified_variant",0,0
+"853","nation","England","E92000001","2022-06-26","Other",2239490,2.89
+"854","nation","England","E92000001","2022-06-26","V-20DEC-01 (Alpha)",0,0
+"855","nation","England","E92000001","2022-06-26","V-21APR-02 (Delta B.1.617.2)",2239490,0.01
+"856","nation","England","E92000001","2022-06-26","V-21OCT-01 (Delta AY 4.2)",0,0
+"857","nation","England","E92000001","2022-06-26","V-22DEC-01 (Omicron CH.1.1)",0,0
+"858","nation","England","E92000001","2022-06-26","V-22JUL-01 (Omicron BA.2.75)",2239490,0.06
+"859","nation","England","E92000001","2022-06-26","V-22OCT-01 (Omicron BQ.1)",2239490,0.01
+"860","nation","England","E92000001","2022-06-26","VOC-21NOV-01 (Omicron BA.1)",2239490,0.01
+"861","nation","England","E92000001","2022-06-26","VOC-22APR-03 (Omicron BA.4)",2239490,18.07
+"862","nation","England","E92000001","2022-06-26","VOC-22APR-04 (Omicron BA.5)",2239490,70.91
+"863","nation","England","E92000001","2022-06-26","VOC-22JAN-01 (Omicron BA.2)",2239490,8.04
+"864","nation","England","E92000001","2022-06-26","unclassified_variant",0,0
+"865","nation","England","E92000001","2022-07-03","Other",2249707,2.89
+"866","nation","England","E92000001","2022-07-03","V-20DEC-01 (Alpha)",0,0
+"867","nation","England","E92000001","2022-07-03","V-21APR-02 (Delta B.1.617.2)",0,0
+"868","nation","England","E92000001","2022-07-03","V-21OCT-01 (Delta AY 4.2)",0,0
+"869","nation","England","E92000001","2022-07-03","V-22DEC-01 (Omicron CH.1.1)",2249707,0.02
+"870","nation","England","E92000001","2022-07-03","V-22JUL-01 (Omicron BA.2.75)",2249707,0.04
+"871","nation","England","E92000001","2022-07-03","V-22OCT-01 (Omicron BQ.1)",2249707,0.02
+"872","nation","England","E92000001","2022-07-03","VOC-21NOV-01 (Omicron BA.1)",0,0
+"873","nation","England","E92000001","2022-07-03","VOC-22APR-03 (Omicron BA.4)",2249707,14.09
+"874","nation","England","E92000001","2022-07-03","VOC-22APR-04 (Omicron BA.5)",2249707,78
+"875","nation","England","E92000001","2022-07-03","VOC-22JAN-01 (Omicron BA.2)",2249707,4.94
+"876","nation","England","E92000001","2022-07-03","unclassified_variant",0,0
+"877","nation","England","E92000001","2022-07-10","Other",2258417,3.38
+"878","nation","England","E92000001","2022-07-10","V-20DEC-01 (Alpha)",0,0
+"879","nation","England","E92000001","2022-07-10","V-21APR-02 (Delta B.1.617.2)",2258417,0.02
+"880","nation","England","E92000001","2022-07-10","V-21OCT-01 (Delta AY 4.2)",0,0
+"881","nation","England","E92000001","2022-07-10","V-22DEC-01 (Omicron CH.1.1)",0,0
+"882","nation","England","E92000001","2022-07-10","V-22JUL-01 (Omicron BA.2.75)",2258417,0.05
+"883","nation","England","E92000001","2022-07-10","V-22OCT-01 (Omicron BQ.1)",2258417,0.05
+"884","nation","England","E92000001","2022-07-10","VOC-21NOV-01 (Omicron BA.1)",2258417,0.02
+"885","nation","England","E92000001","2022-07-10","VOC-22APR-03 (Omicron BA.4)",2258417,13.52
+"886","nation","England","E92000001","2022-07-10","VOC-22APR-04 (Omicron BA.5)",2258417,80.41
+"887","nation","England","E92000001","2022-07-10","VOC-22JAN-01 (Omicron BA.2)",2258417,2.55
+"888","nation","England","E92000001","2022-07-10","unclassified_variant",0,0
+"889","nation","England","E92000001","2022-07-17","Other",2266236,3.5
+"890","nation","England","E92000001","2022-07-17","V-20DEC-01 (Alpha)",0,0
+"891","nation","England","E92000001","2022-07-17","V-21APR-02 (Delta B.1.617.2)",0,0
+"892","nation","England","E92000001","2022-07-17","V-21OCT-01 (Delta AY 4.2)",0,0
+"893","nation","England","E92000001","2022-07-17","V-22DEC-01 (Omicron CH.1.1)",0,0
+"894","nation","England","E92000001","2022-07-17","V-22JUL-01 (Omicron BA.2.75)",2266236,0.1
+"895","nation","England","E92000001","2022-07-17","V-22OCT-01 (Omicron BQ.1)",2266236,0.03
+"896","nation","England","E92000001","2022-07-17","VOC-21NOV-01 (Omicron BA.1)",2266236,0.03
+"897","nation","England","E92000001","2022-07-17","VOC-22APR-03 (Omicron BA.4)",2266236,10.83
+"898","nation","England","E92000001","2022-07-17","VOC-22APR-04 (Omicron BA.5)",2266236,83.94
+"899","nation","England","E92000001","2022-07-17","VOC-22JAN-01 (Omicron BA.2)",2266236,1.57
+"900","nation","England","E92000001","2022-07-17","unclassified_variant",0,0
+"901","nation","England","E92000001","2022-07-24","Other",2272745,5.18
+"902","nation","England","E92000001","2022-07-24","V-20DEC-01 (Alpha)",0,0
+"903","nation","England","E92000001","2022-07-24","V-21APR-02 (Delta B.1.617.2)",0,0
+"904","nation","England","E92000001","2022-07-24","V-21OCT-01 (Delta AY 4.2)",0,0
+"905","nation","England","E92000001","2022-07-24","V-22DEC-01 (Omicron CH.1.1)",2272745,0.02
+"906","nation","England","E92000001","2022-07-24","V-22JUL-01 (Omicron BA.2.75)",2272745,0.11
+"907","nation","England","E92000001","2022-07-24","V-22OCT-01 (Omicron BQ.1)",2272745,0.08
+"908","nation","England","E92000001","2022-07-24","VOC-21NOV-01 (Omicron BA.1)",0,0
+"909","nation","England","E92000001","2022-07-24","VOC-22APR-03 (Omicron BA.4)",2272745,8.14
+"910","nation","England","E92000001","2022-07-24","VOC-22APR-04 (Omicron BA.5)",2272745,85.39
+"911","nation","England","E92000001","2022-07-24","VOC-22JAN-01 (Omicron BA.2)",2272745,1.09
+"912","nation","England","E92000001","2022-07-24","unclassified_variant",0,0
+"913","nation","England","E92000001","2022-07-31","Other",2277781,6.51
+"914","nation","England","E92000001","2022-07-31","V-20DEC-01 (Alpha)",0,0
+"915","nation","England","E92000001","2022-07-31","V-21APR-02 (Delta B.1.617.2)",0,0
+"916","nation","England","E92000001","2022-07-31","V-21OCT-01 (Delta AY 4.2)",0,0
+"917","nation","England","E92000001","2022-07-31","V-22DEC-01 (Omicron CH.1.1)",0,0
+"918","nation","England","E92000001","2022-07-31","V-22JUL-01 (Omicron BA.2.75)",2277781,0.3
+"919","nation","England","E92000001","2022-07-31","V-22OCT-01 (Omicron BQ.1)",2277781,0.08
+"920","nation","England","E92000001","2022-07-31","VOC-21NOV-01 (Omicron BA.1)",2277781,0.02
+"921","nation","England","E92000001","2022-07-31","VOC-22APR-03 (Omicron BA.4)",2277781,7.25
+"922","nation","England","E92000001","2022-07-31","VOC-22APR-04 (Omicron BA.5)",2277781,85.07
+"923","nation","England","E92000001","2022-07-31","VOC-22JAN-01 (Omicron BA.2)",2277781,0.77
+"924","nation","England","E92000001","2022-07-31","unclassified_variant",0,0
+"925","nation","England","E92000001","2022-08-07","Other",2281877,5.74
+"926","nation","England","E92000001","2022-08-07","V-20DEC-01 (Alpha)",0,0
+"927","nation","England","E92000001","2022-08-07","V-21APR-02 (Delta B.1.617.2)",0,0
+"928","nation","England","E92000001","2022-08-07","V-21OCT-01 (Delta AY 4.2)",0,0
+"929","nation","England","E92000001","2022-08-07","V-22DEC-01 (Omicron CH.1.1)",2281877,0.02
+"930","nation","England","E92000001","2022-08-07","V-22JUL-01 (Omicron BA.2.75)",2281877,0.59
+"931","nation","England","E92000001","2022-08-07","V-22OCT-01 (Omicron BQ.1)",2281877,0.07
+"932","nation","England","E92000001","2022-08-07","VOC-21NOV-01 (Omicron BA.1)",2281877,0.02
+"933","nation","England","E92000001","2022-08-07","VOC-22APR-03 (Omicron BA.4)",2281877,6.08
+"934","nation","England","E92000001","2022-08-07","VOC-22APR-04 (Omicron BA.5)",2281877,87.18
+"935","nation","England","E92000001","2022-08-07","VOC-22JAN-01 (Omicron BA.2)",2281877,0.29
+"936","nation","England","E92000001","2022-08-07","unclassified_variant",0,0
+"937","nation","England","E92000001","2022-08-14","Other",2284699,6.87
+"938","nation","England","E92000001","2022-08-14","V-20DEC-01 (Alpha)",0,0
+"939","nation","England","E92000001","2022-08-14","V-21APR-02 (Delta B.1.617.2)",0,0
+"940","nation","England","E92000001","2022-08-14","V-21OCT-01 (Delta AY 4.2)",0,0
+"941","nation","England","E92000001","2022-08-14","V-22DEC-01 (Omicron CH.1.1)",0,0
+"942","nation","England","E92000001","2022-08-14","V-22JUL-01 (Omicron BA.2.75)",2284699,0.64
+"943","nation","England","E92000001","2022-08-14","V-22OCT-01 (Omicron BQ.1)",2284699,0.14
+"944","nation","England","E92000001","2022-08-14","VOC-21NOV-01 (Omicron BA.1)",2284699,0.04
+"945","nation","England","E92000001","2022-08-14","VOC-22APR-03 (Omicron BA.4)",2284699,4.32
+"946","nation","England","E92000001","2022-08-14","VOC-22APR-04 (Omicron BA.5)",2284699,87.24
+"947","nation","England","E92000001","2022-08-14","VOC-22JAN-01 (Omicron BA.2)",2284699,0.71
+"948","nation","England","E92000001","2022-08-14","unclassified_variant",2284699,0.04
+"949","nation","England","E92000001","2022-08-21","Other",2287017,7.55
+"950","nation","England","E92000001","2022-08-21","V-20DEC-01 (Alpha)",0,0
+"951","nation","England","E92000001","2022-08-21","V-21APR-02 (Delta B.1.617.2)",0,0
+"952","nation","England","E92000001","2022-08-21","V-21OCT-01 (Delta AY 4.2)",0,0
+"953","nation","England","E92000001","2022-08-21","V-22DEC-01 (Omicron CH.1.1)",0,0
+"954","nation","England","E92000001","2022-08-21","V-22JUL-01 (Omicron BA.2.75)",2287017,1.34
+"955","nation","England","E92000001","2022-08-21","V-22OCT-01 (Omicron BQ.1)",2287017,0.56
+"956","nation","England","E92000001","2022-08-21","VOC-21NOV-01 (Omicron BA.1)",0,0
+"957","nation","England","E92000001","2022-08-21","VOC-22APR-03 (Omicron BA.4)",2287017,4.01
+"958","nation","England","E92000001","2022-08-21","VOC-22APR-04 (Omicron BA.5)",2287017,86.24
+"959","nation","England","E92000001","2022-08-21","VOC-22JAN-01 (Omicron BA.2)",2287017,0.3
+"960","nation","England","E92000001","2022-08-21","unclassified_variant",0,0
+"961","nation","England","E92000001","2022-08-28","Other",2289363,7.72
+"962","nation","England","E92000001","2022-08-28","V-20DEC-01 (Alpha)",0,0
+"963","nation","England","E92000001","2022-08-28","V-21APR-02 (Delta B.1.617.2)",0,0
+"964","nation","England","E92000001","2022-08-28","V-21OCT-01 (Delta AY 4.2)",0,0
+"965","nation","England","E92000001","2022-08-28","V-22DEC-01 (Omicron CH.1.1)",0,0
+"966","nation","England","E92000001","2022-08-28","V-22JUL-01 (Omicron BA.2.75)",2289363,1.62
+"967","nation","England","E92000001","2022-08-28","V-22OCT-01 (Omicron BQ.1)",2289363,0.77
+"968","nation","England","E92000001","2022-08-28","VOC-21NOV-01 (Omicron BA.1)",2289363,0.04
+"969","nation","England","E92000001","2022-08-28","VOC-22APR-03 (Omicron BA.4)",2289363,2.77
+"970","nation","England","E92000001","2022-08-28","VOC-22APR-04 (Omicron BA.5)",2289363,86.79
+"971","nation","England","E92000001","2022-08-28","VOC-22JAN-01 (Omicron BA.2)",2289363,0.3
+"972","nation","England","E92000001","2022-08-28","unclassified_variant",0,0
+"973","nation","England","E92000001","2022-09-04","Other",2291661,8.27
+"974","nation","England","E92000001","2022-09-04","V-20DEC-01 (Alpha)",0,0
+"975","nation","England","E92000001","2022-09-04","V-21APR-02 (Delta B.1.617.2)",0,0
+"976","nation","England","E92000001","2022-09-04","V-21OCT-01 (Delta AY 4.2)",0,0
+"977","nation","England","E92000001","2022-09-04","V-22DEC-01 (Omicron CH.1.1)",0,0
+"978","nation","England","E92000001","2022-09-04","V-22JUL-01 (Omicron BA.2.75)",2291661,2.48
+"979","nation","England","E92000001","2022-09-04","V-22OCT-01 (Omicron BQ.1)",2291661,2.18
+"980","nation","England","E92000001","2022-09-04","VOC-21NOV-01 (Omicron BA.1)",2291661,0.04
+"981","nation","England","E92000001","2022-09-04","VOC-22APR-03 (Omicron BA.4)",2291661,2.35
+"982","nation","England","E92000001","2022-09-04","VOC-22APR-04 (Omicron BA.5)",2291661,84.2
+"983","nation","England","E92000001","2022-09-04","VOC-22JAN-01 (Omicron BA.2)",2291661,0.48
+"984","nation","England","E92000001","2022-09-04","unclassified_variant",0,0
+"985","nation","England","E92000001","2022-09-11","Other",2294235,5.94
+"986","nation","England","E92000001","2022-09-11","V-20DEC-01 (Alpha)",0,0
+"987","nation","England","E92000001","2022-09-11","V-21APR-02 (Delta B.1.617.2)",0,0
+"988","nation","England","E92000001","2022-09-11","V-21OCT-01 (Delta AY 4.2)",0,0
+"989","nation","England","E92000001","2022-09-11","V-22DEC-01 (Omicron CH.1.1)",0,0
+"990","nation","England","E92000001","2022-09-11","V-22JUL-01 (Omicron BA.2.75)",2294235,4.55
+"991","nation","England","E92000001","2022-09-11","V-22OCT-01 (Omicron BQ.1)",2294235,2.8
+"992","nation","England","E92000001","2022-09-11","VOC-21NOV-01 (Omicron BA.1)",2294235,0.04
+"993","nation","England","E92000001","2022-09-11","VOC-22APR-03 (Omicron BA.4)",2294235,1.94
+"994","nation","England","E92000001","2022-09-11","VOC-22APR-04 (Omicron BA.5)",2294235,84.46
+"995","nation","England","E92000001","2022-09-11","VOC-22JAN-01 (Omicron BA.2)",2294235,0.27
+"996","nation","England","E92000001","2022-09-11","unclassified_variant",0,0
+"997","nation","England","E92000001","2022-09-18","Other",2297958,5.99
+"998","nation","England","E92000001","2022-09-18","V-20DEC-01 (Alpha)",0,0
+"999","nation","England","E92000001","2022-09-18","V-21APR-02 (Delta B.1.617.2)",0,0
+"1000","nation","England","E92000001","2022-09-18","V-21OCT-01 (Delta AY 4.2)",0,0
+"1001","nation","England","E92000001","2022-09-18","V-22DEC-01 (Omicron CH.1.1)",2297958,0.05
+"1002","nation","England","E92000001","2022-09-18","V-22JUL-01 (Omicron BA.2.75)",2297958,5.21
+"1003","nation","England","E92000001","2022-09-18","V-22OCT-01 (Omicron BQ.1)",2297958,5.37
+"1004","nation","England","E92000001","2022-09-18","VOC-21NOV-01 (Omicron BA.1)",2297958,0.05
+"1005","nation","England","E92000001","2022-09-18","VOC-22APR-03 (Omicron BA.4)",2297958,2.04
+"1006","nation","England","E92000001","2022-09-18","VOC-22APR-04 (Omicron BA.5)",2297958,81.12
+"1007","nation","England","E92000001","2022-09-18","VOC-22JAN-01 (Omicron BA.2)",2297958,0.16
+"1008","nation","England","E92000001","2022-09-18","unclassified_variant",0,0
+"1009","nation","England","E92000001","2022-09-25","Other",2302745,6.33
+"1010","nation","England","E92000001","2022-09-25","V-20DEC-01 (Alpha)",0,0
+"1011","nation","England","E92000001","2022-09-25","V-21APR-02 (Delta B.1.617.2)",0,0
+"1012","nation","England","E92000001","2022-09-25","V-21OCT-01 (Delta AY 4.2)",0,0
+"1013","nation","England","E92000001","2022-09-25","V-22DEC-01 (Omicron CH.1.1)",2302745,0.02
+"1014","nation","England","E92000001","2022-09-25","V-22JUL-01 (Omicron BA.2.75)",2302745,4.45
+"1015","nation","England","E92000001","2022-09-25","V-22OCT-01 (Omicron BQ.1)",2302745,8.96
+"1016","nation","England","E92000001","2022-09-25","VOC-21NOV-01 (Omicron BA.1)",2302745,0.02
+"1017","nation","England","E92000001","2022-09-25","VOC-22APR-03 (Omicron BA.4)",2302745,0.86
+"1018","nation","England","E92000001","2022-09-25","VOC-22APR-04 (Omicron BA.5)",2302745,79.03
+"1019","nation","England","E92000001","2022-09-25","VOC-22JAN-01 (Omicron BA.2)",2302745,0.33
+"1020","nation","England","E92000001","2022-09-25","unclassified_variant",0,0
+"1021","nation","England","E92000001","2022-10-02","Other",2309476,6.46
+"1022","nation","England","E92000001","2022-10-02","V-20DEC-01 (Alpha)",0,0
+"1023","nation","England","E92000001","2022-10-02","V-21APR-02 (Delta B.1.617.2)",0,0
+"1024","nation","England","E92000001","2022-10-02","V-21OCT-01 (Delta AY 4.2)",0,0
+"1025","nation","England","E92000001","2022-10-02","V-22DEC-01 (Omicron CH.1.1)",2309476,0.18
+"1026","nation","England","E92000001","2022-10-02","V-22JUL-01 (Omicron BA.2.75)",2309476,5.65
+"1027","nation","England","E92000001","2022-10-02","V-22OCT-01 (Omicron BQ.1)",2309476,13.64
+"1028","nation","England","E92000001","2022-10-02","VOC-21NOV-01 (Omicron BA.1)",2309476,0.03
+"1029","nation","England","E92000001","2022-10-02","VOC-22APR-03 (Omicron BA.4)",2309476,0.55
+"1030","nation","England","E92000001","2022-10-02","VOC-22APR-04 (Omicron BA.5)",2309476,73.2
+"1031","nation","England","E92000001","2022-10-02","VOC-22JAN-01 (Omicron BA.2)",2309476,0.3
+"1032","nation","England","E92000001","2022-10-02","unclassified_variant",0,0
+"1033","nation","England","E92000001","2022-10-09","Other",2315233,6.27
+"1034","nation","England","E92000001","2022-10-09","V-20DEC-01 (Alpha)",0,0
+"1035","nation","England","E92000001","2022-10-09","V-21APR-02 (Delta B.1.617.2)",0,0
+"1036","nation","England","E92000001","2022-10-09","V-21OCT-01 (Delta AY 4.2)",0,0
+"1037","nation","England","E92000001","2022-10-09","V-22DEC-01 (Omicron CH.1.1)",2315233,0.07
+"1038","nation","England","E92000001","2022-10-09","V-22JUL-01 (Omicron BA.2.75)",2315233,5.61
+"1039","nation","England","E92000001","2022-10-09","V-22OCT-01 (Omicron BQ.1)",2315233,19.58
+"1040","nation","England","E92000001","2022-10-09","VOC-21NOV-01 (Omicron BA.1)",0,0
+"1041","nation","England","E92000001","2022-10-09","VOC-22APR-03 (Omicron BA.4)",2315233,0.42
+"1042","nation","England","E92000001","2022-10-09","VOC-22APR-04 (Omicron BA.5)",2315233,67.83
+"1043","nation","England","E92000001","2022-10-09","VOC-22JAN-01 (Omicron BA.2)",2315233,0.21
+"1044","nation","England","E92000001","2022-10-09","unclassified_variant",2315233,0.02
+"1045","nation","England","E92000001","2022-10-16","Other",2320447,5.83
+"1046","nation","England","E92000001","2022-10-16","V-20DEC-01 (Alpha)",0,0
+"1047","nation","England","E92000001","2022-10-16","V-21APR-02 (Delta B.1.617.2)",0,0
+"1048","nation","England","E92000001","2022-10-16","V-21OCT-01 (Delta AY 4.2)",0,0
+"1049","nation","England","E92000001","2022-10-16","V-22DEC-01 (Omicron CH.1.1)",2320447,0.4
+"1050","nation","England","E92000001","2022-10-16","V-22JUL-01 (Omicron BA.2.75)",2320447,6.83
+"1051","nation","England","E92000001","2022-10-16","V-22OCT-01 (Omicron BQ.1)",2320447,25.72
+"1052","nation","England","E92000001","2022-10-16","VOC-21NOV-01 (Omicron BA.1)",2320447,0.04
+"1053","nation","England","E92000001","2022-10-16","VOC-22APR-03 (Omicron BA.4)",2320447,0.54
+"1054","nation","England","E92000001","2022-10-16","VOC-22APR-04 (Omicron BA.5)",2320447,60.09
+"1055","nation","England","E92000001","2022-10-16","VOC-22JAN-01 (Omicron BA.2)",2320447,0.56
+"1056","nation","England","E92000001","2022-10-16","unclassified_variant",0,0
+"1057","nation","England","E92000001","2022-10-23","Other",2324202,4.87
+"1058","nation","England","E92000001","2022-10-23","V-20DEC-01 (Alpha)",0,0
+"1059","nation","England","E92000001","2022-10-23","V-21APR-02 (Delta B.1.617.2)",0,0
+"1060","nation","England","E92000001","2022-10-23","V-21OCT-01 (Delta AY 4.2)",0,0
+"1061","nation","England","E92000001","2022-10-23","V-22DEC-01 (Omicron CH.1.1)",2324202,0.56
+"1062","nation","England","E92000001","2022-10-23","V-22JUL-01 (Omicron BA.2.75)",2324202,8.71
+"1063","nation","England","E92000001","2022-10-23","V-22OCT-01 (Omicron BQ.1)",2324202,32.86
+"1064","nation","England","E92000001","2022-10-23","VOC-21NOV-01 (Omicron BA.1)",2324202,0.03
+"1065","nation","England","E92000001","2022-10-23","VOC-22APR-03 (Omicron BA.4)",2324202,0.59
+"1066","nation","England","E92000001","2022-10-23","VOC-22APR-04 (Omicron BA.5)",2324202,51.8
+"1067","nation","England","E92000001","2022-10-23","VOC-22JAN-01 (Omicron BA.2)",2324202,0.59
+"1068","nation","England","E92000001","2022-10-23","unclassified_variant",0,0
+"1069","nation","England","E92000001","2022-10-30","Other",2326902,5.56
+"1070","nation","England","E92000001","2022-10-30","V-20DEC-01 (Alpha)",0,0
+"1071","nation","England","E92000001","2022-10-30","V-21APR-02 (Delta B.1.617.2)",2326902,0.04
+"1072","nation","England","E92000001","2022-10-30","V-21OCT-01 (Delta AY 4.2)",0,0
+"1073","nation","England","E92000001","2022-10-30","V-22DEC-01 (Omicron CH.1.1)",2326902,0.85
+"1074","nation","England","E92000001","2022-10-30","V-22JUL-01 (Omicron BA.2.75)",2326902,7.89
+"1075","nation","England","E92000001","2022-10-30","V-22OCT-01 (Omicron BQ.1)",2326902,39.48
+"1076","nation","England","E92000001","2022-10-30","VOC-21NOV-01 (Omicron BA.1)",2326902,0.04
+"1077","nation","England","E92000001","2022-10-30","VOC-22APR-03 (Omicron BA.4)",2326902,0.11
+"1078","nation","England","E92000001","2022-10-30","VOC-22APR-04 (Omicron BA.5)",2326902,45.48
+"1079","nation","England","E92000001","2022-10-30","VOC-22JAN-01 (Omicron BA.2)",2326902,0.56
+"1080","nation","England","E92000001","2022-10-30","unclassified_variant",0,0
+"1081","nation","England","E92000001","2022-11-06","Other",2329335,6.17
+"1082","nation","England","E92000001","2022-11-06","V-20DEC-01 (Alpha)",0,0
+"1083","nation","England","E92000001","2022-11-06","V-21APR-02 (Delta B.1.617.2)",0,0
+"1084","nation","England","E92000001","2022-11-06","V-21OCT-01 (Delta AY 4.2)",0,0
+"1085","nation","England","E92000001","2022-11-06","V-22DEC-01 (Omicron CH.1.1)",2329335,1.64
+"1086","nation","England","E92000001","2022-11-06","V-22JUL-01 (Omicron BA.2.75)",2329335,10.89
+"1087","nation","England","E92000001","2022-11-06","V-22OCT-01 (Omicron BQ.1)",2329335,46.86
+"1088","nation","England","E92000001","2022-11-06","VOC-21NOV-01 (Omicron BA.1)",0,0
+"1089","nation","England","E92000001","2022-11-06","VOC-22APR-03 (Omicron BA.4)",2329335,0.21
+"1090","nation","England","E92000001","2022-11-06","VOC-22APR-04 (Omicron BA.5)",2329335,33.83
+"1091","nation","England","E92000001","2022-11-06","VOC-22JAN-01 (Omicron BA.2)",2329335,0.41
+"1092","nation","England","E92000001","2022-11-06","unclassified_variant",0,0
+"1093","nation","England","E92000001","2022-11-13","Other",2331711,5.72
+"1094","nation","England","E92000001","2022-11-13","V-20DEC-01 (Alpha)",0,0
+"1095","nation","England","E92000001","2022-11-13","V-21APR-02 (Delta B.1.617.2)",0,0
+"1096","nation","England","E92000001","2022-11-13","V-21OCT-01 (Delta AY 4.2)",0,0
+"1097","nation","England","E92000001","2022-11-13","V-22DEC-01 (Omicron CH.1.1)",2331711,2.86
+"1098","nation","England","E92000001","2022-11-13","V-22JUL-01 (Omicron BA.2.75)",2331711,9.09
+"1099","nation","England","E92000001","2022-11-13","V-22OCT-01 (Omicron BQ.1)",2331711,53.37
+"1100","nation","England","E92000001","2022-11-13","VOC-21NOV-01 (Omicron BA.1)",0,0
+"1101","nation","England","E92000001","2022-11-13","VOC-22APR-03 (Omicron BA.4)",2331711,0.04
+"1102","nation","England","E92000001","2022-11-13","VOC-22APR-04 (Omicron BA.5)",2331711,28.83
+"1103","nation","England","E92000001","2022-11-13","VOC-22JAN-01 (Omicron BA.2)",2331711,0.08
+"1104","nation","England","E92000001","2022-11-13","unclassified_variant",0,0
+"1105","nation","England","E92000001","2022-11-20","Other",2334415,7.17
+"1106","nation","England","E92000001","2022-11-20","V-20DEC-01 (Alpha)",0,0
+"1107","nation","England","E92000001","2022-11-20","V-21APR-02 (Delta B.1.617.2)",0,0
+"1108","nation","England","E92000001","2022-11-20","V-21OCT-01 (Delta AY 4.2)",0,0
+"1109","nation","England","E92000001","2022-11-20","V-22DEC-01 (Omicron CH.1.1)",2334415,6.4
+"1110","nation","England","E92000001","2022-11-20","V-22JUL-01 (Omicron BA.2.75)",2334415,9.58
+"1111","nation","England","E92000001","2022-11-20","V-22OCT-01 (Omicron BQ.1)",2334415,55.03
+"1112","nation","England","E92000001","2022-11-20","VOC-21NOV-01 (Omicron BA.1)",2334415,0.04
+"1113","nation","England","E92000001","2022-11-20","VOC-22APR-03 (Omicron BA.4)",2334415,0.11
+"1114","nation","England","E92000001","2022-11-20","VOC-22APR-04 (Omicron BA.5)",2334415,21.12
+"1115","nation","England","E92000001","2022-11-20","VOC-22JAN-01 (Omicron BA.2)",2334415,0.48
+"1116","nation","England","E92000001","2022-11-20","unclassified_variant",2334415,0.07
+"1117","nation","England","E92000001","2022-11-27","Other",2338036,6.02
+"1118","nation","England","E92000001","2022-11-27","V-20DEC-01 (Alpha)",0,0
+"1119","nation","England","E92000001","2022-11-27","V-21APR-02 (Delta B.1.617.2)",0,0
+"1120","nation","England","E92000001","2022-11-27","V-21OCT-01 (Delta AY 4.2)",0,0
+"1121","nation","England","E92000001","2022-11-27","V-22DEC-01 (Omicron CH.1.1)",2338036,6.93
+"1122","nation","England","E92000001","2022-11-27","V-22JUL-01 (Omicron BA.2.75)",2338036,9.58
+"1123","nation","England","E92000001","2022-11-27","V-22OCT-01 (Omicron BQ.1)",2338036,59.73
+"1124","nation","England","E92000001","2022-11-27","VOC-21NOV-01 (Omicron BA.1)",0,0
+"1125","nation","England","E92000001","2022-11-27","VOC-22APR-03 (Omicron BA.4)",2338036,0.03
+"1126","nation","England","E92000001","2022-11-27","VOC-22APR-04 (Omicron BA.5)",2338036,17.01
+"1127","nation","England","E92000001","2022-11-27","VOC-22JAN-01 (Omicron BA.2)",2338036,0.52
+"1128","nation","England","E92000001","2022-11-27","unclassified_variant",2338036,0.17
+"1129","nation","England","E92000001","2022-12-04","Other",2342475,5.72
+"1130","nation","England","E92000001","2022-12-04","V-20DEC-01 (Alpha)",0,0
+"1131","nation","England","E92000001","2022-12-04","V-21APR-02 (Delta B.1.617.2)",0,0
+"1132","nation","England","E92000001","2022-12-04","V-21OCT-01 (Delta AY 4.2)",0,0
+"1133","nation","England","E92000001","2022-12-04","V-22DEC-01 (Omicron CH.1.1)",2342475,9.91
+"1134","nation","England","E92000001","2022-12-04","V-22JUL-01 (Omicron BA.2.75)",2342475,9.57
+"1135","nation","England","E92000001","2022-12-04","V-22OCT-01 (Omicron BQ.1)",2342475,60.33
+"1136","nation","England","E92000001","2022-12-04","VOC-21NOV-01 (Omicron BA.1)",2342475,0.02
+"1137","nation","England","E92000001","2022-12-04","VOC-22APR-03 (Omicron BA.4)",0,0
+"1138","nation","England","E92000001","2022-12-04","VOC-22APR-04 (Omicron BA.5)",2342475,13.85
+"1139","nation","England","E92000001","2022-12-04","VOC-22JAN-01 (Omicron BA.2)",2342475,0.34
+"1140","nation","England","E92000001","2022-12-04","unclassified_variant",2342475,0.25
+"1141","nation","England","E92000001","2022-12-11","Other",2348719,6.47
+"1142","nation","England","E92000001","2022-12-11","V-20DEC-01 (Alpha)",0,0
+"1143","nation","England","E92000001","2022-12-11","V-21APR-02 (Delta B.1.617.2)",0,0
+"1144","nation","England","E92000001","2022-12-11","V-21OCT-01 (Delta AY 4.2)",0,0
+"1145","nation","England","E92000001","2022-12-11","V-22DEC-01 (Omicron CH.1.1)",2348719,13.02
+"1146","nation","England","E92000001","2022-12-11","V-22JUL-01 (Omicron BA.2.75)",2348719,7.78
+"1147","nation","England","E92000001","2022-12-11","V-22OCT-01 (Omicron BQ.1)",2348719,60.92
+"1148","nation","England","E92000001","2022-12-11","VOC-21NOV-01 (Omicron BA.1)",2348719,0.02
+"1149","nation","England","E92000001","2022-12-11","VOC-22APR-03 (Omicron BA.4)",2348719,0.06
+"1150","nation","England","E92000001","2022-12-11","VOC-22APR-04 (Omicron BA.5)",2348719,10.17
+"1151","nation","England","E92000001","2022-12-11","VOC-22JAN-01 (Omicron BA.2)",2348719,0.66
+"1152","nation","England","E92000001","2022-12-11","unclassified_variant",2348719,0.9
+"1153","nation","England","E92000001","2022-12-18","Other",2355574,5.69
+"1154","nation","England","E92000001","2022-12-18","V-20DEC-01 (Alpha)",0,0
+"1155","nation","England","E92000001","2022-12-18","V-21APR-02 (Delta B.1.617.2)",0,0
+"1156","nation","England","E92000001","2022-12-18","V-21OCT-01 (Delta AY 4.2)",0,0
+"1157","nation","England","E92000001","2022-12-18","V-22DEC-01 (Omicron CH.1.1)",2355574,16.47
+"1158","nation","England","E92000001","2022-12-18","V-22JUL-01 (Omicron BA.2.75)",2355574,6.74
+"1159","nation","England","E92000001","2022-12-18","V-22OCT-01 (Omicron BQ.1)",2355574,58.91
+"1160","nation","England","E92000001","2022-12-18","VOC-21NOV-01 (Omicron BA.1)",2355574,0.03
+"1161","nation","England","E92000001","2022-12-18","VOC-22APR-03 (Omicron BA.4)",2355574,0.03
+"1162","nation","England","E92000001","2022-12-18","VOC-22APR-04 (Omicron BA.5)",2355574,9.67
+"1163","nation","England","E92000001","2022-12-18","VOC-22JAN-01 (Omicron BA.2)",2355574,0.61
+"1164","nation","England","E92000001","2022-12-18","unclassified_variant",2355574,1.85
+"1165","nation","England","E92000001","2022-12-25","Other",2361745,5.09
+"1166","nation","England","E92000001","2022-12-25","V-20DEC-01 (Alpha)",0,0
+"1167","nation","England","E92000001","2022-12-25","V-21APR-02 (Delta B.1.617.2)",2361745,0.02
+"1168","nation","England","E92000001","2022-12-25","V-21OCT-01 (Delta AY 4.2)",0,0
+"1169","nation","England","E92000001","2022-12-25","V-22DEC-01 (Omicron CH.1.1)",2361745,21.5
+"1170","nation","England","E92000001","2022-12-25","V-22JUL-01 (Omicron BA.2.75)",2361745,7.71
+"1171","nation","England","E92000001","2022-12-25","V-22OCT-01 (Omicron BQ.1)",2361745,52.5
+"1172","nation","England","E92000001","2022-12-25","VOC-21NOV-01 (Omicron BA.1)",0,0
+"1173","nation","England","E92000001","2022-12-25","VOC-22APR-03 (Omicron BA.4)",2361745,0.06
+"1174","nation","England","E92000001","2022-12-25","VOC-22APR-04 (Omicron BA.5)",2361745,7.58
+"1175","nation","England","E92000001","2022-12-25","VOC-22JAN-01 (Omicron BA.2)",2361745,1.15
+"1176","nation","England","E92000001","2022-12-25","unclassified_variant",2361745,4.38
+"1177","nation","England","E92000001","2023-01-01","Other",2366843,4.59
+"1178","nation","England","E92000001","2023-01-01","V-20DEC-01 (Alpha)",0,0
+"1179","nation","England","E92000001","2023-01-01","V-21APR-02 (Delta B.1.617.2)",0,0
+"1180","nation","England","E92000001","2023-01-01","V-21OCT-01 (Delta AY 4.2)",0,0
+"1181","nation","England","E92000001","2023-01-01","V-22DEC-01 (Omicron CH.1.1)",2366843,24.56
+"1182","nation","England","E92000001","2023-01-01","V-22JUL-01 (Omicron BA.2.75)",2366843,8.93
+"1183","nation","England","E92000001","2023-01-01","V-22OCT-01 (Omicron BQ.1)",2366843,49.57
+"1184","nation","England","E92000001","2023-01-01","VOC-21NOV-01 (Omicron BA.1)",2366843,0.02
+"1185","nation","England","E92000001","2023-01-01","VOC-22APR-03 (Omicron BA.4)",2366843,0.08
+"1186","nation","England","E92000001","2023-01-01","VOC-22APR-04 (Omicron BA.5)",2366843,5.59
+"1187","nation","England","E92000001","2023-01-01","VOC-22JAN-01 (Omicron BA.2)",2366843,1.41
+"1188","nation","England","E92000001","2023-01-01","unclassified_variant",2366843,5.26
