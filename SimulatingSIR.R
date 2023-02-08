@@ -91,8 +91,9 @@ mod_sir <- function(ini,
   }
   cases  |> 
     as.data.frame() |> 
-    mutate(time=seq(timestart,timeend,by=1)) |> 
-    mutate_at(vars(time),factor)-> cases
+    mutate(time=seq(timestart,timeend,by=1)) -> cases #|> 
+    #mutate_at(vars(time),factor)
+  
   return(cases)
 }
 
@@ -104,7 +105,7 @@ initial_infected <- 0.01
 vaxrate <- 0.3
 #assume 1% of infected is from emergent strain
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,i1=0.99*initial_infected,i2=0.01*initial_infected,v=vaxrate,r1=initial_recovered,r2=0,d=0)
-x <- list(beta=2, betap=2, gamma=0.7, gammap=0.7,mu=0.0002, nu=0.0005) #with death and vaccination
+x <- list(beta=2, betap=1.2, gamma=0.7, gammap=0.7,mu=0.0002, nu=0.0005) #with death and vaccination
 # x <- list(beta=2, betap=4.5, gamma=0.7, gammap=0.7,mu=0.000, nu=0.0) #without death and vaccination
 
 
@@ -119,5 +120,44 @@ test_run |> mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/in
   geom_point(aes(y=infprop1),size=2) + geom_line(aes(y=infprop1),size=2) + #original
   geom_point(aes(y=infprop2),color="blue", size=2) + geom_line(aes(y=infprop2),color="blue",size=2) +
   geom_hline(yintercept=0.5,linetype="dashed", color="red") + 
-  theme_bw() + ylab("Percentage of Infected Population") + xlab("Week after emergence")
+  theme_bw() + ylab("Percentage of Infected Population") + xlab("Week after emergence") + scale_x_continuous(breaks=0:15)
+
+
+
+##LOGISTIC MODELING
+
+test_run |> mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/infected) -> test_run
+
+#nonlinear least squares
+
+library(car)
+
+coef(lm(logit(infprop2)~time,data=test_run))
+
+
+logisticmodel <- nls(infprop2~phi1/(1+exp(-(phi2+phi3*time))),
+                     start=list(phi1=1,phi2=-5.41, phi3=0.563), data=test_run,trace=T)
+
+summary(logisticmodel)
+
+#use coefficients of the logistic model to predict values
+#checking if the curve does follow the emergent curve
+test_run |> mutate(prediction=predict(logisticmodel,data=test_run)) |> 
+  ggplot(aes(x=time)) + #x axis
+  geom_point(aes(y=infprop1),size=2) + geom_line(aes(y=infprop1),size=2) + #original
+  geom_point(aes(y=infprop2),color="blue", size=2) + geom_line(aes(y=infprop2),color="blue",size=2) +
+  geom_line(aes(y=prediction),color="red",size=3)+
+  geom_hline(yintercept=0.5,linetype="dashed", color="red") + 
+  theme_bw() + ylab("Percentage of Infected Population") + xlab("Week after emergence") + scale_x_continuous(breaks=0:15)
+
+
+#we use algebra to get the time to 50%.
+#t = (-1/phi3) * (phi2 + ln(2*phi1-1))
+
+phi1 <- coef(logisticmodel)[1] |> unname()
+phi2 <- coef(logisticmodel)[2] |> unname()
+phi3 <- coef(logisticmodel)[3] |> unname()
+tdominance <- (-1/phi3) * (phi2 + log(2*phi1-1))
+
+tdominance
 
