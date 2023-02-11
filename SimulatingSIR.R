@@ -5,7 +5,8 @@
 
 library(tidyverse)
 library(ggforce)
-
+library(car)
+library(emmeans)
 #create a function that updates the SIR model
 # ini = initial proportions (s,i1,i2,v,r1,r2,d)
 # x = list of variables 
@@ -91,12 +92,14 @@ mod_sir <- function(ini,
   }
   cases  |> 
     as.data.frame() |> 
-    mutate(time=seq(timestart,timeend,by=1)) -> cases #|> 
-    #mutate_at(vars(time),factor)
+    mutate(time=seq(timestart,timeend,by=1)) |> 
+    mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/infected) -> cases 
   
   return(cases)
 }
 
+
+#TESTING ONE RUN=================
 #initial recovered is 1%
 initial_recovered <- 0.01
 #initial infected based on data
@@ -105,13 +108,22 @@ initial_infected <- 0.01
 vaxrate <- 0.3
 #assume 1% of infected is from emergent strain
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,i1=0.99*initial_infected,i2=0.01*initial_infected,v=vaxrate,r1=initial_recovered,r2=0,d=0)
-x <- list(beta=2, betap=1.2, gamma=0.7, gammap=0.7,mu=0.0002, nu=0.0005) #with death and vaccination
+x <- list(beta=0.7, betap=0.5, gamma=0.7, gammap=0.7,mu=0.0002, nu=0.0005) #with death and vaccination
 # x <- list(beta=2, betap=4.5, gamma=0.7, gammap=0.7,mu=0.000, nu=0.0) #without death and vaccination
 
 
-test_run <- mod_sir(ini=ini,
-                    x=x,
-                    timeend = 15)
+test_run <- tryCatch({mod_sir(ini=ini,
+                              x=x,
+                              timestart=0,
+                              timeend = 10)},
+                     error=function(e){
+                       return(-1)
+                     },
+                     warning=function(w){
+                       return(-1)
+                     }
+                     
+)
 
 test_run |>   ggplot(aes(x=time, y=i1*100000)) + geom_point() + geom_point(aes(x=time,y=i2*100000,color="blue"))
 
@@ -126,17 +138,17 @@ test_run |> mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/in
 
 ##LOGISTIC MODELING
 
-test_run |> mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/infected) -> test_run
+# test_run |> mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/infected) -> test_run
 
 #nonlinear least squares
 
-library(car)
 
-coef(lm(logit(infprop2)~time,data=test_run))
+
+coef(lm(logit(infprop2)~time,data=test_run)) |> unname()-> gg
 
 
 logisticmodel <- nls(infprop2~phi1/(1+exp(-(phi2+phi3*time))),
-                     start=list(phi1=1,phi2=-5.41, phi3=0.563), data=test_run,trace=T)
+                     start=list(phi1=1,phi2=gg[1], phi3=gg[2]), data=test_run,trace=T)
 
 summary(logisticmodel)
 
@@ -161,3 +173,138 @@ tdominance <- (-1/phi3) * (phi2 + log(2*phi1-1))
 
 tdominance
 
+#======FUNCTION==============
+
+tdom <- function(ini, x, timestart=0, timeend=10){
+  trun <- tryCatch({mod_sir(ini=ini,
+                  x=x,
+                  timestart=timestart,
+                  timeend = timeend)},
+                  error=function(e){
+                    return(-1)
+                  },
+                  warning=function(w){
+                    return(-1)
+                  }
+                  
+  )
+  
+  if(tail(trun$infprop2,1) <=0.5 | max(trun$infprop2) <=0.5){
+    tdominance <- 100 #never dominates
+  }
+  else{
+    #initialize the logistic model using logit transformed model estimates
+    coef(lm(logit(infprop2)~time,data=trun)) |> unname()->tcoeffs
+    
+    phi_2 <- tcoeffs[1]
+    phi_3<- tcoeffs[2]
+    
+    logisticmodel <- nls(infprop2~phi1/(1+exp(-(phi2+phi3*time))),
+                         start=list(phi1=1,phi2=phi_2, phi3=phi_3), 
+                         data=trun,
+                         trace=F,
+                         control=list(maxiter=500))
+    phi1 <- coef(logisticmodel)[1] |> unname()
+    phi2 <- coef(logisticmodel)[2] |> unname()
+    phi3 <- coef(logisticmodel)[3] |> unname()
+    tdominance <- (-1/phi3) * (phi2 + log(2*phi1-1))
+  }  
+  tdominance
+}
+
+
+#testing function
+#initial recovered is 1%
+initial_recovered <- 0.01
+#initial infected based on data
+initial_infected <- 0.01
+#vaccination rate
+vaxrate <- 0.3
+#assume 1% of infected is from emergent strain
+ini <- c(s=1-vaxrate-initial_infected-initial_recovered,i1=0.99*initial_infected,i2=0.01*initial_infected,v=vaxrate,r1=initial_recovered,r2=0,d=0)
+x <- list(beta=0.8, betap=0.5, gamma=0.7, gammap=0.7,mu=0.000, nu=0.000) #with death and vaccination
+
+
+tdom(ini=ini,x=x)-> tdominance
+
+#=====EXPERIMENT============
+
+#ORIGINAL STRAIN COULD BE gamma =0.7, gammap = 0.7
+gamma <- 0.7
+gammap <- 0.7
+betaset <- c(1.4,1.75,2.1)
+betapset <- c(1.25,1.5,1.75,2) #multiple of betaset
+initial_recovered <- 0.01 #approximation
+initial_infected <- 0.01 #loosely based on data
+vaxxrateset <- c(0.3)
+
+nsims <-100
+
+sim_array <- expand.grid(1:nsims,
+                         betaset,
+                         betapset,
+                         gamma,
+                         gammap,
+                         vaxxrateset,
+                         initial_recovered,
+                         initial_infected) |> as.data.frame()
+names(sim_array) <- c("SimNumber",
+                      "beta",
+                      "betap",
+                      "gamma",
+                      "gammap",
+                      "vaxrate",
+                      "ini_recovered",
+                      "ini_infected")
+
+#experiment function
+exp_trun <- function(x1,timestart=0,timeend=10){
+  x1 |> unname() |> as.numeric()->x1
+  #initial recovered is 1%
+  initial_recovered <- x1[7]
+  #initial infected based on population
+  initial_infected <- x1[8]
+  #vaccination rate
+  vaxrate <- x1[6]
+  
+  x <-list(beta=x1[2], 
+           betap=x1[3]*x1[2],
+           gamma=x1[4], 
+           gammap=x1[5],
+           mu=0.000, 
+           nu=0.000) #no birth and vaccination
+
+  ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
+           i1=0.99*initial_infected,
+           i2=0.01*initial_infected,
+           v=vaxrate,
+           r1=initial_recovered,
+           r2=0,
+           d=0)
+  tdom(ini=ini,x=x,timestart=timestart,timeend=timeend)-> tdominance
+  tdominance
+}
+
+
+
+rm(expresults)
+sim_array |> rowwise() |> 
+  mutate(tdom = exp_trun(c(SimNumber,beta,betap,gamma,gammap,vaxrate,
+                           ini_recovered,ini_infected))) |>  ungroup()-> expresults
+
+expresults |> 
+  mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
+                 ini_recovered,ini_infected),factor) ->expresults
+
+expresults |>  group_by(beta,betap,gamma,gammap,vaxrate,
+                               ini_recovered,ini_infected) |>
+  mutate(nondom=ifelse(tdom==100,1,0)) |> 
+  summarise(mean=mean(tdom),sd=sd(tdom),max=max(tdom),min=min(tdom),
+            prop_nondom=sum(nondom)/n()) ->sumstats
+
+mod1 <- lm(tdom~beta*betap,data=expresults,contrasts = list(beta=contr.SAS,betap=contr.SAS))
+summary(mod1)
+summary(aov(mod1))
+
+emmeans(mod1,pairwise~beta|betap,adjust="tukey")
+emmeans::pairs
