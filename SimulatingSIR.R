@@ -105,10 +105,10 @@ initial_recovered <- 0.01
 #initial infected based on data
 initial_infected <- 0.01
 #vaccination rate
-vaxrate <- 0.3
+vaxrate <- 0
 #assume 1% of infected is from emergent strain
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,i1=0.99*initial_infected,i2=0.01*initial_infected,v=vaxrate,r1=initial_recovered,r2=0,d=0)
-x <- list(beta=0.7, betap=0.5, gamma=0.7, gammap=0.7,mu=0.0002, nu=0.0005) #with death and vaccination
+x <- list(beta=1.4, betap=1.25*1.4, gamma=0.7, gammap=0.7,mu=0.0002, nu=0.0005) #with death and vaccination
 # x <- list(beta=2, betap=4.5, gamma=0.7, gammap=0.7,mu=0.000, nu=0.0) #without death and vaccination
 
 
@@ -134,8 +134,17 @@ test_run |> mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/in
   geom_hline(yintercept=0.5,linetype="dashed", color="red") + 
   theme_bw() + ylab("Percentage of Infected Population") + xlab("Week after emergence") + scale_x_continuous(breaks=0:15)
 
+test_run |> mutate(infected = i1+i2+0.000001,infprop1=log(i1/infected),infprop2=log(i2/infected)) |>
+  ggplot(aes(x=time)) + #x axis
+  geom_point(aes(y=infprop1),size=2) + geom_line(aes(y=infprop1),size=2) + #original
+  geom_point(aes(y=infprop2),color="blue", size=2) + geom_line(aes(y=infprop2),color="blue",size=2) +
+  geom_hline(yintercept=0.5,linetype="dashed", color="red") + 
+  theme_bw() + ylab("Percentage of Infected Population") + xlab("Week after emergence") + scale_x_continuous(breaks=0:15)
 
+mod1 <- lm(log(infprop2)~time,data=test_run)
 
+coef(mod1)
+(log(0.5)- coef(mod1)[1])/coef(mod1)[2]
 ##LOGISTIC MODELING
 
 # test_run |> mutate(infected = i1+i2+0.000001,infprop1=i1/infected,infprop2=i2/infected) -> test_run
@@ -199,15 +208,35 @@ tdom <- function(ini, x, timestart=0, timeend=10){
     phi_2 <- tcoeffs[1]
     phi_3<- tcoeffs[2]
     
-    logisticmodel <- nls(infprop2~phi1/(1+exp(-(phi2+phi3*time))),
-                         start=list(phi1=1,phi2=phi_2, phi3=phi_3), 
+    # logisticmodel <- nls(infprop2~phi1/(1+exp(-(phi2+phi3*time))),
+    #                      start=list(phi1=1,phi2=phi_2, phi3=phi_3), 
+    #                      data=trun,
+    #                      trace=F,
+    #                      control=list(maxiter=500))
+    # 
+    # phi1 <- coef(logisticmodel)[1] |> unname()
+    # phi2 <- coef(logisticmodel)[2] |> unname()
+    # phi3 <- coef(logisticmodel)[3] |> unname()
+    # tdominance <- (-1/phi3) * (phi2 + log(2*phi1-1))
+    logisticmodel <- tryCatch({nls(infprop2~SSlogis(time,Asym=1,xmid,scal),
                          data=trun,
-                         trace=F,
-                         control=list(maxiter=500))
-    phi1 <- coef(logisticmodel)[1] |> unname()
-    phi2 <- coef(logisticmodel)[2] |> unname()
-    phi3 <- coef(logisticmodel)[3] |> unname()
-    tdominance <- (-1/phi3) * (phi2 + log(2*phi1-1))
+                         control=list(maxiter=500))},
+                         error=function(e){
+                           # print(paste("infected probability is ",max(trun$infprop2),", ",tail(trun$infprop2,1)))
+                           #rerun with an experimental growth curve
+                           rerun <- lm(log(infprop2)~time,
+                                        data=trun)
+                           
+                           return((log(0.5)- coef(rerun)[1])/coef(rerun)[2])
+                         },
+                         warning=function(w){
+                           rerun <- lm(log(infprop2)~time,
+                                       data=trun)
+                           
+                           return((log(0.5)- coef(rerun)[1])/coef(rerun)[2])                         }
+                         
+                      )
+    tdominance <- ifelse(is.numeric(logisticmodel),logisticmodel,coef(logisticmodel)[2])
   }  
   tdominance
 }
@@ -219,13 +248,13 @@ initial_recovered <- 0.01
 #initial infected based on data
 initial_infected <- 0.01
 #vaccination rate
-vaxrate <- 0.3
+vaxrate <- 0.
 #assume 1% of infected is from emergent strain
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,i1=0.99*initial_infected,i2=0.01*initial_infected,v=vaxrate,r1=initial_recovered,r2=0,d=0)
-x <- list(beta=0.8, betap=0.5, gamma=0.7, gammap=0.7,mu=0.000, nu=0.000) #with death and vaccination
+x <- list(beta=1.4, betap=1.25*1.75, gamma=0.7, gammap=0.7,mu=0.000, nu=0.000) #with death and vaccination
 
 
-tdom(ini=ini,x=x)-> tdominance
+tdom(ini=ini,x=x,timeend=12)-> tdominance
 
 #=====EXPERIMENT============
 
@@ -236,7 +265,7 @@ betaset <- c(1.4,1.75,2.1)
 betapset <- c(1.25,1.5,1.75,2) #multiple of betaset
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 #loosely based on data
-vaxxrateset <- c(0.3)
+vaxxrateset <- c(0,0.3)
 
 nsims <-100
 
@@ -258,7 +287,7 @@ names(sim_array) <- c("SimNumber",
                       "ini_infected")
 
 #experiment function
-exp_trun <- function(x1,timestart=0,timeend=10){
+exp_trun <- function(x1,timestart=0,timeend=12){
   x1 |> unname() |> as.numeric()->x1
   #initial recovered is 1%
   initial_recovered <- x1[7]
