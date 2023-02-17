@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Miguel Fudolig">
+
+<title>Multi-strain Simulation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="MultiStrainExperiment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="MultiStrainExperiment_files/libs/quarto-html/quarto.js"></script>
+<script src="MultiStrainExperiment_files/libs/quarto-html/popper.min.js"></script>
+<script src="MultiStrainExperiment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="MultiStrainExperiment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="MultiStrainExperiment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="MultiStrainExperiment_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="MultiStrainExperiment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="MultiStrainExperiment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="MultiStrainExperiment_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Multi-strain Simulation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Miguel Fudolig </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="multi-strain-sir-experiment" class="level2">
+<h2 class="anchored" data-anchor-id="multi-strain-sir-experiment">Multi-strain SIR Experiment</h2>
+<p>This is an abridged version of the code used to perform a simulation-based experiment for the manuscript submitted to <em>Microorganisms</em>.</p>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<p>We import the relevant packages: tidyverse and emmeans</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.1     ✔ purrr   1.0.1
+✔ tibble  3.1.8     ✔ dplyr   1.1.0
+✔ tidyr   1.3.0     ✔ stringr 1.5.0
+✔ readr   2.1.2     ✔ forcats 1.0.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData
+
+Attaching package: 'car'
+
+The following object is masked from 'package:dplyr':
+
+    recode
+
+The following object is masked from 'package:purrr':
+
+    some</code></pre>
+</div>
+</div>
+<p>Next, we write the function to simulate the stochastic SIR model. We assume an arbitrary population of 100,000, an assumption based on how surveillance data is being reported for COVID-19 cases. This population number will be cancelled out when we solve for infected proportions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mod_sir <span class="ot">&lt;-</span> <span class="cf">function</span>(ini,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">N=</span><span class="dv">100000</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                    x,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">timestart=</span><span class="dv">0</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">timeend=</span><span class="dv">10</span>, <span class="co">#in weeks</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">dt=</span><span class="dv">1</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">tol=</span><span class="fl">1e-9</span>){</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  sim <span class="ot">&lt;-</span> <span class="fu">unname</span>(ini)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  cases <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">nrow=</span><span class="fu">length</span>(<span class="fu">seq</span>(timestart,timeend,<span class="at">by=</span>dt)),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ncol=</span><span class="fu">length</span>(ini))</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(cases) <span class="ot">&lt;-</span> <span class="fu">names</span>(ini)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  cases[<span class="dv">1</span>,] <span class="ot">&lt;-</span> sim</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#probability of transitions from susceptible compartment</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(cases)){</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      p_SI <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">$</span>beta<span class="sc">*</span>sim[<span class="dv">2</span>] <span class="sc">+</span> </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                       x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>] <span class="sc">+</span> x<span class="sc">$</span>nu)))<span class="sc">*</span>(x<span class="sc">$</span>beta<span class="sc">*</span>sim[<span class="dv">2</span>])<span class="sc">/</span>(x<span class="sc">$</span>beta<span class="sc">*</span>sim[<span class="dv">2</span>] <span class="sc">+</span> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                                         x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>] <span class="sc">+</span> x<span class="sc">$</span>nu)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      p_SIn <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">$</span>beta<span class="sc">*</span>sim[<span class="dv">2</span>] <span class="sc">+</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                          x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>] <span class="sc">+</span> x<span class="sc">$</span>nu)))<span class="sc">*</span>(x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>])<span class="sc">/</span>(x<span class="sc">$</span>beta<span class="sc">*</span>sim[<span class="dv">2</span>] <span class="sc">+</span> </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                                                            x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>] <span class="sc">+</span> x<span class="sc">$</span>nu)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      p_SV <span class="ot">&lt;-</span>  (<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">$</span>beta<span class="sc">*</span>sim[<span class="dv">2</span>] <span class="sc">+</span> </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>                          x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>] <span class="sc">+</span> x<span class="sc">$</span>nu)))<span class="sc">*</span>(x<span class="sc">$</span>nu)<span class="sc">/</span>(x<span class="sc">$</span>beta<span class="sc">*</span>sim[<span class="dv">2</span>] <span class="sc">+</span> x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>] <span class="sc">+</span> x<span class="sc">$</span>nu)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      <span class="co">#probability of transitions from first infected compartment</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>      p_IR <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">$</span>gamma<span class="sc">+</span>x<span class="sc">$</span>mu)))<span class="sc">*</span>(x<span class="sc">$</span>gamma<span class="sc">/</span>(x<span class="sc">$</span>gamma<span class="sc">+</span>x<span class="sc">$</span>mu))</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>      p_ID <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">$</span>gamma<span class="sc">+</span>x<span class="sc">$</span>mu)))<span class="sc">*</span>(x<span class="sc">$</span>mu<span class="sc">/</span>(x<span class="sc">$</span>gamma<span class="sc">+</span>x<span class="sc">$</span>mu))</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>      <span class="co">#probability of transition from vaccinated compartment</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>      p_VIn <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>])</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>      <span class="co">#probability of transition from recovered compartment</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>      p_RIn <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">$</span>betap<span class="sc">*</span>sim[<span class="dv">3</span>])</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>      <span class="co">#probability of transitions from second infected compartment</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>      p_InRn <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">$</span>gammap<span class="sc">+</span>x<span class="sc">$</span>mu)))<span class="sc">*</span>(x<span class="sc">$</span>gammap<span class="sc">/</span>(x<span class="sc">$</span>gammap<span class="sc">+</span>x<span class="sc">$</span>mu))</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>      p_InD <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">$</span>gammap<span class="sc">+</span>x<span class="sc">$</span>mu)))<span class="sc">*</span>(x<span class="sc">$</span>mu<span class="sc">/</span>(x<span class="sc">$</span>gammap<span class="sc">+</span>x<span class="sc">$</span>mu))</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>      <span class="co">#number of transitions</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>      <span class="co">#susceptible</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>      S_probs <span class="ot">&lt;-</span> <span class="fu">c</span>(p_SI, p_SIn, p_SV, <span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(p_SI, p_SIn, p_SV))</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>      n_S <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">rmultinom</span>(<span class="dv">1</span>,<span class="fu">round</span>(N<span class="sc">*</span>sim[<span class="dv">1</span>]),<span class="at">prob=</span>S_probs))</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>      <span class="co">#first strain</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>      I_probs <span class="ot">&lt;-</span> <span class="fu">c</span>(p_IR,p_ID, (<span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(p_IR,p_ID)))</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>      n_I <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">rmultinom</span>(<span class="dv">1</span>,<span class="fu">round</span>(N<span class="sc">*</span>sim[<span class="dv">2</span>]),<span class="at">prob=</span>I_probs))</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>      <span class="co">#new strain</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>      In_probs <span class="ot">&lt;-</span> <span class="fu">c</span>(p_InRn, p_InD, <span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(p_InRn, p_InD))</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>      n_In <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">rmultinom</span>(<span class="dv">1</span>,<span class="fu">round</span>(N<span class="sc">*</span>sim[<span class="dv">3</span>]),<span class="at">prob=</span>In_probs))</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>      <span class="co">#vaccinated</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>      n_V <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>,<span class="fu">round</span>(N<span class="sc">*</span>sim[<span class="dv">4</span>]),<span class="at">prob=</span>p_VIn)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>      <span class="co">#first recovered</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>      n_R <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>,<span class="fu">round</span>(N<span class="sc">*</span>sim[<span class="dv">5</span>]),<span class="at">prob =</span> p_RIn)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>      <span class="co">#update sim</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>      change <span class="ot">&lt;-</span>(<span class="dv">1</span><span class="sc">/</span>N) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fu">sum</span>(n_S[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]),</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>                  n_S[<span class="dv">1</span>]<span class="sc">-</span><span class="fu">sum</span>(n_I),</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>                  n_S[<span class="dv">2</span>]<span class="sc">+</span>n_V<span class="sc">+</span>n_R <span class="sc">-</span> <span class="fu">sum</span>(n_In),</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>                  n_S[<span class="dv">3</span>] <span class="sc">-</span> n_V,</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>                  n_I[<span class="dv">1</span>] <span class="sc">-</span> n_R,</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>                  n_In[<span class="dv">1</span>],</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>                  n_I[<span class="dv">2</span>]<span class="sc">+</span>n_In[<span class="dv">2</span>])</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> (sim <span class="sc">+</span> change)</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> sim<span class="sc">*</span>(sim <span class="sc">&gt;</span> tol)</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>      cases[t,] <span class="ot">&lt;-</span> sim</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>  cases  <span class="sc">|&gt;</span> </span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">time=</span><span class="fu">seq</span>(timestart,timeend,<span class="at">by=</span><span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">infected =</span> i1<span class="sc">+</span>i2<span class="fl">+0.000001</span>,<span class="at">infprop1=</span>i1<span class="sc">/</span>infected,<span class="at">infprop2=</span>i2<span class="sc">/</span>infected) <span class="ot">-&gt;</span> cases </span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(cases)</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we write a function that will calculate the time to dominance (TTD).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tdom <span class="ot">&lt;-</span> <span class="cf">function</span>(ini, x, <span class="at">timestart=</span><span class="dv">0</span>, <span class="at">timeend=</span><span class="dv">10</span>){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  trun <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({<span class="fu">mod_sir</span>(<span class="at">ini=</span>ini,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">x=</span>x,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">timestart=</span>timestart,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">timeend =</span> timeend)},</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">error=</span><span class="cf">function</span>(e){</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">infprop1=</span><span class="dv">0</span>,<span class="at">infprop2=</span><span class="dv">0</span>))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                  },</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">warning=</span><span class="cf">function</span>(w){</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">infprop1=</span><span class="dv">0</span>,<span class="at">infprop2=</span><span class="dv">0</span>))</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                  }</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                  </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">tail</span>(trun<span class="sc">$</span>infprop2,<span class="dv">1</span>) <span class="sc">&lt;=</span><span class="fl">0.5</span> <span class="sc">|</span> <span class="fu">max</span>(trun<span class="sc">$</span>infprop2) <span class="sc">&lt;=</span><span class="fl">0.5</span>){</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    tdominance <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co">#never dominates</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>{</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">#initialize the logistic model using logit transformed model estimates</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(<span class="fu">lm</span>(<span class="fu">logit</span>(infprop2)<span class="sc">~</span>time,<span class="at">data=</span>trun)) <span class="sc">|&gt;</span> <span class="fu">unname</span>()<span class="ot">-&gt;</span>tcoeffs</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    phi_2 <span class="ot">&lt;-</span> tcoeffs[<span class="dv">1</span>]</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    phi_3<span class="ot">&lt;-</span> tcoeffs[<span class="dv">2</span>]</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># logisticmodel &lt;- nls(infprop2~phi1/(1+exp(-(phi2+phi3*time))),</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#                      start=list(phi1=1,phi2=phi_2, phi3=phi_3), </span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">#                      data=trun,</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">#                      trace=F,</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">#                      control=list(maxiter=500))</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># phi1 &lt;- coef(logisticmodel)[1] |&gt; unname()</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># phi2 &lt;- coef(logisticmodel)[2] |&gt; unname()</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># phi3 &lt;- coef(logisticmodel)[3] |&gt; unname()</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># tdominance &lt;- (-1/phi3) * (phi2 + log(2*phi1-1))</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    logisticmodel <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({<span class="fu">nls</span>(infprop2<span class="sc">~</span><span class="fu">SSlogis</span>(time,<span class="at">Asym=</span><span class="dv">1</span>,xmid,scal),</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data=</span>trun,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>                         <span class="at">control=</span><span class="fu">list</span>(<span class="at">maxiter=</span><span class="dv">500</span>))},</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>                         <span class="at">error=</span><span class="cf">function</span>(e){</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>                           <span class="co"># print(paste("infected probability is ",max(trun$infprop2),", ",tail(trun$infprop2,1)))</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>                           <span class="co">#rerun with an experimental growth curve</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>                           rerun <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(infprop2)<span class="sc">~</span>time,</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">data=</span>trun)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">return</span>((<span class="fu">log</span>(<span class="fl">0.5</span>)<span class="sc">-</span> <span class="fu">coef</span>(rerun)[<span class="dv">1</span>])<span class="sc">/</span><span class="fu">coef</span>(rerun)[<span class="dv">2</span>])</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>                         },</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>                         <span class="at">warning=</span><span class="cf">function</span>(w){</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>                           rerun <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(infprop2)<span class="sc">~</span>time,</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">data=</span>trun)</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">return</span>((<span class="fu">log</span>(<span class="fl">0.5</span>)<span class="sc">-</span> <span class="fu">coef</span>(rerun)[<span class="dv">1</span>])<span class="sc">/</span><span class="fu">coef</span>(rerun)[<span class="dv">2</span>])                         }</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>                         </span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    tdominance <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">is.numeric</span>(logisticmodel),logisticmodel,<span class="fu">coef</span>(logisticmodel)[<span class="dv">2</span>])</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  tdominance</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We now perform the experiment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ORIGINAL STRAIN COULD BE gamma =0.7, gammap = 0.7</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>gamma <span class="ot">&lt;-</span> <span class="fl">0.7</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>gammap <span class="ot">&lt;-</span> <span class="fl">0.7</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>betaset <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.4</span>,<span class="fl">1.75</span>,<span class="fl">2.1</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>betapset <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">1.25</span>,<span class="fl">1.5</span>,<span class="fl">1.75</span>,<span class="dv">2</span>) <span class="co">#multiple of betaset</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>initial_recovered <span class="ot">&lt;-</span> <span class="fl">0.01</span> <span class="co">#approximation</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>initial_infected <span class="ot">&lt;-</span> <span class="fl">0.01</span> <span class="co">#loosely based on data</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>vaxxrateset <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.3</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>nuset <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.3</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>muset <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>nsims <span class="ot">&lt;-</span><span class="dv">100</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>sim_array <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="dv">1</span><span class="sc">:</span>nsims,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                         betaset,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                         betapset,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                         gamma,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                         gammap,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                         vaxxrateset,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                         initial_recovered,</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                         initial_infected,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                         nuset,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                         muset) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(sim_array) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SimNumber"</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"beta"</span>,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"betap"</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"gamma"</span>,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"gammap"</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"vaxrate"</span>,</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"ini_recovered"</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"ini_infected"</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"nu"</span>,</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"mu"</span>)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#experiment function</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>exp_trun <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,<span class="at">timestart=</span><span class="dv">0</span>,<span class="at">timeend=</span><span class="dv">12</span>){</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  x1 <span class="sc">|&gt;</span> <span class="fu">unname</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()<span class="ot">-&gt;</span>x1</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="co">#initial recovered is 1%</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  initial_recovered <span class="ot">&lt;-</span> x1[<span class="dv">7</span>]</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#initial infected based on population</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  initial_infected <span class="ot">&lt;-</span> x1[<span class="dv">8</span>]</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="co">#vaccination rate</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>  vaxrate <span class="ot">&lt;-</span> x1[<span class="dv">6</span>]</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span><span class="fu">list</span>(<span class="at">beta=</span>x1[<span class="dv">2</span>], </span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>           <span class="at">betap=</span>x1[<span class="dv">3</span>]<span class="sc">*</span>x1[<span class="dv">2</span>],</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>           <span class="at">gamma=</span>x1[<span class="dv">4</span>], </span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>           <span class="at">gammap=</span>x1[<span class="dv">5</span>],</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>           <span class="at">nu=</span>x1[<span class="dv">9</span>], </span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>           <span class="at">mu=</span>x1[<span class="dv">10</span>]) <span class="co">#no birth and vaccination</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>  ini <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">s=</span><span class="dv">1</span><span class="sc">-</span>vaxrate<span class="sc">-</span>initial_infected<span class="sc">-</span>initial_recovered,</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>           <span class="at">i1=</span><span class="fl">0.99</span><span class="sc">*</span>initial_infected,</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>           <span class="at">i2=</span><span class="fl">0.01</span><span class="sc">*</span>initial_infected,</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>           <span class="at">v=</span>vaxrate,</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>           <span class="at">r1=</span>initial_recovered,</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>           <span class="at">r2=</span><span class="dv">0</span>,</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>           <span class="at">d=</span><span class="dv">0</span>)</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tdom</span>(<span class="at">ini=</span>ini,<span class="at">x=</span>x,<span class="at">timestart=</span>timestart,<span class="at">timeend=</span>timeend)<span class="ot">-&gt;</span> tdominance</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>  tdominance</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(expresults)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in rm(expresults): object 'expresults' not found</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sim_array <span class="sc">|&gt;</span> <span class="fu">rowwise</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tdom =</span> <span class="fu">exp_trun</span>(<span class="fu">c</span>(SimNumber,beta,betap,gamma,gammap,vaxrate,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                           ini_recovered,ini_infected,nu,mu))) <span class="sc">|&gt;</span>  <span class="fu">ungroup</span>()<span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(beta,betap,gamma,gammap,vaxrate,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                 ini_recovered,ini_infected,nu,mu),factor)<span class="ot">-&gt;</span> expresults</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>expresults <span class="sc">|&gt;</span>  <span class="fu">group_by</span>(beta,betap,gamma,gammap,vaxrate,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                               ini_recovered,ini_infected,nu,mu) <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">nondom=</span><span class="fu">ifelse</span>(tdom<span class="sc">==</span><span class="dv">100</span>,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(tdom),<span class="at">sd=</span><span class="fu">sd</span>(tdom),<span class="at">max=</span><span class="fu">max</span>(tdom),<span class="at">min=</span><span class="fu">min</span>(tdom),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">prop_nondom=</span><span class="fu">sum</span>(nondom)<span class="sc">/</span><span class="fu">n</span>(),<span class="at">median=</span><span class="fu">quantile</span>(tdom,<span class="fl">0.50</span>)) <span class="ot">-&gt;</span>sumstats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'beta', 'betap', 'gamma', 'gammap',
+'vaxrate', 'ini_recovered', 'ini_infected', 'nu'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sumstats <span class="sc">|&gt;</span> <span class="fu">filter</span>(mean <span class="sc">&gt;</span> <span class="dv">12</span>) <span class="sc">|&gt;</span> <span class="fu">View</span>()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(tdom<span class="sc">~</span>beta<span class="sc">*</span>betap<span class="sc">*</span>vaxrate<span class="sc">*</span>nu,<span class="at">data=</span>expresults,<span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">beta=</span>contr.SAS,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                                                                          <span class="at">betap=</span>contr.SAS,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                                                                          <span class="at">nu=</span>contr.SAS))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># mod1 &lt;- lm(tdom~beta*betap*vaxrate*nu*mu,data=expresults,contrasts = list(beta=contr.SAS,</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                                                                betap=contr.SAS,</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#                                                                nu=contr.SAS))</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>mod1 <span class="sc">|&gt;</span> <span class="fu">aov</span>() <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                        Df Sum Sq Mean Sq F value Pr(&gt;F)    
+beta                     2  69142   34571   387.6 &lt;2e-16 ***
+betap                    4 307349   76837   861.6 &lt;2e-16 ***
+vaxrate                  1  89430   89430  1002.8 &lt;2e-16 ***
+nu                       1 155406  155406  1742.6 &lt;2e-16 ***
+beta:betap               8 297521   37190   417.0 &lt;2e-16 ***
+beta:vaxrate             2  85899   42949   481.6 &lt;2e-16 ***
+betap:vaxrate            4 191885   47971   537.9 &lt;2e-16 ***
+beta:nu                  2 155754   77877   873.2 &lt;2e-16 ***
+betap:nu                 4 371429   92857  1041.2 &lt;2e-16 ***
+vaxrate:nu               1 123001  123001  1379.2 &lt;2e-16 ***
+beta:betap:vaxrate       8 157776   19722   221.1 &lt;2e-16 ***
+beta:betap:nu            8 191358   23920   268.2 &lt;2e-16 ***
+beta:vaxrate:nu          2  37351   18675   209.4 &lt;2e-16 ***
+betap:vaxrate:nu         4 136396   34099   382.4 &lt;2e-16 ***
+beta:betap:vaxrate:nu    8 195962   24495   274.7 &lt;2e-16 ***
+Residuals             5940 529741      89                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(mod1,<span class="sc">~</span>nu<span class="sc">*</span>beta<span class="sc">*</span>betap<span class="sc">*</span>vaxrate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> nu  beta betap vaxrate emmean    SE   df lower.CL upper.CL
+ 0   1.4  1     0       100.00 0.944 5940    98.15   101.85
+ 0.3 1.4  1     0         9.04 0.944 5940     7.19    10.89
+ 0   1.75 1     0       100.00 0.944 5940    98.15   101.85
+ 0.3 1.75 1     0         8.09 0.944 5940     6.23     9.94
+ 0   2.1  1     0        12.39 0.944 5940    10.54    14.24
+ 0.3 2.1  1     0         8.03 0.944 5940     6.18     9.89
+ 0   1.4  1.25  0        99.12 0.944 5940    97.27   100.97
+ 0.3 1.4  1.25  0         7.72 0.944 5940     5.87     9.57
+ 0   1.75 1.25  0        11.37 0.944 5940     9.52    13.22
+ 0.3 1.75 1.25  0         7.68 0.944 5940     5.83     9.53
+ 0   2.1  1.25  0         9.84 0.944 5940     7.99    11.69
+ 0.3 2.1  1.25  0         7.67 0.944 5940     5.82     9.52
+ 0   1.4  1.5   0         9.98 0.944 5940     8.13    11.84
+ 0.3 1.4  1.5   0         7.43 0.944 5940     5.57     9.28
+ 0   1.75 1.5   0         9.33 0.944 5940     7.48    11.18
+ 0.3 1.75 1.5   0         7.40 0.944 5940     5.55     9.26
+ 0   2.1  1.5   0         8.88 0.944 5940     7.03    10.73
+ 0.3 2.1  1.5   0         7.39 0.944 5940     5.54     9.24
+ 0   1.4  1.75  0         8.62 0.944 5940     6.76    10.47
+ 0.3 1.4  1.75  0         7.19 0.944 5940     5.34     9.04
+ 0   1.75 1.75  0         8.44 0.944 5940     6.59    10.29
+ 0.3 1.75 1.75  0         7.21 0.944 5940     5.36     9.06
+ 0   2.1  1.75  0         8.24 0.944 5940     6.39    10.09
+ 0.3 2.1  1.75  0         7.19 0.944 5940     5.33     9.04
+ 0   1.4  2     0         8.02 0.944 5940     6.17     9.87
+ 0.3 1.4  2     0         7.04 0.944 5940     5.19     8.89
+ 0   1.75 2     0         7.94 0.944 5940     6.09     9.79
+ 0.3 1.75 2     0         7.03 0.944 5940     5.17     8.88
+ 0   2.1  2     0         7.83 0.944 5940     5.98     9.68
+ 0.3 2.1  2     0        15.39 0.944 5940    13.54    17.24
+ 0   1.4  1     0.3      40.18 0.944 5940    38.32    42.03
+ 0.3 1.4  1     0.3       7.50 0.944 5940     5.64     9.35
+ 0   1.75 1     0.3      12.19 0.944 5940    10.34    14.04
+ 0.3 1.75 1     0.3       7.42 0.944 5940     5.57     9.27
+ 0   2.1  1     0.3       9.69 0.944 5940     7.84    11.54
+ 0.3 2.1  1     0.3       7.42 0.944 5940     5.57     9.27
+ 0   1.4  1.25  0.3       8.59 0.944 5940     6.74    10.44
+ 0.3 1.4  1.25  0.3       7.15 0.944 5940     5.30     9.00
+ 0   1.75 1.25  0.3       8.47 0.944 5940     6.62    10.32
+ 0.3 1.75 1.25  0.3       7.09 0.944 5940     5.24     8.94
+ 0   2.1  1.25  0.3       8.27 0.944 5940     6.42    10.12
+ 0.3 2.1  1.25  0.3       7.11 0.944 5940     5.26     8.97
+ 0   1.4  1.5   0.3       7.76 0.944 5940     5.91     9.61
+ 0.3 1.4  1.5   0.3       6.90 0.944 5940     5.05     8.75
+ 0   1.75 1.5   0.3       7.74 0.944 5940     5.89     9.59
+ 0.3 1.75 1.5   0.3       6.89 0.944 5940     5.04     8.75
+ 0   2.1  1.5   0.3       7.65 0.944 5940     5.80     9.50
+ 0.3 2.1  1.5   0.3       6.87 0.944 5940     5.01     8.72
+ 0   1.4  1.75  0.3       7.37 0.944 5940     5.52     9.22
+ 0.3 1.4  1.75  0.3       6.70 0.944 5940     4.85     8.55
+ 0   1.75 1.75  0.3       7.31 0.944 5940     5.46     9.16
+ 0.3 1.75 1.75  0.3       6.70 0.944 5940     4.84     8.55
+ 0   2.1  1.75  0.3       7.29 0.944 5940     5.44     9.14
+ 0.3 2.1  1.75  0.3       6.69 0.944 5940     4.84     8.54
+ 0   1.4  2     0.3       7.08 0.944 5940     5.23     8.93
+ 0.3 1.4  2     0.3       6.58 0.944 5940     4.73     8.43
+ 0   1.75 2     0.3       7.07 0.944 5940     5.22     8.92
+ 0.3 1.75 2     0.3       6.54 0.944 5940     4.69     8.40
+ 0   2.1  2     0.3      11.69 0.944 5940     9.84    13.55
+ 0.3 2.1  2     0.3      43.95 0.944 5940    42.09    45.80
+
+Confidence level used: 0.95 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(mod1,pairwise<span class="sc">~</span>nu<span class="sc">|</span>beta<span class="sc">*</span>betap<span class="sc">*</span>vaxrate,<span class="at">adjust=</span><span class="st">"tukey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$emmeans
+beta = 1.4, betap = 1, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0   100.00 0.944 5940    98.15   101.85
+ 0.3   9.04 0.944 5940     7.19    10.89
+
+beta = 1.75, betap = 1, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0   100.00 0.944 5940    98.15   101.85
+ 0.3   8.09 0.944 5940     6.23     9.94
+
+beta = 2.1, betap = 1, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0    12.39 0.944 5940    10.54    14.24
+ 0.3   8.03 0.944 5940     6.18     9.89
+
+beta = 1.4, betap = 1.25, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0    99.12 0.944 5940    97.27   100.97
+ 0.3   7.72 0.944 5940     5.87     9.57
+
+beta = 1.75, betap = 1.25, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0    11.37 0.944 5940     9.52    13.22
+ 0.3   7.68 0.944 5940     5.83     9.53
+
+beta = 2.1, betap = 1.25, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     9.84 0.944 5940     7.99    11.69
+ 0.3   7.67 0.944 5940     5.82     9.52
+
+beta = 1.4, betap = 1.5, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     9.98 0.944 5940     8.13    11.84
+ 0.3   7.43 0.944 5940     5.57     9.28
+
+beta = 1.75, betap = 1.5, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     9.33 0.944 5940     7.48    11.18
+ 0.3   7.40 0.944 5940     5.55     9.26
+
+beta = 2.1, betap = 1.5, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.88 0.944 5940     7.03    10.73
+ 0.3   7.39 0.944 5940     5.54     9.24
+
+beta = 1.4, betap = 1.75, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.62 0.944 5940     6.76    10.47
+ 0.3   7.19 0.944 5940     5.34     9.04
+
+beta = 1.75, betap = 1.75, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.44 0.944 5940     6.59    10.29
+ 0.3   7.21 0.944 5940     5.36     9.06
+
+beta = 2.1, betap = 1.75, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.24 0.944 5940     6.39    10.09
+ 0.3   7.19 0.944 5940     5.33     9.04
+
+beta = 1.4, betap = 2, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.02 0.944 5940     6.17     9.87
+ 0.3   7.04 0.944 5940     5.19     8.89
+
+beta = 1.75, betap = 2, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.94 0.944 5940     6.09     9.79
+ 0.3   7.03 0.944 5940     5.17     8.88
+
+beta = 2.1, betap = 2, vaxrate = 0:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.83 0.944 5940     5.98     9.68
+ 0.3  15.39 0.944 5940    13.54    17.24
+
+beta = 1.4, betap = 1, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0    40.18 0.944 5940    38.32    42.03
+ 0.3   7.50 0.944 5940     5.64     9.35
+
+beta = 1.75, betap = 1, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0    12.19 0.944 5940    10.34    14.04
+ 0.3   7.42 0.944 5940     5.57     9.27
+
+beta = 2.1, betap = 1, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     9.69 0.944 5940     7.84    11.54
+ 0.3   7.42 0.944 5940     5.57     9.27
+
+beta = 1.4, betap = 1.25, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.59 0.944 5940     6.74    10.44
+ 0.3   7.15 0.944 5940     5.30     9.00
+
+beta = 1.75, betap = 1.25, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.47 0.944 5940     6.62    10.32
+ 0.3   7.09 0.944 5940     5.24     8.94
+
+beta = 2.1, betap = 1.25, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     8.27 0.944 5940     6.42    10.12
+ 0.3   7.11 0.944 5940     5.26     8.97
+
+beta = 1.4, betap = 1.5, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.76 0.944 5940     5.91     9.61
+ 0.3   6.90 0.944 5940     5.05     8.75
+
+beta = 1.75, betap = 1.5, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.74 0.944 5940     5.89     9.59
+ 0.3   6.89 0.944 5940     5.04     8.75
+
+beta = 2.1, betap = 1.5, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.65 0.944 5940     5.80     9.50
+ 0.3   6.87 0.944 5940     5.01     8.72
+
+beta = 1.4, betap = 1.75, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.37 0.944 5940     5.52     9.22
+ 0.3   6.70 0.944 5940     4.85     8.55
+
+beta = 1.75, betap = 1.75, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.31 0.944 5940     5.46     9.16
+ 0.3   6.70 0.944 5940     4.84     8.55
+
+beta = 2.1, betap = 1.75, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.29 0.944 5940     5.44     9.14
+ 0.3   6.69 0.944 5940     4.84     8.54
+
+beta = 1.4, betap = 2, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.08 0.944 5940     5.23     8.93
+ 0.3   6.58 0.944 5940     4.73     8.43
+
+beta = 1.75, betap = 2, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0     7.07 0.944 5940     5.22     8.92
+ 0.3   6.54 0.944 5940     4.69     8.40
+
+beta = 2.1, betap = 2, vaxrate = 0.3:
+ nu  emmean    SE   df lower.CL upper.CL
+ 0    11.69 0.944 5940     9.84    13.55
+ 0.3  43.95 0.944 5940    42.09    45.80
+
+Confidence level used: 0.95 
+
+$contrasts
+beta = 1.4, betap = 1, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3   90.958 1.34 5940  68.106  &lt;.0001
+
+beta = 1.75, betap = 1, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3   91.915 1.34 5940  68.823  &lt;.0001
+
+beta = 2.1, betap = 1, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    4.357 1.34 5940   3.262  0.0011
+
+beta = 1.4, betap = 1.25, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3   91.395 1.34 5940  68.434  &lt;.0001
+
+beta = 1.75, betap = 1.25, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    3.693 1.34 5940   2.765  0.0057
+
+beta = 2.1, betap = 1.25, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    2.171 1.34 5940   1.626  0.1041
+
+beta = 1.4, betap = 1.5, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    2.558 1.34 5940   1.916  0.0555
+
+beta = 1.75, betap = 1.5, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.925 1.34 5940   1.441  0.1496
+
+beta = 2.1, betap = 1.5, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.492 1.34 5940   1.117  0.2639
+
+beta = 1.4, betap = 1.75, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.426 1.34 5940   1.068  0.2858
+
+beta = 1.75, betap = 1.75, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.231 1.34 5940   0.922  0.3566
+
+beta = 2.1, betap = 1.75, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.058 1.34 5940   0.792  0.4285
+
+beta = 1.4, betap = 2, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.982 1.34 5940   0.735  0.4621
+
+beta = 1.75, betap = 2, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.911 1.34 5940   0.682  0.4954
+
+beta = 2.1, betap = 2, vaxrate = 0:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3   -7.560 1.34 5940  -5.661  &lt;.0001
+
+beta = 1.4, betap = 1, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3   32.679 1.34 5940  24.469  &lt;.0001
+
+beta = 1.75, betap = 1, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    4.775 1.34 5940   3.575  0.0004
+
+beta = 2.1, betap = 1, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    2.271 1.34 5940   1.700  0.0891
+
+beta = 1.4, betap = 1.25, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.438 1.34 5940   1.077  0.2815
+
+beta = 1.75, betap = 1.25, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.383 1.34 5940   1.036  0.3005
+
+beta = 2.1, betap = 1.25, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    1.155 1.34 5940   0.865  0.3872
+
+beta = 1.4, betap = 1.5, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.857 1.34 5940   0.642  0.5211
+
+beta = 1.75, betap = 1.5, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.847 1.34 5940   0.634  0.5260
+
+beta = 2.1, betap = 1.5, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.784 1.34 5940   0.587  0.5574
+
+beta = 1.4, betap = 1.75, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.665 1.34 5940   0.498  0.6183
+
+beta = 1.75, betap = 1.75, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.614 1.34 5940   0.460  0.6458
+
+beta = 2.1, betap = 1.75, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.601 1.34 5940   0.450  0.6529
+
+beta = 1.4, betap = 2, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.502 1.34 5940   0.376  0.7068
+
+beta = 1.75, betap = 2, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3    0.527 1.34 5940   0.395  0.6931
+
+beta = 2.1, betap = 2, vaxrate = 0.3:
+ contrast    estimate   SE   df t.ratio p.value
+ nu0 - nu0.3  -32.250 1.34 5940 -24.148  &lt;.0001</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># emmeans(mod1,pairwise~mu|beta*betap*vaxrate*nu,adjust="tukey")</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#analyzing without non-dominating runs:</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>expresults <span class="sc">|&gt;</span> <span class="fu">filter</span>(tdom <span class="sc">!=</span><span class="dv">100</span>) <span class="ot">-&gt;</span>expresults_dom</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>expresults_dom <span class="sc">|&gt;</span>  <span class="fu">group_by</span>(beta,betap,gamma,gammap,vaxrate,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>                        ini_recovered,ini_infected,nu,mu) <span class="sc">|&gt;</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(tdom),<span class="at">sd=</span><span class="fu">sd</span>(tdom),<span class="at">max=</span><span class="fu">max</span>(tdom),<span class="at">min=</span><span class="fu">min</span>(tdom),</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">median=</span><span class="fu">quantile</span>(tdom,<span class="fl">0.50</span>)) <span class="ot">-&gt;</span>sumstats_dom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'beta', 'betap', 'gamma', 'gammap',
+'vaxrate', 'ini_recovered', 'ini_infected', 'nu'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sumstats_dom <span class="sc">|&gt;</span> <span class="fu">View</span>()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>mod1_dom <span class="ot">&lt;-</span> <span class="fu">lm</span>(tdom<span class="sc">~</span>beta<span class="sc">*</span>betap<span class="sc">*</span>vaxrate<span class="sc">/</span>nu,<span class="at">data=</span>expresults_dom,<span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">beta=</span>contr.SAS,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                                                                                  <span class="at">betap=</span>contr.SAS,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                                                                  <span class="at">nu=</span>contr.SAS))</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># mod1_dom &lt;- lm(tdom~beta*betap*vaxrate/nu*mu,data=expresults_dom,contrasts = list(beta=contr.SAS,</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                                                                            betap=contr.SAS,</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">#                                                                            nu=contr.SAS))</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="fu">eff_size</span>(<span class="fu">emmeans</span>(mod1_dom,pairwise<span class="sc">~</span>betap<span class="sc">|</span>beta<span class="sc">*</span>vaxrate,<span class="at">adjust=</span><span class="st">"tukey"</span>),</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">sigma=</span><span class="fu">sigma</span>(mod1_dom),</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">edf=</span><span class="fu">df.residual</span>(mod1_dom))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>NOTE: A nesting structure was detected in the fitted model:
+    nu %in% (beta*betap*vaxrate)
+NOTE: Results may be misleading due to involvement in interactions
+Since 'object' is a list, we are using the contrasts already present.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>beta = 1.4, vaxrate = 0:
+ contrast                effect.size    SE   df lower.CL upper.CL
+ (betap1 - betap1.25)         -6.559 0.516 5553   -7.571   -5.547
+ (betap1 - betap1.5)          -2.371 0.125 5553   -2.616   -2.126
+ (betap1 - betap1.75)          0.900 0.123 5553    0.658    1.141
+ (betap1 - betap2)             2.418 0.125 5553    2.173    2.663
+ (betap1.25 - betap1.5)        4.188 0.509 5553    3.190    5.186
+ (betap1.25 - betap1.75)       7.459 0.512 5553    6.454    8.463
+ (betap1.25 - betap2)          8.977 0.515 5553    7.969    9.986
+ (betap1.5 - betap1.75)        3.271 0.105 5553    3.066    3.476
+ (betap1.5 - betap2)           4.789 0.110 5553    4.574    5.005
+ (betap1.75 - betap2)          1.518 0.101 5553    1.320    1.716
+
+beta = 1.75, vaxrate = 0:
+ contrast                effect.size    SE   df lower.CL upper.CL
+ (betap1 - betap1.25)         -5.877 0.135 5553   -6.141   -5.613
+ (betap1 - betap1.5)          -1.148 0.123 5553   -1.389   -0.907
+ (betap1 - betap1.75)          1.055 0.123 5553    0.814    1.296
+ (betap1 - betap2)             2.466 0.125 5553    2.221    2.710
+ (betap1.25 - betap1.5)        4.729 0.110 5553    4.514    4.944
+ (betap1.25 - betap1.75)       6.932 0.120 5553    6.697    7.166
+ (betap1.25 - betap2)          8.342 0.128 5553    8.092    8.592
+ (betap1.5 - betap1.75)        2.203 0.102 5553    2.002    2.403
+ (betap1.5 - betap2)           3.613 0.106 5553    3.406    3.821
+ (betap1.75 - betap2)          1.411 0.101 5553    1.213    1.608
+
+beta = 2.1, vaxrate = 0:
+ contrast                effect.size    SE   df lower.CL upper.CL
+ (betap1 - betap1.25)          5.952 0.115 5553    5.727    6.177
+ (betap1 - betap1.5)           8.474 0.128 5553    8.222    8.725
+ (betap1 - betap1.75)         10.193 0.139 5553    9.921   10.466
+ (betap1 - betap2)            11.380 0.148 5553   11.089   11.670
+ (betap1.25 - betap1.5)        2.521 0.103 5553    2.320    2.723
+ (betap1.25 - betap1.75)       4.241 0.108 5553    4.030    4.453
+ (betap1.25 - betap2)          5.427 0.114 5553    5.205    5.650
+ (betap1.5 - betap1.75)        1.720 0.101 5553    1.521    1.918
+ (betap1.5 - betap2)           2.906 0.105 5553    2.700    3.111
+ (betap1.75 - betap2)          1.186 0.102 5553    0.986    1.386
+
+beta = 1.4, vaxrate = 0.3:
+ contrast                effect.size    SE   df lower.CL upper.CL
+ (betap1 - betap1.25)          5.037 0.116 5553    4.809    5.265
+ (betap1 - betap1.5)           7.226 0.126 5553    6.979    7.474
+ (betap1 - betap1.75)          8.437 0.133 5553    8.177    8.697
+ (betap1 - betap2)             9.281 0.138 5553    9.011    9.551
+ (betap1.25 - betap1.5)        2.189 0.102 5553    1.989    2.390
+ (betap1.25 - betap1.75)       3.400 0.105 5553    3.194    3.606
+ (betap1.25 - betap2)          4.244 0.108 5553    4.033    4.455
+ (betap1.5 - betap1.75)        1.211 0.101 5553    1.013    1.408
+ (betap1.5 - betap2)           2.055 0.102 5553    1.855    2.254
+ (betap1.75 - betap2)          0.844 0.100 5553    0.647    1.040
+
+beta = 1.75, vaxrate = 0.3:
+ contrast                effect.size    SE   df lower.CL upper.CL
+ (betap1 - betap1.25)          4.607 0.109 5553    4.393    4.822
+ (betap1 - betap1.5)           6.498 0.118 5553    6.268    6.729
+ (betap1 - betap1.75)          7.785 0.125 5553    7.541    8.029
+ (betap1 - betap2)             8.576 0.129 5553    8.323    8.829
+ (betap1.25 - betap1.5)        1.891 0.102 5553    1.692    2.090
+ (betap1.25 - betap1.75)       3.178 0.104 5553    2.973    3.382
+ (betap1.25 - betap2)          3.968 0.107 5553    3.759    4.178
+ (betap1.5 - betap1.75)        1.287 0.101 5553    1.089    1.484
+ (betap1.5 - betap2)           2.077 0.102 5553    1.878    2.277
+ (betap1.75 - betap2)          0.791 0.100 5553    0.594    0.987
+
+beta = 2.1, vaxrate = 0.3:
+ contrast                effect.size    SE   df lower.CL upper.CL
+ (betap1 - betap1.25)          3.533 0.105 5553    3.326    3.740
+ (betap1 - betap1.5)           5.308 0.112 5553    5.089    5.528
+ (betap1 - betap1.75)          6.406 0.117 5553    6.176    6.635
+ (betap1 - betap2)             7.128 0.128 5553    6.877    7.379
+ (betap1.25 - betap1.5)        1.775 0.101 5553    1.577    1.974
+ (betap1.25 - betap1.75)       2.873 0.104 5553    2.670    3.076
+ (betap1.25 - betap2)          3.595 0.114 5553    3.372    3.818
+ (betap1.5 - betap1.75)        1.097 0.101 5553    0.900    1.294
+ (betap1.5 - betap2)           1.819 0.110 5553    1.604    2.035
+ (betap1.75 - betap2)          0.722 0.109 5553    0.509    0.935
+
+Results are averaged over the levels of: nu 
+sigma used for effect sizes: 0.2451 
+Confidence level used: 0.95 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mod1_dom <span class="sc">|&gt;</span> <span class="fu">aov</span>() <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                        Df Sum Sq Mean Sq F value Pr(&gt;F)    
+beta                     2     54    26.8   446.2 &lt;2e-16 ***
+betap                    4   2012   503.0  8373.0 &lt;2e-16 ***
+vaxrate                  1    945   945.0 15730.6 &lt;2e-16 ***
+beta:betap               8    213    26.6   442.5 &lt;2e-16 ***
+beta:vaxrate             2     40    19.9   331.4 &lt;2e-16 ***
+betap:vaxrate            4    106    26.5   440.5 &lt;2e-16 ***
+beta:betap:vaxrate       8    431    53.9   896.8 &lt;2e-16 ***
+beta:betap:vaxrate:nu   28   4436   158.4  2637.0 &lt;2e-16 ***
+Residuals             5553    334     0.1                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(mod1_dom,<span class="sc">~</span>beta<span class="sc">*</span>betap<span class="sc">*</span>vaxrate<span class="sc">/</span>nu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>NOTE: A nesting structure was detected in the fitted model:
+    nu %in% (beta*betap*vaxrate)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> nu  beta betap vaxrate emmean      SE   df lower.CL upper.CL
+ 0.3 1.4  1     0        8.124 0.02463 5553    8.075    8.172
+ 0.3 1.75 1     0        8.085 0.02451 5553    8.037    8.133
+ 0   2.1  1     0       12.391 0.02451 5553   12.343   12.439
+ 0.3 2.1  1     0        8.034 0.02451 5553    7.986    8.082
+ 0   1.4  1.25  0       11.740 0.24510 5553   11.260   12.221
+ 0.3 1.4  1.25  0        7.722 0.02451 5553    7.674    7.770
+ 0   1.75 1.25  0       11.372 0.02451 5553   11.324   11.420
+ 0.3 1.75 1.25  0        7.680 0.02451 5553    7.632    7.728
+ 0   2.1  1.25  0        9.839 0.02451 5553    9.791    9.887
+ 0.3 2.1  1.25  0        7.668 0.02451 5553    7.620    7.716
+ 0   1.4  1.5   0        9.984 0.02451 5553    9.936   10.032
+ 0.3 1.4  1.5   0        7.426 0.02451 5553    7.378    7.474
+ 0   1.75 1.5   0        9.329 0.02451 5553    9.281    9.377
+ 0.3 1.75 1.5   0        7.404 0.02451 5553    7.356    7.452
+ 0   2.1  1.5   0        8.882 0.02451 5553    8.834    8.930
+ 0.3 2.1  1.5   0        7.390 0.02451 5553    7.342    7.438
+ 0   1.4  1.75  0        8.616 0.02451 5553    8.568    8.664
+ 0.3 1.4  1.75  0        7.190 0.02451 5553    7.142    7.238
+ 0   1.75 1.75  0        8.442 0.02451 5553    8.394    8.491
+ 0.3 1.75 1.75  0        7.211 0.02451 5553    7.163    7.259
+ 0   2.1  1.75  0        8.243 0.02451 5553    8.195    8.291
+ 0.3 2.1  1.75  0        7.186 0.02451 5553    7.137    7.234
+ 0   1.4  2     0        8.022 0.02451 5553    7.974    8.070
+ 0.3 1.4  2     0        7.040 0.02451 5553    6.992    7.088
+ 0   1.75 2     0        7.936 0.02451 5553    7.888    7.984
+ 0.3 1.75 2     0        7.026 0.02451 5553    6.978    7.074
+ 0   2.1  2     0        7.828 0.02451 5553    7.780    7.876
+ 0.3 2.1  2     0        7.020 0.02569 5553    6.969    7.070
+ 0   1.4  1     0.3     10.709 0.02994 5553   10.650   10.768
+ 0.3 1.4  1     0.3      7.496 0.02451 5553    7.448    7.544
+ 0   1.75 1     0.3     10.401 0.02476 5553   10.353   10.450
+ 0.3 1.75 1     0.3      7.419 0.02451 5553    7.371    7.467
+ 0   2.1  1     0.3      9.694 0.02451 5553    9.646    9.742
+ 0.3 2.1  1     0.3      7.423 0.02451 5553    7.375    7.471
+ 0   1.4  1.25  0.3      8.587 0.02451 5553    8.539    8.635
+ 0.3 1.4  1.25  0.3      7.149 0.02451 5553    7.101    7.197
+ 0   1.75 1.25  0.3      8.472 0.02451 5553    8.424    8.520
+ 0.3 1.75 1.25  0.3      7.089 0.02451 5553    7.041    7.137
+ 0   2.1  1.25  0.3      8.270 0.02451 5553    8.222    8.318
+ 0.3 2.1  1.25  0.3      7.115 0.02451 5553    7.067    7.163
+ 0   1.4  1.5   0.3      7.760 0.02451 5553    7.712    7.808
+ 0.3 1.4  1.5   0.3      6.903 0.02451 5553    6.855    6.951
+ 0   1.75 1.5   0.3      7.741 0.02451 5553    7.693    7.789
+ 0.3 1.75 1.5   0.3      6.894 0.02451 5553    6.846    6.942
+ 0   2.1  1.5   0.3      7.649 0.02451 5553    7.601    7.697
+ 0.3 2.1  1.5   0.3      6.865 0.02451 5553    6.817    6.913
+ 0   1.4  1.75  0.3      7.367 0.02451 5553    7.319    7.415
+ 0.3 1.4  1.75  0.3      6.702 0.02451 5553    6.654    6.750
+ 0   1.75 1.75  0.3      7.309 0.02451 5553    7.261    7.357
+ 0.3 1.75 1.75  0.3      6.695 0.02451 5553    6.647    6.743
+ 0   2.1  1.75  0.3      7.288 0.02451 5553    7.240    7.336
+ 0.3 2.1  1.75  0.3      6.688 0.02451 5553    6.640    6.736
+ 0   1.4  2     0.3      7.079 0.02451 5553    7.031    7.127
+ 0.3 1.4  2     0.3      6.576 0.02451 5553    6.528    6.625
+ 0   1.75 2     0.3      7.072 0.02451 5553    7.024    7.120
+ 0.3 1.75 2     0.3      6.545 0.02451 5553    6.497    6.593
+ 0   2.1  2     0.3      7.047 0.02515 5553    6.998    7.097
+ 0.3 2.1  2     0.3      6.575 0.03164 5553    6.513    6.637
+
+Confidence level used: 0.95 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># emmeans(mod1_dom,~beta*betap*vaxrate/mu)</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(mod1_dom,pairwise<span class="sc">~</span>nu<span class="sc">|</span>beta<span class="sc">*</span>betap<span class="sc">*</span>vaxrate,<span class="at">adjust=</span><span class="st">"tukey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>NOTE: A nesting structure was detected in the fitted model:
+    nu %in% (beta*betap*vaxrate)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$emmeans
+beta = 1.4, betap = 1, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0.3  8.124 0.02463 5553    8.075    8.172
+
+beta = 1.75, betap = 1, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0.3  8.085 0.02451 5553    8.037    8.133
+
+beta = 2.1, betap = 1, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0   12.391 0.02451 5553   12.343   12.439
+ 0.3  8.034 0.02451 5553    7.986    8.082
+
+beta = 1.4, betap = 1.25, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0   11.740 0.24510 5553   11.260   12.221
+ 0.3  7.722 0.02451 5553    7.674    7.770
+
+beta = 1.75, betap = 1.25, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0   11.372 0.02451 5553   11.324   11.420
+ 0.3  7.680 0.02451 5553    7.632    7.728
+
+beta = 2.1, betap = 1.25, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    9.839 0.02451 5553    9.791    9.887
+ 0.3  7.668 0.02451 5553    7.620    7.716
+
+beta = 1.4, betap = 1.5, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    9.984 0.02451 5553    9.936   10.032
+ 0.3  7.426 0.02451 5553    7.378    7.474
+
+beta = 1.75, betap = 1.5, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    9.329 0.02451 5553    9.281    9.377
+ 0.3  7.404 0.02451 5553    7.356    7.452
+
+beta = 2.1, betap = 1.5, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.882 0.02451 5553    8.834    8.930
+ 0.3  7.390 0.02451 5553    7.342    7.438
+
+beta = 1.4, betap = 1.75, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.616 0.02451 5553    8.568    8.664
+ 0.3  7.190 0.02451 5553    7.142    7.238
+
+beta = 1.75, betap = 1.75, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.442 0.02451 5553    8.394    8.491
+ 0.3  7.211 0.02451 5553    7.163    7.259
+
+beta = 2.1, betap = 1.75, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.243 0.02451 5553    8.195    8.291
+ 0.3  7.186 0.02451 5553    7.137    7.234
+
+beta = 1.4, betap = 2, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.022 0.02451 5553    7.974    8.070
+ 0.3  7.040 0.02451 5553    6.992    7.088
+
+beta = 1.75, betap = 2, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.936 0.02451 5553    7.888    7.984
+ 0.3  7.026 0.02451 5553    6.978    7.074
+
+beta = 2.1, betap = 2, vaxrate = 0:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.828 0.02451 5553    7.780    7.876
+ 0.3  7.020 0.02569 5553    6.969    7.070
+
+beta = 1.4, betap = 1, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0   10.709 0.02994 5553   10.650   10.768
+ 0.3  7.496 0.02451 5553    7.448    7.544
+
+beta = 1.75, betap = 1, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0   10.401 0.02476 5553   10.353   10.450
+ 0.3  7.419 0.02451 5553    7.371    7.467
+
+beta = 2.1, betap = 1, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    9.694 0.02451 5553    9.646    9.742
+ 0.3  7.423 0.02451 5553    7.375    7.471
+
+beta = 1.4, betap = 1.25, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.587 0.02451 5553    8.539    8.635
+ 0.3  7.149 0.02451 5553    7.101    7.197
+
+beta = 1.75, betap = 1.25, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.472 0.02451 5553    8.424    8.520
+ 0.3  7.089 0.02451 5553    7.041    7.137
+
+beta = 2.1, betap = 1.25, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    8.270 0.02451 5553    8.222    8.318
+ 0.3  7.115 0.02451 5553    7.067    7.163
+
+beta = 1.4, betap = 1.5, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.760 0.02451 5553    7.712    7.808
+ 0.3  6.903 0.02451 5553    6.855    6.951
+
+beta = 1.75, betap = 1.5, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.741 0.02451 5553    7.693    7.789
+ 0.3  6.894 0.02451 5553    6.846    6.942
+
+beta = 2.1, betap = 1.5, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.649 0.02451 5553    7.601    7.697
+ 0.3  6.865 0.02451 5553    6.817    6.913
+
+beta = 1.4, betap = 1.75, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.367 0.02451 5553    7.319    7.415
+ 0.3  6.702 0.02451 5553    6.654    6.750
+
+beta = 1.75, betap = 1.75, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.309 0.02451 5553    7.261    7.357
+ 0.3  6.695 0.02451 5553    6.647    6.743
+
+beta = 2.1, betap = 1.75, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.288 0.02451 5553    7.240    7.336
+ 0.3  6.688 0.02451 5553    6.640    6.736
+
+beta = 1.4, betap = 2, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.079 0.02451 5553    7.031    7.127
+ 0.3  6.576 0.02451 5553    6.528    6.625
+
+beta = 1.75, betap = 2, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.072 0.02451 5553    7.024    7.120
+ 0.3  6.545 0.02451 5553    6.497    6.593
+
+beta = 2.1, betap = 2, vaxrate = 0.3:
+ nu  emmean      SE   df lower.CL upper.CL
+ 0    7.047 0.02515 5553    6.998    7.097
+ 0.3  6.575 0.03164 5553    6.513    6.637
+
+Confidence level used: 0.95 
+
+$contrasts
+beta = 1.4, betap = 1, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ (nothing)     nonEst     NA   NA      NA      NA
+
+beta = 1.75, betap = 1, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ (nothing)     nonEst     NA   NA      NA      NA
+
+beta = 2.1, betap = 1, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    4.357 0.0347 5553 125.692  &lt;.0001
+
+beta = 1.4, betap = 1.25, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    4.018 0.2463 5553  16.311  &lt;.0001
+
+beta = 1.75, betap = 1.25, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    3.693 0.0347 5553 106.527  &lt;.0001
+
+beta = 2.1, betap = 1.25, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    2.171 0.0347 5553  62.637  &lt;.0001
+
+beta = 1.4, betap = 1.5, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    2.558 0.0347 5553  73.808  &lt;.0001
+
+beta = 1.75, betap = 1.5, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.925 0.0347 5553  55.533  &lt;.0001
+
+beta = 2.1, betap = 1.5, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.492 0.0347 5553  43.054  &lt;.0001
+
+beta = 1.4, betap = 1.75, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.426 0.0347 5553  41.131  &lt;.0001
+
+beta = 1.75, betap = 1.75, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.231 0.0347 5553  35.521  &lt;.0001
+
+beta = 2.1, betap = 1.75, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.058 0.0347 5553  30.511  &lt;.0001
+
+beta = 1.4, betap = 2, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.982 0.0347 5553  28.338  &lt;.0001
+
+beta = 1.75, betap = 2, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.911 0.0347 5553  26.268  &lt;.0001
+
+beta = 2.1, betap = 2, vaxrate = 0:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.808 0.0355 5553  22.756  &lt;.0001
+
+beta = 1.4, betap = 1, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    3.213 0.0387 5553  83.042  &lt;.0001
+
+beta = 1.75, betap = 1, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    2.983 0.0348 5553  85.611  &lt;.0001
+
+beta = 2.1, betap = 1, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    2.271 0.0347 5553  65.514  &lt;.0001
+
+beta = 1.4, betap = 1.25, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.438 0.0347 5553  41.495  &lt;.0001
+
+beta = 1.75, betap = 1.25, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.383 0.0347 5553  39.899  &lt;.0001
+
+beta = 2.1, betap = 1.25, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    1.155 0.0347 5553  33.318  &lt;.0001
+
+beta = 1.4, betap = 1.5, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.857 0.0347 5553  24.724  &lt;.0001
+
+beta = 1.75, betap = 1.5, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.847 0.0347 5553  24.431  &lt;.0001
+
+beta = 2.1, betap = 1.5, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.784 0.0347 5553  22.608  &lt;.0001
+
+beta = 1.4, betap = 1.75, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.665 0.0347 5553  19.198  &lt;.0001
+
+beta = 1.75, betap = 1.75, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.614 0.0347 5553  17.708  &lt;.0001
+
+beta = 2.1, betap = 1.75, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.601 0.0347 5553  17.330  &lt;.0001
+
+beta = 1.4, betap = 2, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.502 0.0347 5553  14.491  &lt;.0001
+
+beta = 1.75, betap = 2, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.527 0.0347 5553  15.204  &lt;.0001
+
+beta = 2.1, betap = 2, vaxrate = 0.3:
+ contrast    estimate     SE   df t.ratio p.value
+ nu0 - nu0.3    0.472 0.0404 5553  11.684  &lt;.0001</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># emmeans(mod1_dom,pairwise~mu|beta*betap*vaxrate,adjust="tukey")</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(mod1_dom,pairwise<span class="sc">~</span>betap<span class="sc">|</span>beta<span class="sc">*</span>vaxrate,<span class="at">adjust=</span><span class="st">"tukey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>NOTE: A nesting structure was detected in the fitted model:
+    nu %in% (beta*betap*vaxrate)
+NOTE: Results may be misleading due to involvement in interactions</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$emmeans
+beta = 1.4, vaxrate = 0:
+ betap emmean      SE   df lower.CL upper.CL
+ 1      8.124 0.02463 5553    8.075    8.172
+ 1.25   9.731 0.12316 5553    9.490    9.973
+ 1.5    8.705 0.01733 5553    8.671    8.739
+ 1.75   7.903 0.01733 5553    7.869    7.937
+ 2      7.531 0.01733 5553    7.497    7.565
+
+beta = 1.75, vaxrate = 0:
+ betap emmean      SE   df lower.CL upper.CL
+ 1      8.085 0.02451 5553    8.037    8.133
+ 1.25   9.526 0.01733 5553    9.492    9.560
+ 1.5    8.367 0.01733 5553    8.333    8.401
+ 1.75   7.827 0.01733 5553    7.793    7.861
+ 2      7.481 0.01733 5553    7.447    7.515
+
+beta = 2.1, vaxrate = 0:
+ betap emmean      SE   df lower.CL upper.CL
+ 1     10.213 0.01733 5553   10.179   10.247
+ 1.25   8.754 0.01733 5553    8.720    8.788
+ 1.5    8.136 0.01733 5553    8.102    8.170
+ 1.75   7.714 0.01733 5553    7.680    7.748
+ 2      7.424 0.01775 5553    7.389    7.458
+
+beta = 1.4, vaxrate = 0.3:
+ betap emmean      SE   df lower.CL upper.CL
+ 1      9.102 0.01935 5553    9.064    9.140
+ 1.25   7.868 0.01733 5553    7.834    7.902
+ 1.5    7.331 0.01733 5553    7.297    7.365
+ 1.75   7.034 0.01733 5553    7.000    7.068
+ 2      6.828 0.01733 5553    6.794    6.862
+
+beta = 1.75, vaxrate = 0.3:
+ betap emmean      SE   df lower.CL upper.CL
+ 1      8.910 0.01742 5553    8.876    8.944
+ 1.25   7.781 0.01733 5553    7.747    7.815
+ 1.5    7.317 0.01733 5553    7.283    7.351
+ 1.75   7.002 0.01733 5553    6.968    7.036
+ 2      6.808 0.01733 5553    6.774    6.842
+
+beta = 2.1, vaxrate = 0.3:
+ betap emmean      SE   df lower.CL upper.CL
+ 1      8.558 0.01733 5553    8.524    8.592
+ 1.25   7.692 0.01733 5553    7.658    7.726
+ 1.5    7.257 0.01733 5553    7.223    7.291
+ 1.75   6.988 0.01733 5553    6.954    7.022
+ 2      6.811 0.02021 5553    6.772    6.851
+
+Results are averaged over the levels of: nu 
+Confidence level used: 0.95 
+
+$contrasts
+beta = 1.4, vaxrate = 0:
+ contrast              estimate     SE   df t.ratio p.value
+ betap1 - betap1.25      -1.608 0.1256 5553 -12.800  &lt;.0001
+ betap1 - betap1.5       -0.581 0.0301 5553 -19.296  &lt;.0001
+ betap1 - betap1.75       0.220 0.0301 5553   7.321  &lt;.0001
+ betap1 - betap2          0.593 0.0301 5553  19.677  &lt;.0001
+ betap1.25 - betap1.5     1.027 0.1244 5553   8.253  &lt;.0001
+ betap1.25 - betap1.75    1.828 0.1244 5553  14.699  &lt;.0001
+ betap1.25 - betap2       2.200 0.1244 5553  17.691  &lt;.0001
+ betap1.5 - betap1.75     0.802 0.0245 5553  32.708  &lt;.0001
+ betap1.5 - betap2        1.174 0.0245 5553  47.892  &lt;.0001
+ betap1.75 - betap2       0.372 0.0245 5553  15.184  &lt;.0001
+
+beta = 1.75, vaxrate = 0:
+ contrast              estimate     SE   df t.ratio p.value
+ betap1 - betap1.25      -1.440 0.0300 5553 -47.984  &lt;.0001
+ betap1 - betap1.5       -0.281 0.0300 5553  -9.371  &lt;.0001
+ betap1 - betap1.75       0.259 0.0300 5553   8.614  &lt;.0001
+ betap1 - betap2          0.604 0.0300 5553  20.132  &lt;.0001
+ betap1.25 - betap1.5     1.159 0.0245 5553  47.291  &lt;.0001
+ betap1.25 - betap1.75    1.699 0.0245 5553  69.318  &lt;.0001
+ betap1.25 - betap2       2.045 0.0245 5553  83.424  &lt;.0001
+ betap1.5 - betap1.75     0.540 0.0245 5553  22.026  &lt;.0001
+ betap1.5 - betap2        0.886 0.0245 5553  36.133  &lt;.0001
+ betap1.75 - betap2       0.346 0.0245 5553  14.107  &lt;.0001
+
+beta = 2.1, vaxrate = 0:
+ contrast              estimate     SE   df t.ratio p.value
+ betap1 - betap1.25       1.459 0.0245 5553  59.523  &lt;.0001
+ betap1 - betap1.5        2.077 0.0245 5553  84.737  &lt;.0001
+ betap1 - betap1.75       2.498 0.0245 5553 101.935  &lt;.0001
+ betap1 - betap2          2.789 0.0248 5553 112.414  &lt;.0001
+ betap1.25 - betap1.5     0.618 0.0245 5553  25.214  &lt;.0001
+ betap1.25 - betap1.75    1.040 0.0245 5553  42.412  &lt;.0001
+ betap1.25 - betap2       1.330 0.0248 5553  53.613  &lt;.0001
+ betap1.5 - betap1.75     0.422 0.0245 5553  17.198  &lt;.0001
+ betap1.5 - betap2        0.712 0.0248 5553  28.705  &lt;.0001
+ betap1.75 - betap2       0.291 0.0248 5553  11.716  &lt;.0001
+
+beta = 1.4, vaxrate = 0.3:
+ contrast              estimate     SE   df t.ratio p.value
+ betap1 - betap1.25       1.235 0.0260 5553  47.528  &lt;.0001
+ betap1 - betap1.5        1.771 0.0260 5553  68.187  &lt;.0001
+ betap1 - betap1.75       2.068 0.0260 5553  79.611  &lt;.0001
+ betap1 - betap2          2.275 0.0260 5553  87.573  &lt;.0001
+ betap1.25 - betap1.5     0.537 0.0245 5553  21.893  &lt;.0001
+ betap1.25 - betap1.75    0.833 0.0245 5553  34.001  &lt;.0001
+ betap1.25 - betap2       1.040 0.0245 5553  42.439  &lt;.0001
+ betap1.5 - betap1.75     0.297 0.0245 5553  12.108  &lt;.0001
+ betap1.5 - betap2        0.504 0.0245 5553  20.546  &lt;.0001
+ betap1.75 - betap2       0.207 0.0245 5553   8.438  &lt;.0001
+
+beta = 1.75, vaxrate = 0.3:
+ contrast              estimate     SE   df t.ratio p.value
+ betap1 - betap1.25       1.129 0.0246 5553  45.956  &lt;.0001
+ betap1 - betap1.5        1.593 0.0246 5553  64.818  &lt;.0001
+ betap1 - betap1.75       1.908 0.0246 5553  77.651  &lt;.0001
+ betap1 - betap2          2.102 0.0246 5553  85.539  &lt;.0001
+ betap1.25 - betap1.5     0.463 0.0245 5553  18.910  &lt;.0001
+ betap1.25 - betap1.75    0.779 0.0245 5553  31.776  &lt;.0001
+ betap1.25 - betap2       0.973 0.0245 5553  39.684  &lt;.0001
+ betap1.5 - betap1.75     0.315 0.0245 5553  12.866  &lt;.0001
+ betap1.5 - betap2        0.509 0.0245 5553  20.773  &lt;.0001
+ betap1.75 - betap2       0.194 0.0245 5553   7.908  &lt;.0001
+
+beta = 2.1, vaxrate = 0.3:
+ contrast              estimate     SE   df t.ratio p.value
+ betap1 - betap1.25       0.866 0.0245 5553  35.330  &lt;.0001
+ betap1 - betap1.5        1.301 0.0245 5553  53.085  &lt;.0001
+ betap1 - betap1.75       1.570 0.0245 5553  64.058  &lt;.0001
+ betap1 - betap2          1.747 0.0266 5553  65.622  &lt;.0001
+ betap1.25 - betap1.5     0.435 0.0245 5553  17.755  &lt;.0001
+ betap1.25 - betap1.75    0.704 0.0245 5553  28.728  &lt;.0001
+ betap1.25 - betap2       0.881 0.0266 5553  33.096  &lt;.0001
+ betap1.5 - betap1.75     0.269 0.0245 5553  10.973  &lt;.0001
+ betap1.5 - betap2        0.446 0.0266 5553  16.750  &lt;.0001
+ betap1.75 - betap2       0.177 0.0266 5553   6.648  &lt;.0001
+
+Results are averaged over the levels of: nu 
+P value adjustment: tukey method for comparing a family of 5 estimates </code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
