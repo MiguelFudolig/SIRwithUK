@@ -5,7 +5,7 @@ format: html
 editor: visual
 ---
 
-## Multi-strain SIR Experiment 
+## Multi-strain SIR Experiment
 
 This is an abridged version of the code used to perform a simulation-based experiment for the manuscript submitted to *Microorganisms*.
 
@@ -253,6 +253,9 @@ expresults |>  group_by(beta,betap,gamma,gammap,vaxrate,
   summarise(mean=mean(tdom),sd=sd(tdom),max=max(tdom),min=min(tdom),
             prop_nondom=sum(nondom)/n(),median=quantile(tdom,0.50)) ->sumstats
 
+sumstats
+
+#did not dominate within 3 months
 sumstats |> filter(mean > 12) |> View()
 mod1 <- lm(tdom~beta*betap*vaxrate*nu,data=expresults,contrasts = list(beta=contr.SAS,
                                                                           betap=contr.SAS,
@@ -279,7 +282,7 @@ expresults_dom |>  group_by(beta,betap,gamma,gammap,vaxrate,
                         ini_recovered,ini_infected,nu,mu) |>
   summarise(mean=mean(tdom),sd=sd(tdom),max=max(tdom),min=min(tdom),
             median=quantile(tdom,0.50)) ->sumstats_dom
-sumstats_dom |> View()
+sumstats_dom 
 
 mod1_dom <- lm(tdom~beta*betap*vaxrate/nu,data=expresults_dom,contrasts = list(beta=contr.SAS,
                                                                                   betap=contr.SAS,

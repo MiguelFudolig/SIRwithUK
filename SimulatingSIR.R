@@ -32,6 +32,7 @@ mod_sir <- function(ini,
   
   #probability of transitions from susceptible compartment
   for(t in 2:nrow(cases)){
+      sim <- N*sim
       p_SI <- (1-exp(-(x$beta*sim[2] + 
                        x$betap*sim[3] + x$nu)))*(x$beta*sim[2])/(x$beta*sim[2] + 
                                                          x$betap*sim[3] + x$nu)
@@ -86,7 +87,7 @@ mod_sir <- function(ini,
                   n_In[1],
                   n_I[2]+n_In[2])
       
-      sim <- (sim + change)
+      sim <- (sim/N + change)
       sim <- sim*(sim > tol)
       cases[t,] <- sim
   }
