@@ -272,7 +272,7 @@ emmeans(mod1_dom,~beta*betap*vaxrate/nu) |>  as.data.frame() |> rename(initialva
   ggplot(aes(x=as.factor(nu),y=emmean, group=betap, shape=betap)) + 
   facet_wrap(~initialvaxx + beta,nrow=2, labeller = label_both) + 
   theme_bw()+
-  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL))+
+  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
   scale_shape_manual(values=c(15,16,17,18,25))+
   ylab("TTD LSMeans") + xlab("Vaccination Rate") + labs(shape="ESTR") ->lsmeansplot
   ggsave(lsmeansplot,filename="lsmeans.png", width=6, height=4, units="in")
