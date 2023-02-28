@@ -99,7 +99,7 @@ tdom <- function(ini, x, timestart=0, timeend=10){
   )
   
   if(tail(trun$infprop2,1) <=0.5 | max(trun$infprop2) <=0.5){
-    tdominance <- 100 #never dominates
+    tdominance <- NA #never dominates
   }
   else{
     #initialize the logistic model using logit transformed model estimates
@@ -146,13 +146,13 @@ tdom <- function(ini, x, timestart=0, timeend=10){
 gamma <- 0.7
 gammap <- 0.7
 betaset <- c(1.4,1.75,2.1)
-betapset <- c(1,1.25,1.5,1.75,2) #multiple of betaset
+betapset <- c(1.25,1.5,1.75,2) #multiple of betaset
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 #loosely based on data
 vaxxrateset <- c(0,0.3)
 nuset <- c(0, 0.3)
 muset <- c(0)
-nsims <-100
+nsims <-20
 
 sim_array <- expand.grid(1:nsims,
                          betaset,
@@ -215,11 +215,11 @@ sim_array |> rowwise() |>
 
 expresults |>  group_by(beta,betap,gamma,gammap,vaxrate,
                         ini_recovered,ini_infected,nu,mu) |>
-  mutate(nondom=ifelse(tdom==100,1,0)) |> 
-  summarise(mean=mean(tdom),sd=sd(tdom),max=max(tdom),min=min(tdom),
-            prop_nondom=sum(nondom)/n(),median=quantile(tdom,0.50)) ->sumstats
+  mutate(nondom=ifelse(is.na(tdom),1,0)) |>
+  summarise(mean=mean(tdom,na.rm=T),sd=sd(tdom,na.rm=T),max=max(tdom,na.rm=T),min=min(tdom,na.rm=T),
+            prop_nondom=sum(nondom,na.rm=T)/n(),median=quantile(tdom,0.50,na.rm=T)) ->sumstats
 
-sumstats
+sumstats |> View()
 
 #did not dominate within 3 months
 sumstats |> filter(mean > 12) |> ungroup() |> 

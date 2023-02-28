@@ -109,21 +109,10 @@ tdom <- function(ini, x, timestart=0, timeend=10){
     phi_2 <- tcoeffs[1]
     phi_3<- tcoeffs[2]
     
-    # logisticmodel <- nls(infprop2~phi1/(1+exp(-(phi2+phi3*time))),
-    #                      start=list(phi1=1,phi2=phi_2, phi3=phi_3), 
-    #                      data=trun,
-    #                      trace=F,
-    #                      control=list(maxiter=500))
-    # 
-    # phi1 <- coef(logisticmodel)[1] |> unname()
-    # phi2 <- coef(logisticmodel)[2] |> unname()
-    # phi3 <- coef(logisticmodel)[3] |> unname()
-    # tdominance <- (-1/phi3) * (phi2 + log(2*phi1-1))
     logisticmodel <- tryCatch({nls(infprop2~SSlogis(time,Asym=1,xmid,scal),
                                    data=trun,
                                    control=list(maxiter=500))},
                               error=function(e){
-                                # print(paste("infected probability is ",max(trun$infprop2),", ",tail(trun$infprop2,1)))
                                 #rerun with an experimental growth curve
                                 rerun <- lm(log(infprop2)~time,
                                             data=trun)
