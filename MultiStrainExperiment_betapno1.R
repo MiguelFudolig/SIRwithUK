@@ -1,7 +1,7 @@
 library(tidyverse)
 library(emmeans)
 library(car)
-
+library(gmodels)
 
 mod_sir <- function(ini,
                     N=100000,
@@ -100,7 +100,7 @@ tdom <- function(ini, x, timestart=0, timeend=10){
   )
   
   if(tail(trun$infprop2,1) <=0.5 | max(trun$infprop2) <=0.5){
-    tdominance <- 100 #never dominates
+    tdominance <- NA #never dominates
   }
   else{
     #initialize the logistic model using logit transformed model estimates
@@ -142,7 +142,7 @@ initial_infected <- 0.01 #loosely based on data
 vaxxrateset <- c(0,0.3)
 nuset <- c(0, 0.3)
 muset <- c(0)
-nsims <-10
+nsims <-100
 
 sim_array <- expand.grid(1:nsims,
                          betaset,
@@ -195,21 +195,25 @@ exp_trun <- function(x1,timestart=0,timeend=12){
 
 
 
-rm(expresults)
-sim_array |> rowwise() |> 
-  mutate(tdom = exp_trun(c(SimNumber,beta,betap,gamma,gammap,vaxrate,
-                           ini_recovered,ini_infected,nu,mu))) |>  ungroup()|> 
-  mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
-                 ini_recovered,ini_infected,nu,mu),factor)-> expresults
+# rm(expresults)
+# sim_array |> rowwise() |> 
+#   mutate(tdom = exp_trun(c(SimNumber,beta,betap,gamma,gammap,vaxrate,
+#                            ini_recovered,ini_infected,nu,mu))) |>  ungroup()|> 
+#   mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
+#                  ini_recovered,ini_infected,nu,mu),factor)-> expresults
+# 
+# 
+# write.csv(expresults,file="simresults.csv")
 
+expresults <- read.csv("simresults.csv")
 
 expresults |>  group_by(beta,betap,gamma,gammap,vaxrate,
                         ini_recovered,ini_infected,nu,mu) |>
-  mutate(nondom=ifelse(tdom==100,1,0)) |> 
-  summarise(mean=mean(tdom),sd=sd(tdom),max=max(tdom),min=min(tdom),
-            prop_nondom=sum(nondom)/n(),median=quantile(tdom,0.50)) ->sumstats
+  mutate(nondom=ifelse(is.na(tdom),1,0)) |> 
+  summarise(mean=mean(tdom,na.rm=T),sd=sd(tdom,na.rm=T),max=max(tdom,na.rm=T),min=min(tdom,na.rm=T),
+            prop_nondom=sum(nondom,na.rm=T)/n(),median=quantile(tdom,0.50,na.rm=T)) ->sumstats
 
-sumstats |> filter(mean > 12) |> View()
+sumstats  |> View()
 mod1 <- lm(tdom~beta*betap*vaxrate*nu,data=expresults,
            contrasts = list(beta=contr.SAS,
                             betap=contr.SAS,
@@ -223,82 +227,35 @@ mod1 |> aov() |> summary()
 emmeans(mod1,~nu*beta*betap*vaxrate)
 emmeans(mod1,pairwise~nu|beta*betap*vaxrate,adjust="tukey")
 
-# emmeans(mod1,pairwise~mu|beta*betap*vaxrate*nu,adjust="tukey")
 
+emmeans(mod1,~beta*betap*vaxrate*nu) ->mod1means
+mod1means |>  as.data.frame() |> rename(initialvaxx=vaxrate) |>
+  ggplot(aes(x=betap,y=emmean, group=nu, shape=nu)) + 
+  facet_wrap(~initialvaxx + beta,nrow=2, labeller = label_both) + 
+  theme_bw()+
+  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
+  scale_shape_manual(values=c(15,16))+
+  ylab("TTD LSMeans") + xlab("ESTR") + labs(shape="Vaccination Rate") ->lsmeansplot
+ggsave(lsmeansplot,filename="lsmeans_no1.png", width=6, height=4, units="in")
 
-#analyzing without non-dominating runs:
-
-expresults |> filter(tdom !=100) ->expresults_dom
-
-
-
-expresults_dom |>  group_by(beta,betap,gamma,gammap,vaxrate,
-                            ini_recovered,ini_infected,nu,mu) |>
-  summarise(mean=mean(tdom),sd=sd(tdom),max=max(tdom),min=min(tdom),
-            median=quantile(tdom,0.50)) ->sumstats_dom
-sumstats_dom |> View()
-
-mod1_dom <- lm(tdom~beta*betap*vaxrate*nu,
-               data=expresults_dom,
-               contrasts = list(beta=contr.SAS,
-                                                                               betap=contr.SAS,
-                                                                               nu=contr.SAS))
-
-# mod1_dom <- lm(tdom~beta*betap*vaxrate/nu*mu,data=expresults_dom,contrasts = list(beta=contr.SAS,
-#                                                                            betap=contr.SAS,
-#                                                                            nu=contr.SAS))
-
-
-eff_size(emmeans(mod1_dom,pairwise~betap|beta*vaxrate,adjust="tukey"),
-         sigma=sigma(mod1_dom),
-         edf=df.residual(mod1_dom))
-
-
-mod1_dom |> aov() |> summary()
-emmeans(mod1_dom,~beta*betap*vaxrate*nu) ->mod1dom_means
 # emmeans(mod1_dom,~beta*betap*vaxrate/mu)
 
-emmeans(mod1_dom,pairwise~nu|beta*betap*vaxrate) |>
-  confint()
+# emmeans(mod1_dom,pairwise~nu|beta*betap*vaxrate) |>
+#   confint()
+# 
+# emmeans(mod1_dom,pairwise~betap|beta*nu*vaxrate) |>
+#   confint(adjust="bonferroni")
 
-emmeans(mod1_dom,pairwise~betap|beta*nu*vaxrate) |>
+
+
+
+
+
+emmeans(mod1,pairwise~nu|betap*vaxrate) |>
+  confint(adjust="bonferroni") 
+
+emmeans(mod1,pairwise~betap|nu*vaxrate) |>
   confint(adjust="bonferroni")
 
-contrast(mod1dom_means,simple=list("nu","betap","vaxrate")) |>
-  confint(adjust="bonferroni")
 
-
-mod1dom_means |> as.data.frame() |> 
-  ggplot(aes(x=nu,y=emmean,group=betap,shape=betap)) + 
-  theme_bw() + 
-  facet_wrap(~beta+vaxrate,nrow=2) + 
-  geom_point(size=2) + geom_line(size=1)
-
-
-#only considering two-way interactions
-
-
-# mod1_twoway <- lm(tdom~beta+betap+vaxrate+nu+
-#                     beta:betap + beta:vaxrate+betap:vaxrate +
-#                     beta:nu + betap:nu + vaxrate:nu,
-#                data=expresults_dom,
-#                contrasts = list(beta=contr.SAS,
-#                                 betap=contr.SAS,
-#                                 nu=contr.SAS))
-
-
-mod1_threeway <- lm(tdom~betap*vaxrate*nu,
-               data=expresults_dom,
-               contrasts = list(beta=contr.SAS,
-                                betap=contr.SAS,
-                                nu=contr.SAS))
-
-mod1_threeway |> aov() |> summary()
-
-emmeans(mod1_threeway,pairwise~nu|betap*vaxrate) |>
-  confint()
-
-emmeans(mod1_threeway,pairwise~betap|nu*vaxrate) |>
-  confint()
-
-
+emmeans(mod1,poly~betap|nu*vaxrate)
