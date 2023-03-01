@@ -194,7 +194,7 @@ exp_trun <- function(x1,timestart=0,timeend=12){
 }
 
 
-
+##uncomment to simulate results 
 # rm(expresults)
 # sim_array |> rowwise() |> 
 #   mutate(tdom = exp_trun(c(SimNumber,beta,betap,gamma,gammap,vaxrate,
@@ -207,6 +207,10 @@ exp_trun <- function(x1,timestart=0,timeend=12){
 
 expresults <- read.csv("simresults.csv")
 
+expresults |> 
+    mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
+                   ini_recovered,ini_infected,nu,mu),factor)-> expresults
+  
 expresults |>  group_by(beta,betap,gamma,gammap,vaxrate,
                         ini_recovered,ini_infected,nu,mu) |>
   mutate(nondom=ifelse(is.na(tdom),1,0)) |> 
@@ -214,10 +218,17 @@ expresults |>  group_by(beta,betap,gamma,gammap,vaxrate,
             prop_nondom=sum(nondom,na.rm=T)/n(),median=quantile(tdom,0.50,na.rm=T)) ->sumstats
 
 sumstats  |> View()
+
+sumstats |> ungroup() |> filter(prop_nondom > 0) |>
+  select(beta,betap,nu,vaxrate,prop_nondom) |> View()
+
+
+
 mod1 <- lm(tdom~beta*betap*vaxrate*nu,data=expresults,
            contrasts = list(beta=contr.SAS,
                             betap=contr.SAS,
-                            nu=contr.SAS))
+                            nu=contr.SAS,
+                            vaxrate=contr.SAS))
 
 
 # mod1 <- lm(tdom~beta*betap*vaxrate*nu*mu,data=expresults,contrasts = list(beta=contr.SAS,
@@ -249,13 +260,69 @@ ggsave(lsmeansplot,filename="lsmeans_no1.png", width=6, height=4, units="in")
 
 
 
+#vaccination rate
+
+emmeans(mod1,pairwise~nu|betap*vaxrate*beta) |>
+  confint(adjust="bonferroni") |> as.data.frame() |> 
+  write.csv("./simple_effects/nu_simpleeffects.csv")
 
 
-emmeans(mod1,pairwise~nu|betap*vaxrate) |>
-  confint(adjust="bonferroni") 
+emmeans(mod1,pairwise~nu|betap*vaxrate*beta)$contrasts |> 
+  confint(adjust="bonferroni") |>
+  as.data.frame() |> rename(initialvaxx=vaxrate) |> 
+  ggplot(aes(x=betap,y=estimate, group=beta, shape=beta)) + 
+  theme_bw() + 
+  facet_wrap(~initialvaxx, labeller = label_both) + 
+  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
+  scale_shape_manual(values=c(15,16,17))+
+  ylab("TTD Difference") + xlab("ESTR") + labs(shape="Existing Transmission") ->vaxratediff
 
-emmeans(mod1,pairwise~betap|nu*vaxrate) |>
-  confint(adjust="bonferroni")
+vaxratediff |> ggsave(filename="vaxrate_diffplot.png",width=6, height=4, units="in")
 
 
-emmeans(mod1,poly~betap|nu*vaxrate)
+
+#initial vaccination
+
+emmeans(mod1,pairwise~vaxrate|nu*betap*beta) |>
+  confint(adjust="bonferroni") |> as.data.frame() |> 
+  write.csv("./simple_effects/vaxrate_simpleeffects.csv")
+
+emmeans(mod1,pairwise~vaxrate|nu*betap*beta)$contrasts |> 
+  confint(adjust="bonferroni") |>
+  as.data.frame() |> 
+  ggplot(aes(x=betap,y=estimate, group=beta, shape=beta)) + 
+  theme_bw() + 
+  facet_wrap(~nu, labeller = label_both) + 
+  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
+  scale_shape_manual(values=c(15,16,17))+
+  ylab("TTD Difference") + xlab("ESTR") + labs(shape="Existing Transmission") ->initialvaxdiff
+
+
+initialvaxdiff |> ggsave(filename="initialvaxrate_diffplot.png",width=6, height=4, units="in")
+
+
+#ESTR
+emmeans(mod1,pairwise~betap|nu*vaxrate*beta) |>
+  confint(adjust="bonferroni") -> estrcontrast
+
+estrcontrast$contrasts |> as.data.frame() |> 
+  write.csv("./simple_effects/estr_simpleeffects.csv")
+
+estrcontrast$emmeans |> as.data.frame() |> 
+  write.csv("./simple_effects/estr_lsmeans.csv")
+
+
+estrcontrast$contrasts |>
+  as.data.frame() |> rename(initialvaxx=vaxrate) |> 
+  ggplot(aes(x=beta,y=estimate, group=nu, shape=nu)) + 
+  theme_bw() + 
+  facet_wrap(contrast~initialvaxx, labeller = label_both) + 
+  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
+  scale_shape_manual(values=c(15,16))+
+  ylab("TTD Difference") + xlab("Existing Strain Transmission Coefficient") + 
+  labs(shape="Vaccination Rate") ->estrdiffplot
+estrdiffplot |> 
+  ggsave(filename="estr_diffplot.png",width=12,height=12,units="in")
+
+
+emmeans(mod1,poly~betap|nu*vaxrate*beta)
