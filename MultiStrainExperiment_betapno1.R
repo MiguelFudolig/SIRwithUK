@@ -85,7 +85,7 @@ mod_sir <- function(ini,
   return(cases)
 }
 
-tdom <- function(ini, x, timestart=0, timeend=10){
+tdom <- function(ini, x, timestart=0, timeend=10,tol=1e-9){
   trun <- tryCatch({mod_sir(ini=ini,
                             x=x,
                             timestart=timestart,
@@ -99,18 +99,18 @@ tdom <- function(ini, x, timestart=0, timeend=10){
                    
   )
   
-  if(tail(trun$infprop2,1) <=0.5 | max(trun$infprop2) <=0.5){
+  if(tail(trun$infprop2,1) <=tol & max(trun$infprop2) <=0.5){
     tdominance <- NA #never dominates
   }
   else{
     #initialize the logistic model using logit transformed model estimates
-    coef(lm(logit(infprop2)~time,data=trun)) |> unname()->tcoeffs
+    # coef(lm(logit(infprop2)~time,data=trun)) |> unname()->tcoeffs
+    # 
+    # phi_2 <- tcoeffs[1]
+    # phi_3<- tcoeffs[2]
     
-    phi_2 <- tcoeffs[1]
-    phi_3<- tcoeffs[2]
-    
-    logisticmodel <- tryCatch({nls(infprop2~SSlogis(time,Asym=1,xmid,scal),
-                                   data=trun,
+    logisticmodel <- tryCatch({nls(infprop2~SSlogis(time,Asym,xmid,scal),
+                                   data=filter(trun,infprop2 > tol),
                                    control=list(maxiter=500))},
                               error=function(e){
                                 #rerun with an experimental growth curve
@@ -130,6 +130,90 @@ tdom <- function(ini, x, timestart=0, timeend=10){
   }  
   tdominance
 }
+
+
+#no dominance
+initial_recovered <- 0.01 #approximation
+initial_infected <- 0.01 
+vaxrate <- 0
+ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
+         i1=0.99*initial_infected,
+         i2=0.01*initial_infected,
+         v=vaxrate,
+         r1=initial_recovered,
+         r2=0,
+         d=0)
+
+x <- list(beta=1.4, 
+          betap=1.25*1.4,
+          gamma=0.7, 
+          gammap=0.7,
+          nu=0, 
+          mu=0)
+mod_sir(ini=ini,
+        x=x,
+        timestart=0,
+        timeend = 12) -> results
+
+results |> select(time, infprop1,infprop2) |> 
+  rename(Existing=infprop1, Emergent=infprop2) |> 
+  pivot_longer(c(Existing,Emergent),names_to="Strain", values_to="Proportion") |> 
+  mutate_at(vars(Strain),factor) |> 
+  ggplot(aes(x=time,y=Proportion,group=Strain, shape=Strain)) +
+  theme_bw() + 
+  geom_point(size=4) + 
+  geom_line(linewidth=1.25) + 
+  labs(x="Time", y="Proportion of Infected") ->fail_plot1
+
+fail_plot1 |> ggsave(filename = "failure_1.png",width=6,height=4,units="in")
+
+tdom(ini=ini,x=x,
+     timestart=0,
+     timeend = 12)
+
+#second way of failure
+
+initial_recovered <- 0.01 #approximation
+initial_infected <- 0.01 
+vaxrate <- 0.3
+ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
+         i1=0.99*initial_infected,
+         i2=0.01*initial_infected,
+         v=vaxrate,
+         r1=initial_recovered,
+         r2=0,
+         d=0)
+
+x <- list(beta=2.1, 
+          betap=2.*2.1,
+          gamma=0.7, 
+          gammap=0.7,
+          nu=0.3, 
+          mu=0)
+mod_sir(ini=ini,
+        x=x,
+        timestart=0,
+        timeend = 12) -> results2
+
+results2 |> select(time, infprop1,infprop2) |> 
+  rename(Existing=infprop1, Emergent=infprop2) |> 
+  pivot_longer(c(Existing,Emergent),names_to="Strain", values_to="Proportion") |> 
+  mutate_at(vars(Strain),factor) |> 
+  ggplot(aes(x=time,y=Proportion,group=Strain, shape=Strain)) +
+  theme_bw() + 
+  geom_point(size=4) + 
+  geom_line(linewidth=1.25) + 
+  labs(x="Time", y="Proportion of Infected") ->fail_plot2
+
+fail_plot2 |> ggsave(filename = "failure_2.png",width=6,height=4,units="in")
+
+nls(infprop2~SSlogis(time,Asym,xmid,scal),
+    data=filter(results2,infprop2 >1e-9),
+    control=list(maxiter=500)) ->coeffs
+
+tdom(ini=ini,x=x,
+     timestart=0,
+     timeend = 12)
 
 
 #ORIGINAL STRAIN COULD BE gamma =0.7, gammap = 0.7
@@ -194,18 +278,18 @@ exp_trun <- function(x1,timestart=0,timeend=12){
 }
 
 
-##uncomment to simulate results 
-# rm(expresults)
-# sim_array |> rowwise() |> 
-#   mutate(tdom = exp_trun(c(SimNumber,beta,betap,gamma,gammap,vaxrate,
-#                            ini_recovered,ini_infected,nu,mu))) |>  ungroup()|> 
-#   mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
-#                  ini_recovered,ini_infected,nu,mu),factor)-> expresults
-# 
-# 
-# write.csv(expresults,file="simresults.csv")
+#uncomment to simulate results
+rm(expresults)
+sim_array |> rowwise() |>
+  mutate(tdom = exp_trun(c(SimNumber,beta,betap,gamma,gammap,vaxrate,
+                           ini_recovered,ini_infected,nu,mu))) |>  ungroup()|>
+  mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
+                 ini_recovered,ini_infected,nu,mu),factor)-> expresults
 
-expresults <- read.csv("simresults.csv")
+
+write.csv(expresults,file="simresults_afterrevision.csv")
+
+expresults <- read.csv("simresults_afterrevision.csv")
 
 expresults |> 
     mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
@@ -224,17 +308,35 @@ sumstats |> ungroup() |> filter(prop_nondom > 0) |>
 
 
 
+
+
+
 mod1 <- lm(tdom~beta*betap*vaxrate*nu,data=expresults,
            contrasts = list(beta=contr.SAS,
                             betap=contr.SAS,
                             nu=contr.SAS,
                             vaxrate=contr.SAS))
 
+#only second order
+mod2 <- lm(tdom~beta+betap+vaxrate+nu +
+             beta:betap + beta:vaxrate + beta:nu + 
+             betap:vaxrate + betap:nu + vaxrate:nu,data=expresults,
+                   contrasts = list(beta=contr.SAS,
+                                    betap=contr.SAS,
+                                    nu=contr.SAS,
+                                    vaxrate=contr.SAS))
+
 
 # mod1 <- lm(tdom~beta*betap*vaxrate*nu*mu,data=expresults,contrasts = list(beta=contr.SAS,
 #                                                                betap=contr.SAS,
 #                                                                nu=contr.SAS))
+
+#full model
 mod1 |> aov() |> summary()
+#second order interaction only
+mod2 |> aov() |> summary()
+
+
 emmeans(mod1,~nu*beta*betap*vaxrate)
 emmeans(mod1,pairwise~nu|beta*betap*vaxrate,adjust="tukey")
 
@@ -325,4 +427,6 @@ estrdiffplot |>
   ggsave(filename="estr_diffplot.png",width=12,height=12,units="in")
 
 
-emmeans(mod1,poly~betap|nu*vaxrate*beta)
+emmeans(mod1,poly~betap|nu*vaxrate*beta) |> as.data.frame() |> 
+  write.csv("./simple_effects/estr_quadratic.csv")
+
