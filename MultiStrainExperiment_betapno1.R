@@ -159,7 +159,7 @@ results |> select(time, infprop1,infprop2) |>
   rename(Existing=infprop1, Emergent=infprop2) |> 
   pivot_longer(c(Existing,Emergent),names_to="Strain", values_to="Proportion") |> 
   mutate_at(vars(Strain),factor) |> 
-  ggplot(aes(x=time,y=Proportion,group=Strain, shape=Strain)) +
+  ggplot(aes(x=as.factor(time),y=Proportion,group=Strain, shape=Strain)) +
   theme_bw() + 
   geom_point(size=4) + 
   geom_line(linewidth=1.25) + 
@@ -199,7 +199,7 @@ results2 |> select(time, infprop1,infprop2) |>
   rename(Existing=infprop1, Emergent=infprop2) |> 
   pivot_longer(c(Existing,Emergent),names_to="Strain", values_to="Proportion") |> 
   mutate_at(vars(Strain),factor) |> 
-  ggplot(aes(x=time,y=Proportion,group=Strain, shape=Strain)) +
+  ggplot(aes(x=as.factor(time),y=Proportion,group=Strain, shape=Strain)) +
   theme_bw() + 
   geom_point(size=4) + 
   geom_line(linewidth=1.25) + 
