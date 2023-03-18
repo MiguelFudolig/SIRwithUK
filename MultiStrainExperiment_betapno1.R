@@ -216,6 +216,49 @@ tdom(ini=ini,x=x,
      timeend = 12)
 
 
+#NORMAL LOGISTIC CURVE
+
+
+initial_recovered <- 0.01 #approximation
+initial_infected <- 0.01 
+vaxrate <- 0.3
+ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
+         i1=0.99*initial_infected,
+         i2=0.01*initial_infected,
+         v=vaxrate,
+         r1=initial_recovered,
+         r2=0,
+         d=0)
+
+x <- list(beta=1.4, 
+          betap=1.5*1.4,
+          gamma=0.7, 
+          gammap=0.7,
+          nu=0.3, 
+          mu=0)
+mod_sir(ini=ini,
+        x=x,
+        timestart=0,
+        timeend = 12) -> results2
+
+results2 |> select(time, infprop1,infprop2) |> 
+  rename(Existing=infprop1, Emergent=infprop2) |> 
+  pivot_longer(c(Existing,Emergent),names_to="Strain", values_to="Proportion") |> 
+  mutate_at(vars(Strain),factor) |> 
+  ggplot(aes(x=as.factor(time),y=Proportion,group=Strain, shape=Strain)) +
+  theme_bw() + 
+  geom_point(size=4) + 
+  geom_line(linewidth=1.25) + 
+  labs(x="Time", y="Proportion of Infected") ->okay_plot2
+
+okay_plot2 |> ggsave(filename = "okay.png",width=6,height=4,units="in")
+
+
+tdom(ini=ini,x=x,
+     timestart=0,
+     timeend = 12)
+
+
 #ORIGINAL STRAIN COULD BE gamma =0.7, gammap = 0.7
 gamma <- 0.7
 gammap <- 0.7
@@ -403,7 +446,20 @@ emmeans(mod1,pairwise~vaxrate|nu*betap*beta)$contrasts |>
 initialvaxdiff |> ggsave(filename="initialvaxrate_diffplot.png",width=6, height=4, units="in")
 
 
+emmeans(mod1,pairwise~vaxrate|nu*betap*beta) |>
+  confint(adjust="bonferroni") |> as.data.frame() |> 
+  summarise(min=min(contrasts.estimate),max=max(contrasts.estimate))
+
 #ESTR
+
+joint_tests(mod1,by=c("nu","vaxrate","beta")) |> write.csv("./simple_effects/estr_sliceeffects.csv")
+
+#two-way interaction between beta and beta'
+joint_tests(mod1,by=c("nu","vaxrate")) |> write.csv("./simple_effects/estr_interaction.csv")
+
+joint_tests(mod1,by=c("beta")) |> write.csv("./simple_effects/estr_three-wayinteraction.csv")
+
+
 emmeans(mod1,pairwise~betap|nu*vaxrate*beta) |>
   confint(adjust="bonferroni") -> estrcontrast
 
@@ -416,16 +472,19 @@ estrcontrast$emmeans |> as.data.frame() |>
 
 estrcontrast$contrasts |>
   as.data.frame() |> rename(initialvaxx=vaxrate) |> 
-  ggplot(aes(x=beta,y=estimate, group=nu, shape=nu)) + 
+  ggplot(aes(x=beta,y=estimate, group=nu, shape=nu,color=nu)) + 
   theme_bw() + 
   facet_wrap(contrast~initialvaxx, labeller = label_both) + 
-  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
+  geom_point(size=3) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.5))+
   scale_shape_manual(values=c(15,16))+
   ylab("TTD Difference") + xlab("Existing Strain Transmission Coefficient") + 
-  labs(shape="Vaccination Rate") ->estrdiffplot
+  labs(shape="Vaccination Rate", color="Vaccination Rate") ->estrdiffplot
 estrdiffplot |> 
   ggsave(filename="estr_diffplot.png",width=12,height=12,units="in")
 
+estrcontrast$contrasts |>
+   as.data.frame() |> 
+  filter(vaxrate==0.3 | nu==0.3) |> summarise(min=min(estimate),max=max(estimate))
 
 emmeans(mod1,poly~betap|nu*vaxrate*beta) |> as.data.frame() |> 
   write.csv("./simple_effects/estr_quadratic.csv")
