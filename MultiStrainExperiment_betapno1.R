@@ -85,7 +85,7 @@ mod_sir <- function(ini,
   return(cases)
 }
 
-tdom <- function(ini, x, timestart=0, timeend=10,tol=1e-9){
+tdom <- function(ini, x, timestart=0, timeend=10,tol=1e-6){
   trun <- tryCatch({mod_sir(ini=ini,
                             x=x,
                             timestart=timestart,
@@ -133,6 +133,46 @@ tdom <- function(ini, x, timestart=0, timeend=10,tol=1e-9){
 
 
 #no dominance
+
+initial_recovered <- 0.01 #approximation
+initial_infected <- 0.01 
+vaxrate <- 0.75
+ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
+         i1=0.99*initial_infected,
+         i2=0.01*initial_infected,
+         v=vaxrate,
+         r1=initial_recovered,
+         r2=0,
+         d=0)
+
+x <- list(beta=1.4, 
+          betap=1.25*1.4,
+          gamma=0.7, 
+          gammap=0.7,
+          nu=0.25, 
+          mu=0)
+mod_sir(ini=ini,
+        x=x,
+        timestart=0,
+        timeend = 12) -> results
+
+results |> select(time, infprop1,infprop2) |> 
+  rename(Existing=infprop1, Emergent=infprop2) |> 
+  pivot_longer(c(Existing,Emergent),names_to="Strain", values_to="Proportion") |> 
+  mutate_at(vars(Strain),factor) |> 
+  ggplot(aes(x=as.factor(time),y=Proportion,group=Strain, shape=Strain)) +
+  theme_bw() + 
+  geom_point(size=4) + 
+  geom_line(linewidth=1.25) + 
+  labs(x="Time", y="Proportion of Infected") ->fail_plot0
+
+fail_plot0 |> ggsave(filename = "failure_0.png",width=6,height=4,units="in")
+
+tdom(ini=ini,x=x,
+     timestart=0,
+     timeend = 12)
+
+
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 
 vaxrate <- 0
@@ -175,7 +215,7 @@ tdom(ini=ini,x=x,
 
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 
-vaxrate <- 0.3
+vaxrate <- 0.75#0.3
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
          i1=0.99*initial_infected,
          i2=0.01*initial_infected,
@@ -266,10 +306,10 @@ betaset <- c(1.4,1.75,2.1)
 betapset <- c(1.25,1.5,1.75,2) #multiple of beta
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 #loosely based on data
-vaxxrateset <- c(0,0.3)
-nuset <- c(0, 0.3)
+vaxxrateset <- c(0,0.25, 0.5, 0.75) #c(0,0.3)
+nuset <- c(0,0.25, 0.5) #c(0, 0.3)
 muset <- c(0)
-nsims <-100
+nsims <-10 #100
 
 sim_array <- expand.grid(1:nsims,
                          betaset,
@@ -328,11 +368,11 @@ sim_array |> rowwise() |>
                            ini_recovered,ini_infected,nu,mu))) |>  ungroup()|>
   mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
                  ini_recovered,ini_infected,nu,mu),factor)-> expresults
+expresults |> filter(is.na(tdom))
 
+write.csv(expresults,file="simresults_afterrevision_3X4X4X3.csv")
 
-write.csv(expresults,file="simresults_afterrevision.csv")
-
-expresults <- read.csv("simresults_afterrevision.csv")
+expresults <- read.csv("simresults_afterrevision_3X4X4X3.csv")
 
 expresults |> 
     mutate_at(vars(beta,betap,gamma,gammap,vaxrate,
@@ -373,7 +413,7 @@ mod2 <- lm(tdom~beta+betap+vaxrate+nu +
 # mod1 <- lm(tdom~beta*betap*vaxrate*nu*mu,data=expresults,contrasts = list(beta=contr.SAS,
 #                                                                betap=contr.SAS,
 #                                                                nu=contr.SAS))
-
+plot(mod1)
 #full model
 mod1 |> aov() |> summary()
 #second order interaction only
@@ -387,12 +427,12 @@ emmeans(mod1,pairwise~nu|beta*betap*vaxrate,adjust="tukey")
 emmeans(mod1,~beta*betap*vaxrate*nu) ->mod1means
 mod1means |>  as.data.frame() |> rename(initialvaxx=vaxrate) |>
   ggplot(aes(x=betap,y=emmean, group=nu, shape=nu)) + 
-  facet_wrap(~initialvaxx + beta,nrow=2, labeller = label_both) + 
+  facet_grid(beta~initialvaxx, labeller = label_both) + 
   theme_bw()+
-  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
-  scale_shape_manual(values=c(15,16))+
+  geom_point(size=3) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.3))+
+  scale_shape_manual(values=c(15,16,17))+
   ylab("TTD LSMeans") + xlab("ESTR") + labs(shape="Vaccination Rate") ->lsmeansplot
-ggsave(lsmeansplot,filename="lsmeans_no1.png", width=6, height=4, units="in")
+ggsave(lsmeansplot,filename="./3X4X4X3/lsmeans_no1.png", width=12, height=9, units="in")
 
 # emmeans(mod1_dom,~beta*betap*vaxrate/mu)
 
@@ -408,8 +448,10 @@ ggsave(lsmeansplot,filename="lsmeans_no1.png", width=6, height=4, units="in")
 #vaccination rate
 
 emmeans(mod1,pairwise~nu|betap*vaxrate*beta) |>
-  confint(adjust="bonferroni") |> as.data.frame() |> 
-  write.csv("./simple_effects/nu_simpleeffects.csv")
+  confint(adjust="bonferroni") ->nusimp
+
+nusimp |> as.data.frame() |> 
+  write.csv("./3X4X4X3/nu_simpleeffects.csv")
 
 
 emmeans(mod1,pairwise~nu|betap*vaxrate*beta)$contrasts |> 
@@ -418,19 +460,21 @@ emmeans(mod1,pairwise~nu|betap*vaxrate*beta)$contrasts |>
   ggplot(aes(x=betap,y=estimate, group=beta, shape=beta)) + 
   theme_bw() + 
   facet_wrap(~initialvaxx, labeller = label_both) + 
-  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
+  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.3))+
   scale_shape_manual(values=c(15,16,17))+
   ylab("TTD Difference") + xlab("ESTR") + labs(shape="Existing Transmission") ->vaxratediff
 
-vaxratediff |> ggsave(filename="vaxrate_diffplot.png",width=6, height=4, units="in")
+vaxratediff |> ggsave(filename="./3X4X4X3/vaxrate_diffplot.png",width=6, height=4, units="in")
 
 
 
 #initial vaccination
 
 emmeans(mod1,pairwise~vaxrate|nu*betap*beta) |>
-  confint(adjust="bonferroni") |> as.data.frame() |> 
-  write.csv("./simple_effects/vaxrate_simpleeffects.csv")
+  confint(adjust="bonferroni")-> vaxsimp
+
+vaxsimp$contrasts|> as.data.frame() |> 
+  write.csv("./3X4X4X3/vaxrate_simpleeffects.csv")
 
 emmeans(mod1,pairwise~vaxrate|nu*betap*beta)$contrasts |> 
   confint(adjust="bonferroni") |>
@@ -438,12 +482,12 @@ emmeans(mod1,pairwise~vaxrate|nu*betap*beta)$contrasts |>
   ggplot(aes(x=betap,y=estimate, group=beta, shape=beta)) + 
   theme_bw() + 
   facet_wrap(~nu, labeller = label_both) + 
-  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
+  geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.3))+
   scale_shape_manual(values=c(15,16,17))+
   ylab("TTD Difference") + xlab("ESTR") + labs(shape="Existing Transmission") ->initialvaxdiff
 
 
-initialvaxdiff |> ggsave(filename="initialvaxrate_diffplot.png",width=6, height=4, units="in")
+initialvaxdiff |> ggsave(filename="./3X4X4X3/initialvaxrate_diffplot.png",width=6, height=4, units="in")
 
 
 emmeans(mod1,pairwise~vaxrate|nu*betap*beta) |>
@@ -452,22 +496,22 @@ emmeans(mod1,pairwise~vaxrate|nu*betap*beta) |>
 
 #ESTR
 
-joint_tests(mod1,by=c("nu","vaxrate","beta")) |> write.csv("./simple_effects/estr_sliceeffects.csv")
+joint_tests(mod1,by=c("nu","vaxrate","beta")) |> write.csv("./3X4X4X3/estr_sliceeffects.csv")
 
 #two-way interaction between beta and beta'
-joint_tests(mod1,by=c("nu","vaxrate")) |> write.csv("./simple_effects/estr_interaction.csv")
+joint_tests(mod1,by=c("nu","vaxrate")) |> write.csv("./3X4X4X3/estr_interaction.csv")
 
-joint_tests(mod1,by=c("beta")) |> write.csv("./simple_effects/estr_three-wayinteraction.csv")
+joint_tests(mod1,by=c("beta")) |> write.csv("./3X4X4X3/estr_three-wayinteraction.csv")
 
 
 emmeans(mod1,pairwise~betap|nu*vaxrate*beta) |>
   confint(adjust="bonferroni") -> estrcontrast
 
 estrcontrast$contrasts |> as.data.frame() |> 
-  write.csv("./simple_effects/estr_simpleeffects.csv")
+  write.csv("./3X4X4X3/estr_simpleeffects.csv")
 
 estrcontrast$emmeans |> as.data.frame() |> 
-  write.csv("./simple_effects/estr_lsmeans.csv")
+  write.csv("./3X4X4X3/estr_lsmeans.csv")
 
 
 estrcontrast$contrasts |>
@@ -480,12 +524,12 @@ estrcontrast$contrasts |>
   ylab("TTD Difference") + xlab("Existing Strain Transmission Coefficient") + 
   labs(shape="Vaccination Rate", color="Vaccination Rate") ->estrdiffplot
 estrdiffplot |> 
-  ggsave(filename="estr_diffplot.png",width=12,height=12,units="in")
+  ggsave(filename="./3X4X4X3/estr_diffplot.png",width=12,height=12,units="in")
 
 estrcontrast$contrasts |>
    as.data.frame() |> 
-  filter(vaxrate==0.3 | nu==0.3) |> summarise(min=min(estimate),max=max(estimate))
+  filter(vaxrate==0.75 | nu==0.5) |> summarise(min=min(estimate),max=max(estimate))
 
 emmeans(mod1,poly~betap|nu*vaxrate*beta) |> as.data.frame() |> 
-  write.csv("./simple_effects/estr_quadratic.csv")
+  write.csv("./3X4X4X3/estr_quadratic.csv")
 

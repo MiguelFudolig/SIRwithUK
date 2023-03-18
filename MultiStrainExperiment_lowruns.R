@@ -144,8 +144,8 @@ ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
          r2=0,
          d=0)
 
-x <- list(beta=1.4, 
-          betap=1.25*1.4,
+x <- list(beta=1.05, 
+          betap=2.1*1.05,
           gamma=0.7, 
           gammap=0.7,
           nu=0, 
@@ -175,7 +175,7 @@ tdom(ini=ini,x=x,
 
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 
-vaxrate <- 0.3
+vaxrate <- 0.75#0.3
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
          i1=0.99*initial_infected,
          i2=0.01*initial_infected,
@@ -223,8 +223,8 @@ betaset <- c(1.4,1.75,2.1)
 betapset <- c(1.25,1.5,1.75,2) #multiple of beta
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 #loosely based on data
-vaxxrateset <- c(0,0.3)
-nuset <- c(0, 0.3)
+vaxxrateset <- c(0,0.25, 0.5, 0.75) #c(0,0.3)
+nuset <- c(0, 0.25, 0.5)#c(0, 0.3)
 muset <- c(0)
 nsims <-5
 
@@ -344,10 +344,10 @@ emmeans(mod1,pairwise~nu|beta*betap*vaxrate,adjust="tukey")
 emmeans(mod1,~beta*betap*vaxrate*nu) ->mod1means
 mod1means |>  as.data.frame() |> rename(initialvaxx=vaxrate) |>
   ggplot(aes(x=betap,y=emmean, group=nu, shape=nu)) + 
-  facet_wrap(~initialvaxx + beta,nrow=2, labeller = label_both) + 
+  facet_grid(beta~initialvaxx, labeller = label_both) + 
   theme_bw()+
   geom_point(size=2) + geom_line()+ geom_errorbar(aes(ymin=lower.CL,ymax=upper.CL, width=0.1))+
-  scale_shape_manual(values=c(15,16))+
+  scale_shape_manual(values=c(15,16,17))+
   ylab("TTD LSMeans") + xlab("ESTR") + labs(shape="Vaccination Rate") ->lsmeansplot
 ggsave(lsmeansplot,filename="lsmeans_no1.png", width=6, height=4, units="in")
 
