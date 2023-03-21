@@ -3,6 +3,7 @@ library(emmeans)
 library(car)
 library(gmodels)
 
+#========SIMULATION===========
 mod_sir <- function(ini,
                     N=100000,
                     x,
@@ -215,7 +216,7 @@ tdom(ini=ini,x=x,
 
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 
-vaxrate <- 0.75#0.3
+vaxrate <- 0.5#0.3
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
          i1=0.99*initial_infected,
          i2=0.01*initial_infected,
@@ -228,7 +229,7 @@ x <- list(beta=2.1,
           betap=2.*2.1,
           gamma=0.7, 
           gammap=0.7,
-          nu=0.3, 
+          nu=0.5, 
           mu=0)
 mod_sir(ini=ini,
         x=x,
@@ -261,7 +262,7 @@ tdom(ini=ini,x=x,
 
 initial_recovered <- 0.01 #approximation
 initial_infected <- 0.01 
-vaxrate <- 0.3
+vaxrate <- 0.25
 ini <- c(s=1-vaxrate-initial_infected-initial_recovered,
          i1=0.99*initial_infected,
          i2=0.01*initial_infected,
@@ -274,7 +275,7 @@ x <- list(beta=1.4,
           betap=1.5*1.4,
           gamma=0.7, 
           gammap=0.7,
-          nu=0.3, 
+          nu=0.5, 
           mu=0)
 mod_sir(ini=ini,
         x=x,
@@ -372,6 +373,9 @@ expresults |> filter(is.na(tdom))
 
 write.csv(expresults,file="simresults_afterrevision_3X4X4X3.csv")
 
+
+
+#========ANALYSIS=========
 expresults <- read.csv("simresults_afterrevision_3X4X4X3.csv")
 
 expresults |> 
@@ -447,14 +451,25 @@ ggsave(lsmeansplot,filename="./3X4X4X3/lsmeans_no1.png", width=12, height=9, uni
 
 #vaccination rate
 
-emmeans(mod1,pairwise~nu|betap*vaxrate*beta) |>
-  confint(adjust="bonferroni") ->nusimp
+joint_tests(mod1,by=c("beta", "betap", "vaxrate"))
 
-nusimp |> as.data.frame() |> 
+
+emmeans(mod1,pairwise~nu|betap*vaxrate*beta,adjust="bonferroni") ->nusimp
+
+#examining coverage= 0.75
+nusimp$contrasts   |>   as.data.frame() |> filter(vaxrate==0.75) 
+
+nusimp$contrasts   |>   confint(adjust="bonferroni") |> 
+  as.data.frame() |> filter(vaxrate==0. & contrast=="nu0.25 - nu0.5") |>
+  arrange(estimate) |> 
+  View()
+
+nusimp|>
+   confint(adjust="bonferroni") |> as.data.frame() |> 
   write.csv("./3X4X4X3/nu_simpleeffects.csv")
 
 
-emmeans(mod1,pairwise~nu|betap*vaxrate*beta)$contrasts |> 
+nusimp$contrasts |> 
   confint(adjust="bonferroni") |>
   as.data.frame() |> rename(initialvaxx=vaxrate) |> 
   ggplot(aes(x=betap,y=estimate, group=beta, shape=beta)) + 
@@ -467,9 +482,30 @@ emmeans(mod1,pairwise~nu|betap*vaxrate*beta)$contrasts |>
 vaxratediff |> ggsave(filename="./3X4X4X3/vaxrate_diffplot.png",width=6, height=4, units="in")
 
 
+#nu=0 vs non-zero nu
+
+cont_nu <- c(1,-0.5,-0.5)
+emmeans(mod1,specs=~nu*betap*vaxrate*beta) |> 
+  contrast(method=list("no vaxx vs vaxx"=cont_nu), 
+           by=c("beta", "betap", "vaxrate"))
+
+emmeans(mod1,specs=~nu*betap*vaxrate*beta) |> 
+  contrast(method=list("no vaxx vs vaxx"=cont_nu), 
+           by=c("beta", "betap", "vaxrate")) |>  confint()
+
 
 #initial vaccination
 
+joint_tests(mod1,by=c("beta", "betap", "nu"))
+
+#overall average
+emmeans(mod1,consec~vaxrate, adjust="bonferroni") |> confint()
+
+#consecutive differences
+emmeans(mod1,consec~vaxrate|nu*betap*beta) |>
+  confint(adjust="bonferroni")
+
+#pairwise differences
 emmeans(mod1,pairwise~vaxrate|nu*betap*beta) |>
   confint(adjust="bonferroni")-> vaxsimp
 
@@ -504,9 +540,16 @@ joint_tests(mod1,by=c("nu","vaxrate")) |> write.csv("./3X4X4X3/estr_interaction.
 joint_tests(mod1,by=c("beta")) |> write.csv("./3X4X4X3/estr_three-wayinteraction.csv")
 
 
-emmeans(mod1,pairwise~betap|nu*vaxrate*beta) |>
+emmeans(mod1,pairwise~betap|nu*vaxrate*beta, adjust="bonferroni") |> 
   confint(adjust="bonferroni") -> estrcontrast
 
+
+#averaging over all beta values
+emmeans(mod1,consec~betap|vaxrate*nu*beta,adjust="bonferroni")$contrasts |> 
+   as.data.frame() |> mutate_if(is.numeric,round,digits=3) |> View() 
+    write.csv("./3X4X4X3/estr_consec.csv")
+    
+    
 estrcontrast$contrasts |> as.data.frame() |> 
   write.csv("./3X4X4X3/estr_simpleeffects.csv")
 
@@ -530,6 +573,50 @@ estrcontrast$contrasts |>
    as.data.frame() |> 
   filter(vaxrate==0.75 | nu==0.5) |> summarise(min=min(estimate),max=max(estimate))
 
+
+
+#testing polynomials for betap, and vaxrate
+
+expresults |> mutate(betapn = as.numeric(as.character(betap)),
+                     vaxraten = as.numeric(as.character(vaxrate))) -> expresultsn
+mod_lof <- lm(tdom~betapn + vaxraten + I(betapn^2) + I(vaxraten^2) + 
+              I(betapn * vaxraten)   + betap:vaxrate,data=expresultsn)
+
+aov(mod_lof) |> summary()
+
+#lack of fit suggests that there is no need to examine higher orders.
+
+mod_n <- lm(tdom~betapn + vaxraten + I(betapn^2) + I(vaxraten^2) + 
+              I(betapn * vaxraten)   ,data=expresultsn)
+
+
+
 emmeans(mod1,poly~betap|nu*vaxrate*beta) |> as.data.frame() |> 
   write.csv("./3X4X4X3/estr_quadratic.csv")
+
+emmeans(mod1,poly~betap*nu*vaxrate*beta)|>
+  contrast(interaction = c("poly", "poly", "poly","poly")) |> as.data.frame() |> 
+  mutate_if(is.numeric, round,digits=3) |> View()
+  write.csv("./3X4X4X3/overall_relationship.csv")
+
+emmeans(mod1,poly~betap*nu*vaxrate)|>
+  contrast(interaction = c("poly", "poly", "poly")) |> as.data.frame() |> 
+  mutate_if(is.numeric, round,digits=3) |> 
+  write.csv("./3X4X4X3/relationship_averaged_beta.csv")
+
+emmeans(mod1,poly~betap|nu*vaxrate)|>contrast("poly") |> as.data.frame() |> 
+  mutate_if(is.numeric, round,digits=3) |> arrange(nu,vaxrate) |> 
+    write.csv("./3X4X4X3/estr_test.csv")
+
+
+
+#just test vaxrate and beta'
+emmeans(mod1,poly~vaxrate|betap)|>contrast("poly") |> as.data.frame() |> 
+  mutate_if(is.numeric, round,digits=3) |> arrange(betap) |> 
+  write.csv("./3X4X4X3/inivax_test.csv")
+  
+  emmeans(mod1,poly~betap|vaxrate)|>contrast("poly") |> as.data.frame() |> 
+    mutate_if(is.numeric, round,digits=3) |> arrange(vaxrate) |> 
+  write.csv("./3X4X4X3/estr_test_with_inivax.csv")
+
 
